@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>malwaremarket {lang_36}</title>
+<link rel="stylesheet" type="text/css" href="templates/images/Style.css">
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#FF0000">
+{Header}
+<!-- BEGIN Record watchlist -->
+<form name="watchlist" action="{Action}" method="post">
+  
+  <table class="ft" width="100%">
+<tr>
+      <td class="ct"  height="31" colspan="2"><font class="fhf">{lang_37} - {ItemTitle}</font></td>
+    </tr>
+<!-- BEGIN Error -->
+    <tr>
+      <td class="dt"  height="31" colspan="2">{Error}</td>
+    </tr>
+    <!-- END Error -->
+    <tr>
+      <td colspan="2" class="ct" style=font-weight:normal;">
+        <b>{lang_38}: {itemID}</b><BR><BR>
+        {lang_39}
+        {lang_40}<BR><BR>
+      </td>
+    </tr>
+    <tr>
+      <td height="31"><strong>Title</strong>&nbsp;</td>
+      <td height="31"><input class="input" maxlength="250" size="50" value="{ItemTitle}" name="ItemTitle">&nbsp;</td>
+    </tr>
+    <tr>
+      <td nowrap align="right" colspan="2">
+        <!-- BEGIN Button Insert --><input class="button" type="submit" value="Circle" name="Insert"><!-- END Button Insert -->&nbsp;
+        <!-- BEGIN Button Cancel --><input class="button" type="submit" value="Cancel" name="Cancel"><!-- END Button Cancel -->&nbsp;</td>
+    </tr>
+  </table>
+  <input type="hidden" value="{itemID}" name="itemID"><input type="hidden" value="{user_id}" name="user_id">
+</form>
+<!-- END Record watchlist -->{Footer}
+</body>
+</html>

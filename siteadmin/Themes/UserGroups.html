@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>malware market {versions} - Administration</title>
+<link rel="stylesheet" type="text/css" href="Themes/images/Style.css">
+</head>
+<body bgcolor="#ffffff" link="#000000" alink="#ff0000" vlink="#000099" text="#000000">
+{Header}
+<p align="center"><font class="ItechClsFormHeaderFont">Manage Users in Groups</font></p>
+<form method="GET" action="UserGroups.php">
+  <p align="center">
+  <select size="1" name="selected" class="ItechClsSelect">
+  {GroupOptions}
+  </select></p>
+  <p align="center"><input type="submit" value="Edit Group" name="Edit" class="ItechClsButton"></p>
+  <hr>
+</form>
+<form method="POST" action="UserGroups.php">
+<center>{GroupNameTitle}</center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber1">
+    <tr>
+      <td width="40%" align="center" >
+      <p align="right">Not In Group<br><select size="15" name="notingroup[]" multiple class="ItechClsSelect">
+      {NotInGroup}
+      </select></td>
+      <td width="20%" align="center" >
+      <input type="submit" value="Add To Group --&gt;" name="Add" tabindex="1" class="ItechClsButton"><p>
+      <input type="submit" value="&lt;-- Remove From Group" name="Remove" tabindex="2" class="ItechClsButton"></td>
+      <td width="40%" align="center" >
+      <p align="left">In Group<br><select size="15" name="ingroup[]" multiple class="ItechClsSelect">
+      {InGroup}
+      </select></td>
+    </tr>
+  </table>
+  <hr>
+  <p align="center"><font class="ItechClsFormHeaderFont">Group Data</font></p>
+  <p align="center">Name:<br>
+  <input type="text" name="GroupName" size="25" value="{GroupName}" tabindex="3" maxlength="255" class="ItechClsInput" readonly></p>
+  <p align="center">Description:<br>
+  <textarea rows="15" name="GroupDesc" cols="50" tabindex="4" class="ItechClsTextArea" readonly>{GroupDesc}</textarea>
+  <input type="hidden" value="{selected}" name="selected"></p>
+</form>
+<p>{Footer}&nbsp; </p>
+</body>
+</html>

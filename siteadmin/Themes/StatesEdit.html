@@ -1,0 +1,47 @@
+<html>
+<head>
+<title>StatesEdit</title>
+<link rel="stylesheet" type="text/css" href="Themes/images/Style.css">
+</head>
+<body bgcolor="#ffffff" link="#000000" alink="#ff0000" vlink="#000099" text="#000000">
+{Header}
+<!-- BEGIN Record lookup_states -->
+<form method="post" action="{Action}" name="lookup_states">
+  <font class="ItechClsFormHeaderFont">Add/Edit&nbsp;State/Province
+  Values&nbsp;</font>
+  <table cellpadding="3" cellspacing="0" border="0" class="ft">
+    <!-- BEGIN Error -->
+    <tr>
+      <td colspan="2" >{Error}</td>
+    </tr>
+    <!-- END Error -->
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">State/Province&nbsp;Abbreviation<br>
+        <br>
+        (Use&nbsp;an abr.&nbsp;if you&nbsp;would rather<br>
+        have this State/Province show<br>
+        in the drop down list as a&nbsp;<br>
+        shorter name. This keeps the<br>
+        drop down list from being too<br>
+        wide. If you do not want an abr.<br>
+        then be&nbsp;sure to put the full&nbsp;<br>
+        name in this box as well as the<br>
+        same below)&nbsp;</td>
+      <td ><input value="{state_id}" name="state_id" class="ItechClsInput"></td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">State/Province&nbsp;Full Name&nbsp;</td>
+      <td ><input name="state_desc" value="{state_desc}" maxlength="25" size="25" class="ItechClsInput">&nbsp;</td>
+    </tr>
+    <tr>
+      <td colspan="2" align="right" class="ItechClsFooterTD">
+        <!-- BEGIN Button Insert --><input name="Insert" type="submit" value="Add" class="ItechClsButton"><!-- END Button Insert -->
+        <!-- BEGIN Button Update --><input name="Update" type="submit" value="Update" class="ItechClsButton"><!-- END Button Update -->
+        <!-- BEGIN Button Delete --><input name="Delete" type="submit" value="Delete" class="ItechClsButton"><!-- END Button Delete -->&nbsp;
+        <!-- BEGIN Button Cancel --><input type="submit" value="Cancel" name="Cancel" class="ItechClsButton"><!-- END Button Cancel --></td>
+    </tr>
+  </table>
+</form>
+<!-- END Record lookup_states -->{Footer}
+</body>
+</html>

@@ -1,0 +1,41 @@
+                                            ITechClassifieds v3.0 Documentation
+
+
+=================================
+Server requirements for ITechClassifieds
+=================================
+
+1.) MySQL (version 4 or higher)
+2.) MYSQL database
+3.) PHP (version 4.2.3 or higher)
+4.) GD library for PHP
+
+
+====================================
+Installation And Setup Instructions: 
+====================================
+
+1) Extract the zip file containing the software.
+
+3) upload all files to the selected directory.
+
+4) CHMOD 777 the following files and directory
+
+     /uploads
+     /temp_templates
+
+
+5) create a new MySQL user and DB for ZincLance.
+
+5) Open Config/vars.php file and edit the variables as well as the MySQL parameters.
+
+7) Run SQL/SQL.sql through any of your mysql clients (i.e phpmyadmin)
+
+8) Admin Link: http://yoursite.com/admin
+
+8) Default Admin login:
+
+   User: admin
+   Password: admin
+
+11) Set the Paypal account in the admin area.

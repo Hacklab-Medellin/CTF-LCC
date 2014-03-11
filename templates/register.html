@@ -1,0 +1,567 @@
+<html>
+
+<head>
+
+<title>malware market - {lang_200}</title>
+
+<link rel="stylesheet" type="text/css" href="templates/images/Style.css">
+
+<style type="text/css"><!--
+
+div.hidden{
+
+  display: none;
+
+}
+
+
+
+div.error{
+
+  display: inline;
+
+  color: black;
+
+  background-color: #eeeeee;  
+
+}
+
+--></style>
+
+<script language="JavaScript">
+
+
+
+</script>
+
+<script language="JavaScript">
+
+//Begin CCS script
+
+//Include JSFunctions @1-DA3E7A20
+
+</script>
+
+<script language="JavaScript" src="functions.js">
+
+</script>
+
+<script language="JavaScript">
+
+
+
+
+
+var req;
+
+
+
+function loadXMLDoc(url) 
+
+{
+
+    // branch for native XMLHttpRequest object
+
+    if (window.XMLHttpRequest) {
+
+        req = new XMLHttpRequest();
+
+        req.onreadystatechange = processReqChange;
+
+        req.open("GET", url, true);
+
+        req.send(null);
+
+    // branch for IE/Windows ActiveX version
+
+    } else if (window.ActiveXObject) {
+
+        req = new ActiveXObject("Microsoft.XMLHTTP");
+
+        if (req) {
+
+            req.onreadystatechange = processReqChange;
+
+            req.open("GET", url, true);
+
+            req.send();
+
+        }
+
+    }
+
+}
+
+
+
+function processReqChange() 
+
+{
+
+    // only if req shows "complete"
+
+    if (req.readyState == 4) {
+
+        // only if "OK"
+
+        if (req.status == 200) {
+
+        	
+
+      response = req.responseXML.documentElement;
+
+
+
+      method = response.getElementsByTagName('method')[0].firstChild.data;
+
+
+
+      result = response.getElementsByTagName('result')[0].firstChild.data;
+
+      
+
+      eval(method + '(\'\', result)');
+
+        } else {
+
+            alert("- {lang_201}:\n" + req.statusText);
+
+        }
+
+    }
+
+}
+
+
+
+function checkName(input, response)
+
+{
+
+  if (response != ''){ 
+
+    // Response mode
+
+    message = document.getElementById('nameCheckFailed');
+
+    if (response == 1){
+
+      message.className = 'error';
+
+    }else{
+
+      message.className = 'hidden';
+
+    } 
+
+  }else{
+
+    // Input mode
+
+    url  = './register_checkXML.php?user_login=' + input;
+
+    loadXMLDoc(url);
+
+  }
+
+
+
+}
+
+
+
+function checkEmail(input, response)
+
+{
+
+  if (response != ''){ 
+
+    // Response mode
+
+    message = document.getElementById('emailCheckFailed');
+
+    if (response == 1){
+
+      message.className = 'error';
+
+    }else{
+
+      message.className = 'hidden';
+
+    } 
+
+  }else{
+
+    // Input mode
+
+    url  = './register_checkXML.php?email=' + input;
+
+    loadXMLDoc(url);
+
+  }
+
+
+
+}
+
+
+
+
+
+//page_OnLoad @1-D0F4E1D3
+
+function page_OnLoad()
+
+{
+
+    var result;
+
+//End page_OnLoad
+
+
+
+
+
+//Close page_OnLoad @1-BC33A33A
+
+    return result;
+
+}
+
+//End Close page_OnLoad
+
+
+
+//bind_events @1-F4D605D7
+
+function bind_events() {
+
+    page_OnLoad();
+
+}
+
+//End bind_events
+
+
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+
+
+//End CCS script
+
+</script>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#FF0000">
+
+{Header}
+
+<!-- BEGIN Record users -->
+
+<form name="users" action="{Action}" method="post">
+
+  <table class="ft" width="100%">
+
+    <tr> 
+
+      <td class="ct"  height="31" colspan="2"><font class="fhf">Registration
+
+  </font>&nbsp;(- {lang_202}"<strong><font color="#ff0000">*</font></strong>" are
+
+  required)</td>
+
+    </tr>    
+<!-- BEGIN Error -->
+
+    <tr> 
+
+      <td class="dt"  height="31" colspan="2">{Error}</td>
+
+    </tr>
+
+    <!-- END Error -->
+
+    <tr> 
+
+      <td class="ct"  height="31" colspan="2"><strong>- {lang_203}</strong></td>
+
+    </tr>
+
+    <tr> 
+
+      <td height="31" nowrap width="25%"><strong>Desired Username</strong>&nbsp;<strong><font color="#ff0000">*</font></strong></td>
+
+      <td width="75%"><input class="input" id="user_login" maxlength="15" size="25" value="{user_login}" name="user_login" onblur="checkName(this.value,'')"><div class="hidden" id="nameCheckFailed"><br>
+
+  - {lang_204} 
+
+</div>
+
+        &nbsp;</td>
+
+    </tr>
+
+    <tr> 
+
+      <td height="31" nowrap><strong>{lang_32}&nbsp;Address<font color="#ff0000">*</font></strong></td>
+
+      <td><input class="input" id="email" maxlength="64" size="25" value="{email}" name="email" onblur="checkEmail(this.value,'')"><div class="hidden" id="emailCheckFailed"><br>
+
+  - {lang_205} 
+
+</div>
+
+        &nbsp;</td>
+
+    </tr>
+
+    <tr> 
+
+      <td class="ct"  height="31" colspan="2"><strong>- {lang_206}</strong></td>
+
+    </tr>
+
+    <tr> 
+
+      <td height="31" nowrap><strong>First Name</strong>&nbsp;<strong><font color="#ff0000">*</font></strong></td>
+
+      <td> <input class="input" maxlength="20" value="{first_name}" name="first_name" size="20">
+
+        &nbsp;</td>
+
+    </tr>
+
+    <tr> 
+
+      <td height="31" nowrap><strong>Last Name</strong>&nbsp;<strong><font color="#ff0000">*</font></strong></td>
+
+      <td> <input class="input" maxlength="20" value="{last_name}" name="last_name" size="20">
+
+        &nbsp;</td>
+
+    </tr>
+
+    <tr> 
+
+      <td height="31" nowrap><strong>Address</strong>&nbsp;<strong><font color="#ff0000">*</font></strong></td>
+
+      <td><input class="input" maxlength="50" size="40" value="{address1}" name="address1">
+
+        &nbsp;</td>
+
+    </tr>
+
+    <tr> 
+
+      <td height="31" nowrap><strong>{lang_23}</strong></td>
+
+      <td><input class="input" maxlength="50" size="40" value="{address2}" name="address2">
+
+        &nbsp;</td>
+
+    </tr>
+
+    <tr> 
+
+      <td height="31" nowrap><strong>City</strong>&nbsp;<strong><font color="#ff0000">*</font></strong></td>
+
+      <td> <input class="input" maxlength="30" value="{city}" name="city" size="20">
+
+        &nbsp;</td>
+
+    </tr>
+
+    <tr> 
+
+      <td height="31" nowrap><strong>State</strong>&nbsp;<strong><font color="#ff0000">*</font></strong></td>
+
+      <td> <input class="input" maxlength="50" value="{state_id}" name="state_id" size="20">&nbsp;</td>
+
+    </tr>
+
+    <tr> 
+
+      <td height="31" nowrap><strong>Zip</strong>&nbsp;<strong><font color="#ff0000">*</font></strong></td>
+
+      <td><input class="input" maxlength="10" size="10" value="{zip}" name="zip">
+
+        &nbsp;</td>
+
+    </tr>
+
+    <tr> 
+
+      <td height="31" nowrap><strong>Country</strong>&nbsp;<strong><font color="#ff0000">*</font></strong></td>
+
+      <td> <select class="select" name="country_id">
+
+          
+
+          {country_id_Options}
+
+        </select> &nbsp;</td>
+
+    </tr>
+
+    <tr> 
+
+      <td height="31" nowrap><strong>{lang_28}</strong></td>
+
+      <td> <input class="input" maxlength="20" value="{phone_day}" name="phone_day" size="20">
+
+        &nbsp;</td>
+
+    </tr>
+
+    <tr> 
+
+      <td height="31" nowrap><strong>{lang_29}</strong></td>
+
+      <td> <input class="input" maxlength="20" value="{phone_evn}" name="phone_evn" size="20">
+
+        &nbsp;</td>
+
+    </tr>
+
+    <tr> 
+
+      <td height="31" nowrap><strong>{lang_30}&nbsp;Number</strong></td>
+
+      <td> <input class="input" maxlength="20" value="{fax}" name="fax" size="20">
+
+        &nbsp;</td>
+
+    </tr>
+
+    <tr> 
+
+      <td height="31" nowrap><strong>- {lang_207}</strong>&nbsp;<font color="#ff0000">*</font>&nbsp;</td>
+
+      <td> <select class="select" name="age">
+
+          
+
+          {age_Options}
+
+        </select> &nbsp;</td>
+
+    </tr>
+
+
+
+    <tr> 
+
+      <td class="ct"  height="31" colspan="2"><strong>{lang_208}</strong></td>
+
+    </tr>
+
+    <tr> 
+
+      <td height="31" nowrap><strong>Gender</strong>&nbsp;</td>
+
+      <td> <select class="select" name="gender">
+
+          
+
+          {gender_Options}
+
+        </select> &nbsp;</td>
+
+    </tr>
+
+    <tr> 
+
+      <td height="31" nowrap><strong>Education</strong>&nbsp;</td>
+
+      <td> <select class="select" name="education">
+
+          
+
+          {education_Options}
+
+        </select> &nbsp;</td>
+
+    </tr>
+
+    <tr> 
+
+      <td height="31" nowrap><strong>Income</strong>&nbsp;</td>
+
+      <td> <select class="select" name="income">
+
+          
+
+          {income_Options}
+
+        </select> &nbsp;</td>
+
+    </tr>
+
+    
+
+    <tr> 
+
+      <td class="ct"  height="31" colspan="2"><strong>Newsletter</strong></td>
+
+    </tr>
+
+    <tr> 
+
+      <td height="31"><strong>{lang_210} malwaremarket Newsletter</strong></td>
+
+      <td> <select class="select" name="newsletter">
+
+          
+
+          {newsletter_Options}
+
+        </select> &nbsp;</td>
+
+    </tr>
+
+    <tr> 
+
+      <td class="ct"  height="31" colspan="2">&nbsp;<strong>{lang_209}</strong></td>
+
+    </tr>
+
+    <tr> 
+
+      <td height="31" nowrap><strong>{lang_209}</strong>&nbsp;<strong><font color="#ff0000">*</font></strong></td>
+
+      <td><input class="input" type="checkbox" value="1" name="agreement_id" id} {agreement_>
+
+        &nbsp;Yes, I agree with the <a target="_BLANK" href="page.php?name=Terms and Conditions">terms 
+
+        and conditions</a></td>
+
+    </tr>
+
+    <tr> 
+
+      <td nowrap align="middle" colspan="2"> 
+
+        <!-- BEGIN Button Insert -->
+
+        <input class="button" type="submit" value="Register" name="Insert">
+
+        <!-- END Button Insert -->
+
+        &nbsp;</td>
+
+    </tr>
+
+  </table>
+
+  <input type="hidden" value="{user_password}" name="user_password"><input type="hidden" value="{date_created}" name="date_created"><input type="hidden" value="{ip_insert}" name="ip_insert"><input type="hidden" value="{ip_update}" name="ip_update"><input type="hidden" value="{status}" name="status">
+
+</form>
+
+<!-- END Record users -->{Footer}
+
+</body>
+
+</html>
+

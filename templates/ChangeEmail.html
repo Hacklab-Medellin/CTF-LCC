@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>malwaremarket - {lang_31}</title>
+<link rel="stylesheet" type="text/css" href="templates/images/Style.css">
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#FF0000">
+{Header}
+<!-- BEGIN Record users -->
+<form name="users" action="{Action}" method="post">
+    
+  <table class="ft" width="100%">
+<tr>
+      <td class="ct"  height="31" colspan="2"><font class="fhf">{lang_31}</font>&nbsp;</td>
+    </tr>
+      <!-- BEGIN Error -->
+    <tr>
+      <td class="dt"  height="31" colspan="2">{Error}</td>
+    </tr>
+    <!-- END Error -->
+    <tr>
+      <td height="31" nowrap>{lang_32}&nbsp;</td>
+      <td height="31"><input class="input" maxlength="64" size="50" value="{email}" name="email">&nbsp;</td>
+    </tr>
+    <tr>
+      <td nowrap align="right" colspan="2">
+        <!-- BEGIN Button Update --><input class="button" type="submit" value="Change" name="Update"><!-- END Button Update -->
+        <!-- BEGIN Button Cancel --><input class="button" type="submit" value="Cancel" name="Cancel"><!-- END Button Cancel -->&nbsp;</td>
+    </tr>
+  </table>
+</form>
+<!-- END Record users -->{Footer}
+</body>
+</html>

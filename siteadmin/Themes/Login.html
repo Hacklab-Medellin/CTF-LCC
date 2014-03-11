@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>malware market {versions} - Administration</title>
+<link rel="stylesheet" type="text/css" href="Themes/images/Style.css">
+</head>
+<body bgcolor="#ffffff" link="#000000" alink="#ff0000" vlink="#000099" text="#000000">
+{Header}
+<!-- BEGIN Record Login -->
+<form method="post" action="{Action}" name="Login">
+  <table cellpadding="3" cellspacing="0" border="0" class="ft">
+    <!-- BEGIN Error -->
+    <tr>
+      <td colspan="2" >{Error}</td>
+    </tr>
+    <!-- END Error -->
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Login&nbsp;</td>
+      <td ><input name="login" value="{login}" maxlength="100" class="ItechClsInput">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Password&nbsp;</td>
+      <td ><input type="password" name="password" value="{password}" maxlength="100" class="ItechClsInput">&nbsp;</td>
+    </tr>
+    <tr>
+      <td colspan="2" align="right" class="ItechClsFooterTD">
+        <!-- BEGIN Button DoLogin --><input name="DoLogin" type="submit" value="Login" class="ItechClsButton"><!-- END Button DoLogin -->&nbsp;</td>
+    </tr>
+  </table>
+</form>
+<!-- END Record Login -->{Footer}
+</body>
+</html>

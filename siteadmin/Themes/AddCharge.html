@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>malware market {versions} - Administration</title>
+<link rel="stylesheet" type="text/css" href="Themes/images/Style.css">
+</head>
+<body bgcolor="#ffffff" link="#000000" alink="#ff0000" vlink="#000099" text="#000000">
+{Header}
+<!-- BEGIN Record charges -->
+<form name="charges" action="{Action}" method="post">
+  <font class="ItechClsFormHeaderFont">Charge or Credit User</font>&nbsp;
+  <table  cellspacing="0" cellpadding="3" class="ft" border="0">
+    <!-- BEGIN Error -->
+    <tr>
+      <td  colspan="2">{Error}</td>
+    </tr>
+    <!-- END Error -->
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">User to Charge&nbsp;</td>
+      <td >
+        <select class="ItechClsSelect" name="user_id">
+          {user_id_Options}
+        </select>
+        &nbsp;</td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">&nbsp;Charge/Credit Amount<br>
+        <br>
+        If this is a credit given to a user,<br>
+        just enter in the amount you<br>
+        are crediting. Enter a negative symbol<br>
+        if this is a charge.</td>
+      <td ><input class="ItechClsInput" maxlength="12" size="12" value="{charge}" name="charge">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Cause&nbsp;<br>
+        <br>
+        Please note that this is always<br>
+        always displayed in HTML so be sure<br>
+        to enter the appropriate HTML tags<br>
+        if desired<br>
+        <br>
+        Ex. Enter the symbol &lt;BR&gt; for a new<br>
+        line as opposed to pressing the enter<br>
+        key on your keyboard. Enclose any<br>
+        text that you want bold in the tags<br>
+        &lt;b&gt;your text&lt;/b&gt;.</td>
+      <td ><textarea class="ItechClsTextarea" name="cause" rows="10" cols="50">{cause}</textarea>&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="ItechClsFooterTD" align="right" colspan="2">
+        <!-- BEGIN Button Insert --><input class="ItechClsButton" type="submit" value="Add" name="Insert"><!-- END Button Insert -->
+        <!-- BEGIN Button Cancel --><input class="ItechClsButton" type="submit" value="Cancel" name="Cancel"><!-- END Button Cancel -->&nbsp;</td>
+    </tr>
+  </table>
+  <input type="hidden" value="{date}" name="date">
+</form>
+<!-- END Record charges -->{Footer}
+</body>
+</html>

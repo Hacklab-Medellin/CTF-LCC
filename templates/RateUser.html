@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<title>malwaremarket - {lang_289}</title>
+		<link rel="stylesheet" type="text/css" href="templates/images/Style.css">
+	</head>
+	<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#FF0000">
+		<p>{Header} </p><!-- BEGIN Error -->{lang_193}<!-- END Error -->
+		<!-- BEGIN rate -->
+		<br><p>Rate this user {lang_132} Transaction Involving Item #{ItemNum}: <b>"{title}"</b></p>
+		<form method="POST" action="RateUser.php">
+			<table class="formtable" cellspacing="1" cellpadding="5" bordercolor="#111111" width="100%">
+    			<tr>
+      				<td class="fct" height="31" width="100%"><input type="radio" value="1" name="rating">{lang_60}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      				<input type="radio" name="rating" value="0" checked>{lang_63}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      				<input type="radio" name="rating" value="-1">{lang_64}</td>
+    			</tr>
+    			<tr>
+      				<td width="100%">Comment: <input class="inputs" maxlength="100" type="text" name="comment" size="65"> (100
+      				Character Max)</td>
+    			</tr>
+  			</table><input type="hidden" value="{ItemNum}" name="ItemNum"><input type="hidden" value="{purchase_id}" name="purchase_id">
+  			<p><input type="submit" value="Submit Rating" name="submit"></p>
+		</form><!-- END rate -->
+        <!-- BEGIN counter -->
+        <br><p>{lang_194} #{ItemNum}: <b>"{title}"</b></p>
+		<form method="POST" action="RateUser.php">
+			<table class="formtable" cellspacing="1" cellpadding="5" bordercolor="#111111" width="100%">
+    			<tr>
+      				<td class="fct" height="31" width="100%">{lang_195} "{rated_you}" {lang_196}<br> {lang_197}:  {usercomment}
+    			</tr>
+    			<tr>
+      				<td width="100%">{lang_198}: <input class="inputs" maxlength="100" type="text" name="comment" size="65"> (100
+      				Character Max)</td>
+    			</tr>
+  			</table><input type="hidden" value="{id}" name="id">
+  			<p><input type="submit" value="Submit Counter Statment" name="submit"></p>
+		</form>
+        <!-- END counter -->
+		<br>
+		{Footer} </p>
+	</body>
+</html>

@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>malware market {versions} - Administration</title>
+
+
+
+
+.ItechClsTextarea { font-size: 11px; font-family: Tahoma, Verdana, Arial, Helvetica; }
+.ItechClsSelect { font-size: 11px; font-family: Tahoma, Verdana, Arial, Helvetica; }
+-->
+</style></head>
+<body bgcolor="#39597B" link="#000000" alink="#FF0000" vlink="#000099" text="#000000">
+{Header}
+<!-- BEGIN Record sent_newsletters -->
+<form method="post" action="{Action}" name="sent_newsletters">
+<font class="ItechClsFormHeaderFont">Add/Edit sent_newsletters </font>
+<table cellpadding="3" cellspacing="0" border="0" bgcolor="#5A7994" style="border: 2px solid #9DB4C8;">
+  <!-- BEGIN Error -->
+  <tr>
+    <td colspan="2" >{Error}</td>
+  </tr>
+  <!-- END Error -->
+  <tr>
+    <td class="ItechClsFieldCaptionTD" height="31">datesent&nbsp;</td>
+    <td ><input type="text" name="datesent" value="{datesent}" maxlength="10" size="10" class="ItechClsInput">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="ItechClsFieldCaptionTD" height="31">newsletter&nbsp;</td>
+    <td ><textarea name="newsletter" cols="50" rows="3" class="ItechClsTextarea">{newsletter}</textarea>&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="2" align="right" align="center" class="ItechClsFooterTD">
+      <!-- BEGIN Button Insert --><input name="Insert" type="submit" value="Add" class="ItechClsButton"><!-- END Button Insert -->
+      <!-- BEGIN Button Update --><input name="Update" type="submit" value="Submit" class="ItechClsButton"><!-- END Button Update -->
+      <!-- BEGIN Button Delete --><input name="Delete" type="submit" value="Delete" class="ItechClsButton"><!-- END Button Delete -->&nbsp;
+    </td>
+  </tr></table><input type="hidden" name="newsletter_id" value="{newsletter_id}">
+</form>
+<!-- END Record sent_newsletters -->{Footer}
+</body>
+</html>

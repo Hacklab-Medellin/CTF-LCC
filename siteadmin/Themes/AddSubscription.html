@@ -1,0 +1,181 @@
+<html>
+<head>
+<title>malware market {versions} - Administration</title>
+<link rel="stylesheet" type="text/css" href="Themes/images/Style.css">
+<style type="text/css">@import url(cal/calendar-win2k-1.css);</style>
+<script language="JavaScript">
+<!--
+
+function recurringon(cbox) {
+var box;
+var checked;
+box = eval(document.subscriptions.recurring);
+if (box.checked) {
+document.subscriptions.intro.disabled="";
+document.subscriptions.intro_duration.disabled="";
+document.subscriptions.intro_price.disabled="";
+document.subscriptions.paypal.checked="checked";
+document.subscriptions.authnet.disabled="disabled";
+document.subscriptions.co2.disabled="disabled";
+}
+if (!box.checked) {
+document.subscriptions.intro.disabled="disabled";
+document.subscriptions.intro_duration.disabled="disabled";
+document.subscriptions.intro_price.disabled="disabled";
+document.subscriptions.authnet.disabled="";
+document.subscriptions.co2.disabled="";
+}
+}
+
+function authneton(cbox) {
+var box;
+var boxx;
+var checked;
+box = eval(document.subscriptions.authnet);
+boxx = eval(document.subscriptions.co2);
+if (box.checked) {
+document.subscriptions.recurring.disabled="disabled";
+document.subscriptions.intro.disabled="disabled";
+document.subscriptions.intro_duration.disabled="disabled";
+document.subscriptions.intro_price.disabled="disabled";
+}
+if (!box.checked & !boxx.checked) {
+document.subscriptions.recurring.disabled="";
+}
+}
+
+function co2on(cbox) {
+var box;
+var boxx;
+var checked;
+box = eval(document.subscriptions.co2);
+boxx = eval(document.subscriptions.authnet);
+if (box.checked) {
+document.subscriptions.recurring.disabled="disabled";
+document.subscriptions.intro.disabled="disabled";
+document.subscriptions.intro_duration.disabled="disabled";
+document.subscriptions.intro_price.disabled="disabled";
+}
+if (!box.checked & !boxx.checked) {
+document.subscriptions.recurring.disabled="";
+}
+}
+
+function unlimitedon(cbox) {
+var box;
+var checked;
+box = eval(document.subscriptions.unlimited);
+if (box.checked) {
+document.subscriptions.duration.disabled="disabled";
+}
+if (!box.checked) {
+document.subscriptions.duration.disabled="";
+}
+}
+
+function autopop() {
+document.subscriptions.recurring.disabled="{recdisable}";
+document.subscriptions.intro.disabled="{intdisabled}";
+document.subscriptions.intro_duration.disabled="{int_durdisabled}";
+document.subscriptions.intro_price.disabled="{int_pridisabled}";
+document.subscriptions.authnet.disabled="{autdisabled}";
+document.subscriptions.co2.disabled="{co2disabled}";
+document.subscriptions.duration.disabled="{durationdisabled}";
+}
+// -->
+</script>
+</head>
+<body bgcolor="#ffffff" link="#000000" alink="#ff0000" vlink="#000099" text="#000000" onload="autopop()">
+{Header}
+<!-- BEGIN Record subscriptions -->
+<form name="subscriptions" action="{Action}" method="post">
+  <font class="ItechClsFormHeaderFont">Create/Edit Subscriptions</font>&nbsp;
+<table cellspacing="0" cellpadding="3" class="ft" border="0">
+    <!-- BEGIN Error -->
+    <tr>
+      <td  colspan="2">{Error}</td>
+    </tr>
+    <!-- END Error -->    
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Subscription Title</td>
+      <td ><input class="ItechClsInput" type="text" name="title" value="{title}" size="29"></td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Subscription Description</td>
+      <td ><textarea class="ItechClsInput" rows="7" name="description" cols="51">{description}</textarea></td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Add users to this user group when they subscribe</td>
+      <td ><select class="ItechClsInput" size="1" name="group">{group_Options}</select></td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Duration (days)</td>
+      <td ><input class="ItechClsInput" type="text" name="duration" value="{duration}" size="6" document.subscriptions.duration.disabled> Days --or-- Unlimited <input class="ItechClsInput" type="checkbox" name="unlimited" value="1" {unlimited} onclick=unlimitedon("document.subscriptions.unlimited");></td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Duration Price</td>
+      <td >$<input class="ItechClsInput" type="text" name="price" value="{price}" size="9"></td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Recurring:</td>
+      <td ><input class="ItechClsInput" type="checkbox" name="recurring" value="1" onclick=recurringon("document.subscriptions.recurring"); {recurring}></td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Use special Introductory Duration and Price (PayPal only)</td>
+      <td ><input class="ItechClsInput" type="checkbox" name="intro" value="1" {intro} document.subscriptions.intro.disabled></td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Introductory Duration (days)</td>
+      <td ><input class="ItechClsInput" type="text" name="intro_duration" value="{intro_duration}" size="6" document.subscriptions.intro_duration.disabled> Days</td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Introductory Price</td>
+      <td >$<input class="ItechClsInput" type="text" name="intro_price" value="{intro_price}" size="8" document.subscriptions.intro_price.disabled></td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Accept payment via PayPal</td>
+      <td ><input class="ItechClsInput" type="checkbox" name="paypal" value="1" {paypal} document.subscriptions.paypal.checked></td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Accept Payment via Authorize.NET</td>
+      <td ><input class="ItechClsInput" type="checkbox" name="authnet" value="1" {authnet} onclick=authneton("document.subscriptions.authnet"); document.subscriptions.authnet.disabled></td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Accept Payment via 2CheckOut (not yet active in this release)</td>
+      <td ><input class="ItechClsInput" type="checkbox" name="co2" value="1" {co2} onclick=co2on("document.subscriptions.co2"); document.subscriptions.co2.disabled></td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Subscribed Members Icon (optional)</td>
+      <td >./images/<input class="ItechClsInput" type="text" name="icon" value="{icon}" size="29"></td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Accept New Signups (if this is a recurring subscription <br>uncheck this instead of deleting the subscription <br>plan if you do not want let anyone new signup <br>but allow those who have already signed up <br>continue their subscription)</td>
+      <td ><input class="ItechClsInput" type="checkbox" name="active" value="1" {active}></td>
+    </tr>
+    <tr>
+      <td class="ItechClsFooterTD" align="right" colspan="2">
+        <!-- BEGIN Button Insert --><input class="ItechClsButton" type="submit" value="Add" name="Insert"><!-- END Button Insert -->
+        <!-- BEGIN Button Update --><input class="ItechClsButton" type="submit" value="Update" name="Update"><!-- END Button Update -->
+        <!-- BEGIN Button Cancel --><input class="ItechClsButton" type="submit" value="Cancel" name="Cancel"><!-- END Button Cancel -->&nbsp;</td>
+    </tr>
+  </table>
+</form><br>
+<table width="100%" align="left" >
+  <tr>
+    <td align="middle" class="ItechClsFieldCaptionTD" height="31">Subscription Explaination</td>
+  </tr>
+  <tr>
+    <td align="left" >
+    <b>"Subscription Title" and "Subscription Description"</b> - These two fields are both displayed to the end user when they are viewing the ViewSubscriptions page on the front end of the script.  The title will also appear beside their username on items they are selling.<br><br>
+    <b>"Add to User Group"</b> - This is where the main features of subscriptions come from.  Create User Groups with the Category listing permissions, discounts, and tokens that you want members of this subscription plan to have, then use the above box to assign that group to this plan and the users will automatically be added and removed from that group depending on their subscription status.<br><br>
+    <b>"Duration"</b> - How long (in days) a user will be subscribed to this plan.  Can be 'unlimited' and the subscription will never end.<br><br>
+    <b>"Duration Price"</b> - How much it costs to be subscribed for the duration listed above.  Can be 0 (Zero), if it is zero, all the following payment options will be ignored.<br><br>
+    <b>"Recurring"</b> - Creates an Automatically Recurring subscription plan so that users are automatically charged and renewed at the end of each 'Duration'.  This option is only available through paypal.  If you are going to use this method you should make sure that your users are aware that the subscription automatically charges their paypal account at the end of their subscription to renew the subscription otherwise you are likely to have some angry customers when they find out the hard way that they were billed again.<br><br>
+    <b>"Intro Duration and Price"</b> - This can only be used by paypal recurring payment plans, it allows you to have a special introductory offer for your recurring subscriptions.  For example if you have a 30 recurring subscription for $20 every duration, you could offer the first month (or what ever duration you chose) at only $10 (or whatever price you chose) then all the following durations would be normal, as listed above.<br><br>
+    <b>"Icon"</b> - An Icon is a small image that will show up by the subscribed user's name on their listings and in their MyAccount area (also on the ViewSubscriptions page).  This is especially useful if you have some kind of subscription that is used to "Verify" serious sellers, you can have an "I'm Verified" icon by their username on their listings so that buyers know they arern't just some one who is trying to rip them off, but they have been 'authenticated' some way by this site.  Upload your icon image to your '/images' directory then type it's file name in the above box.<br><br>
+    <b>"Accept New Signups"</b> - This will tell the system if a subscription plan should be active.  If you are ending a plan offering while some users are still subscribed then it's a good idea to simply 'deactivate' it here instead of deleting it till all users' subscriptions have expired.  Unchecking this box will make it so that this plan will not show up as an option on the ViewSubscription page and will not accept new subscribers.  This can also be useful for special cases, such as a subscription plan intended for only a handful of users or in the 'verification' idea mentioned above, a subscription plan can be created, but never made public so  you can manually add users to it under "Subscribed Users" here in siteadmin.
+    
+    </td></tr></table>
+<!-- END Record subscriptions -->{Footer}
+</body>
+</html>

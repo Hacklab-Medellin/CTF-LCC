@@ -1,0 +1,114 @@
+BODY { font-family: Verdana, Arial, Helvetica; font-size: 11px; }
+
+TABLE { font-family: Verdana, Arial, Helvetica; font-size: 11px; }
+
+TH { font-family: Verdana, Arial, Helvetica; font-size: 11px; }
+
+TR { font-family: Verdana, Arial, Helvetica; font-size: 11px; }
+
+TD { font-family: Verdana, Arial, Helvetica; font-size: 11px; }
+
+UL { font-family: Verdana, Arial, Helvetica; font-size: 11px; }
+
+OL { font-family: Verdana, Arial, Helvetica; font-size: 11px; }
+
+LI { font-family: Verdana, Arial, Helvetica; font-size: 11px; }
+
+P { font-family: Verdana, Arial, Helvetica; font-size: 11px; }
+
+FONT { font-family: Verdana, Arial, Helvetica; font-size: 11px; }
+
+A { font-family: Verdana, Arial, Helvetica; font-size: 11px; }
+
+BLOCKQUOTE { font-family: Verdana, Arial, Helvetica; font-size: 11px; }
+
+LABEL { font-family: Verdana, Arial, Helvetica; font-size: 11px; }
+
+.ItechClsPageBODY {  }
+
+.ItechClsFormHeaderFont { font-size: 14px; font-weight: bold; }
+
+.ItechClsmenu {
+color: #FFFFFF;
+font-size: 11px;
+font-weight: bold;
+background-image: url('td2_bg.gif');
+ }
+
+.ItechClsFieldCaptionTD {
+background-color: #000000;
+color: #000000;
+font-size: 11px;
+background-image: url('td_back.gif');
+
+ }
+
+.ItechClsAltDataTD { color: #C5D3DF; font-size: 11px; }
+
+.ItechClsColumnTD {
+background-color: #000000;
+color: #000000;
+font-size: 11px;
+font-weight: bold;
+border-top:1px solid #cccccc;border-bottom:1px solid #cccccc;
+background-image: url('td_back.gif');
+ }
+
+.ItechClsSeparatorTD {  }
+
+.ItechClsFooterTD {
+background-color: #000000;
+color: #000000;
+font-size: 11px;
+font-weight: bold;
+border-top:1px solid #cccccc;border-bottom:1px solid #cccccc;
+background-image: url('td_back.gif');
+ }
+
+a.ItechClsSorterLink:link { color: #000000; font-size: 11px; font-weight: bold; text-decoration: none; }
+
+a.ItechClsSorterLink:visited { color: #000000; font-size: 11px; font-weight: bold; text-decoration: none; }
+
+a.ItechClsSorterLink:hover { color: #000000; font-size: 11px; font-weight: bold; text-decoration: none; }
+
+a.ItechClsSorterLink:active { color: #000000; font-size: 11px; font-weight: bold; text-decoration: none; }
+
+a.ItechClsDataLink:link { font-size: 11px; text-decoration: none; padding-top:2px; padding-bottom:2px  }
+
+a.ItechClsDataLink:visited { font-size: 11px; text-decoration: none; }
+
+a.ItechClsDataLink:hover { font-size: 11px; text-decoration: none; }
+
+a.ItechClsDataLink:active { font-size: 11px; text-decoration: none; }
+
+a.ItechClsNavigatorLink:link { color: #000000; font-size: 11px; text-decoration: none; }
+
+a.ItechClsNavigatorLink:visited { color: #000000; font-size: 11px; text-decoration: none; }
+
+a.ItechClsNavigatorLink:hover { color: #000000;; font-size: 11px; text-decoration: none; }
+
+a.ItechClsNavigatorLink:active { color: #000000;; font-size: 11px; text-decoration: none; }
+
+.ItechClsButton { border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; border-top: 1px solid #000000; background-color: #ffffff; font-size: 10px; font-family: Verdana, Arial, Helvetica; }
+
+.ItechClsInput { font-size: 11px; font-family: Verdana, Arial, Helvetica; }
+
+.ItechClsTextarea { font-size: 11px; font-family: Verdana, Arial, Helvetica; }
+
+.ItechClsSelect { font-size: 11px; font-family: Verdana, Arial, Helvetica; }
+
+.ft
+{
+cell-padding: 0px;
+border-spacing: 0px;
+padding-left : 0px; padding-bottom : 3px;
+}
+.ftt
+
+{
+background-image: url('pannel-bottom.gif');
+cell-padding: 0px;
+border-spacing: 0px;
+padding-left : 0px;
+border-top: #cccccc 1px solid; border-bottom: #cccccc 1px solid; border-left: #cccccc 1px solid; border-right: #cccccc 1px solid;
+}

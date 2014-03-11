@@ -1,0 +1,553 @@
+<html>
+<head>
+<title>malwaremarket - New Item</title>
+<link rel="stylesheet" type="text/css" href="templates/images/Style.css">
+
+<script language="JavaScript">
+<!--
+function LoadImage1() {
+var go = "Image1";
+win2=window.open("UploadImage.php?adminkey={adminkey}&which=" + go,"window1", "menubar=no,height=250,width=250,titlebar=test,resizable=yes,status=testing,toolbar=no,screenX=25px,screenY=140px,directories=no,dependent=no");
+}
+function LoadImage2() {
+var go = "Image2";
+win2=window.open("UploadImage.php?adminkey={adminkey}&which=" + go,"window1", "menubar=no,height=250,width=250,titlebar=test,resizable=yes,status=testing,toolbar=no,screenX=25px,screenY=140px,directories=no,dependent=no");
+}
+function LoadImage3() {
+var go = "Image3";
+win2=window.open("UploadImage.php?adminkey={adminkey}&which=" + go,"window1", "menubar=no,height=250,width=250,titlebar=test,resizable=yes,status=testing,toolbar=no,screenX=25px,screenY=140px,directories=no,dependent=no");
+}
+function LoadImage4() {
+var go = "Image4";
+win2=window.open("UploadImage.php?adminkey={adminkey}&which=" + go,"window1", "menubar=no,height=250,width=250,titlebar=test,resizable=yes,status=testing,toolbar=no,screenX=25px,screenY=140px,directories=no,dependent=no");
+}
+function LoadImage5() {
+var go = "Image5";
+win2=window.open("UploadImage.php?adminkey={adminkey}&which=" + go,"window1", "menubar=no,height=250,width=250,titlebar=test,resizable=yes,status=testing,toolbar=no,screenX=25px,screenY=140px,directories=no,dependent=no");
+}
+function RemoveImages(imagename,FileID) {
+win2=window.open("RemoveImage.php?imagename=" + imagename + "&ID=" + FileID,"window1", "menubar=yes,height=250,width=250,titlebar=test,resizable=yes,status=testing,toolbar=no,screenX=25px,screenY=140px,directories=no,dependent=no");
+}
+function Load1(init) {
+        if (document.items.image_one.value != "") {
+                if (init == "1") {
+                        document.images["Image1"].src = "{image_one}";
+                        document.images["Image1"].width = 75;
+                        document.images["Image1"].height = 75;
+                }
+                document.images["Add1"].src = "images/blank.jpg";
+                document.images["Remove1"].src = "images/remove.jpg";
+        }
+        if (document.items.image_one.value == "") {
+                if (init == "1") {
+                        document.images["Image1"].src = "images/nopic.gif";
+                        document.images["Image1"].width = 75;
+                        document.images["Image1"].height = 75;
+                }
+                document.images["Add1"].src = "images/add.jpg";
+                document.images["Remove1"].src = "images/blank.jpg";
+        }
+}
+function Load2(init) {
+        if (document.items.image_two.value != "") {
+                if (init == "1") {
+                        document.images["Image2"].src = "{image_two}";
+                        document.images["Image2"].width = 75;
+                        document.images["Image2"].height = 75;
+                }
+                document.images["Add2"].src = "images/blank.jpg";
+                document.images["Remove2"].src = "images/remove.jpg";
+        }
+        if (document.items.image_two.value == "") {
+                if (init == "1") {
+                        document.images["Image2"].src = "images/nopic.gif";
+                        document.images["Image2"].width = 75;
+                        document.images["Image2"].height = 75;
+                }
+                document.images["Add2"].src = "images/add.jpg";
+                document.images["Remove2"].src = "images/blank.jpg";
+        }
+}
+function Load3(init) {
+        if (document.items.image_three.value != "") {
+                if (init == "1") {
+                        document.images["Image3"].src = "{image_three}";
+                        document.images["Image3"].width = 75;
+                        document.images["Image3"].height = 75;
+                }
+                document.images["Add3"].src = "images/blank.jpg";
+                document.images["Remove3"].src = "images/remove.jpg";
+        }
+        if (document.items.image_three.value == "") {
+                if (init == "1") {
+                        document.images["Image3"].src = "images/nopic.gif";
+                        document.images["Image3"].width = 75;
+                        document.images["Image3"].height = 75;
+                }
+                document.images["Add3"].src = "images/add.jpg";
+                document.images["Remove3"].src = "images/blank.jpg";
+        }
+}
+function Load4(init) {
+        if (document.items.image_four.value != "") {
+                if (init == "1") {
+                        document.images["Image4"].src = "{image_four}";
+                        document.images["Image4"].width = 75;
+                        document.images["Image4"].height = 75;
+                }
+                document.images["Add4"].src = "images/blank.jpg";
+                document.images["Remove4"].src = "images/remove.jpg";
+        }
+        if (document.items.image_four.value == "") {
+                if (init == "1") {
+                        document.images["Image4"].src = "images/nopic.gif";
+                        document.images["Image4"].width = 75;
+                        document.images["Image4"].height = 75;
+                }
+                document.images["Add4"].src = "images/add.jpg";
+                document.images["Remove4"].src = "images/blank.jpg";
+        }
+}
+function Load5(init) {
+        if (document.items.image_five.value != "") {
+                if (init == "1") {
+                        document.images["Image5"].src = "{image_five}";
+                        document.images["Image5"].width = 75;
+                        document.images["Image5"].height = 75;
+                }
+                document.images["Add5"].src = "images/blank.jpg";
+                document.images["Remove5"].src = "images/remove.jpg";
+        }
+        if (document.items.image_five.value == "") {
+                if (init == "1") {
+                        document.images["Image5"].src = "images/nopic.gif";
+                        document.images["Image5"].width = 75;
+                        document.images["Image5"].height = 75;
+                }
+                document.images["Add5"].src = "images/add.jpg";
+                document.images["Remove5"].src = "images/blank.jpg";
+        }
+}
+
+function RemoveImage1() {
+document.items.image_one.value = "";
+Load1("1");
+}
+function RemoveImage2() {
+document.items.image_two.value = "";
+Load2("1");
+}
+function RemoveImage3() {
+document.items.image_three.value = "";
+Load3("1");
+}
+function RemoveImage4() {
+document.items.image_four.value = "";
+Load4("1");
+}
+function RemoveImage5() {
+document.items.image_five.value = "";
+Load5("1");
+}
+function PicLoader() {
+Load1("1")
+Load2("1")
+Load3("1")
+Load4("1")
+Load5("1")
+}
+// -->
+</script>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#FF0000" onload="PicLoader()">
+{Header}
+<!-- BEGIN Record items -->
+<form name="items" action="{Action}" method="post">
+  <table class="ft" width="100%">
+<tr>
+      <td colspan="3" class="ct" height="31">
+  <font class="fhf">New Item Listing {text1} {text1_label}</font>, 
+  Base Listing Fee:<font color="#ff0000"><strong>{currency}{listing_fee}</strong></font></td>
+    </tr>
+
+    <tr>
+      <td colspan="3">
+        <!-- BEGIN Error -->{Error}<!-- END Error --></td>
+    </tr>
+    <tr>
+      <td class="ct"  height="31" colspan="3">Category</td>
+      <tr>
+        <td height="31" valign="top" nowrap>&nbsp;</td>
+        <td valign="bottom">
+
+<input value="{category}" size="9" name="category" readonly>&nbsp; {cat_name}</td>
+        </td>
+      </tr>
+      <tr>
+        <td class="ct"  height="31" colspan="3">{lang_119}</td>
+      </tr>
+      <tr>
+        <td height="31" valign="top" nowrap>
+          <p><strong>Listing Title</strong></p>
+          <p>Up to 80 Characters&nbsp;</p>
+        </td>
+        <td colspan="2"><input class="inputs" maxlength="45" size="45" value="{title}" name="title">&nbsp;</td>
+      </tr>
+      <tr>
+        <td height="31" valign="top" nowrap>
+          <p><strong>Quantity</strong>&nbsp;</p>
+          <p>How many&nbsp;you have<br>
+          for sale</p>
+        </td>
+        <td colspan="2"><input class="inputs" style="WIDTH: 54px; HEIGHT: 20px" maxlength="10" size="5" value="{quantity}" name="quantity">&nbsp;</td>
+      </tr>
+      <tr>
+        <td height="31" valign="top" nowrap><strong>{lang_118}</strong>&nbsp;</td>
+        <td colspan="2">$<input class="inputs" style="WIDTH: 58px; HEIGHT: 20px" maxlength="12" size="5" value="{asking_price}" name="asking_price">&nbsp;(No Commas)</td>
+      </tr>
+      <tr>
+        <td height="31" valign="top" nowrap>
+          <p><strong>{lang_77}</strong>&nbsp;</p>
+          <p>&nbsp;</p>
+        </td>
+        <td colspan="2"><input class="inputs" type="checkbox" maxlength="4" size="4" value="1" name="make_offer" {make_offer}>&nbsp;-
+          {lang_120}<br>
+          {lang_121}</td>
+      </tr>
+      <tr>
+        <td height="31" valign="top" nowrap>
+          <p><strong>Description</strong></p>
+          <p><font>May include HTML</font></p>
+        </td>
+        <td colspan="2"><textarea class="textareas" style="WIDTH: 350px; HEIGHT: 238px" name="description" rows="12" cols="60">{description}</textarea>&nbsp;</td>
+      </tr>
+      <!-- BEGIN Custom_TextArea -->
+    	<tr>
+        	<td class="ct"  height="31" colspan="3">Category Custom TextArea Data</td>
+        	</tr>
+        <!-- BEGIN Row -->
+	    <tr>
+        <td height="31" valign="top" nowrap>
+          <p><strong>{ta_name}</strong></p>
+          <p><font>{ta_description}</font></p>
+        </td>
+        <td colspan="2"><textarea class="textareas" style="WIDTH: 350px; HEIGHT: 238px" name="{ta_var}" rows="12" cols="60">{ta_value}</textarea>&nbsp;</td>
+      </tr><!-- END Row --><!-- END Custom_TextArea -->
+      <tr>
+        <td class="ct"  height="31" colspan="3">Item Images</td>
+        </tr>
+          <tr>
+            <td height="31" valign="top" nowrap><strong>Listing Images</strong>&nbsp;<br>
+              <font color="#ff0000"><strong>{currency}{upload_fee}</strong>&nbsp;</font>each</td>
+            <td colspan="2">
+              <table height="100%" cellspacing="5" cellpadding="1" width="100%" >
+                <tr>
+                  <td valign="center" align="middle" colspan="2">
+                    <table height="75" width="75" align="center" >
+                      <tr>
+                        <td valign="center" align="middle" width="65" bgcolor="#ffffff" height="75"><img id="Image1" height="75" width="75" border="0" name="Image1"></td>
+                      </tr>
+                    </table>
+                    <img id="Add1" onclick="LoadImage1()" name="Add1"><img id="Remove1" onclick="RemoveImages(document.items.image_one.value,'1')" name="Remove1"></td>
+                  <td valign="center" align="middle" colspan="2">
+                    <table height="75" width="75" align="center" >
+                      <tr>
+                        <td valign="center" align="middle" width="65" bgcolor="#ffffff" height="75"><img id="Image2" height="75" width="75" border="0" name="Image2"></td>
+                      </tr>
+                    </table>
+                    <img id="Add2" onclick="LoadImage2()" name="Add2"><img id="Remove2" onclick="RemoveImages(document.items.image_two.value,'2')" name="Remove2"></td>
+                  <td valign="center" align="middle" colspan="2">
+                    <table height="75" width="75" align="center" >
+                      <tr>
+                        <td valign="center" align="middle" width="65" bgcolor="#ffffff" height="75"><img id="Image3" height="75" width="75" border="0" name="Image3"></td>
+                      </tr>
+                    </table>
+                    <img id="Add3" onclick="LoadImage3()" name="Add3"><img id="Remove3" onclick="RemoveImages(document.items.image_three.value,'3')" name="Remove3"></td>
+                </tr>
+                <tr>
+                  <td valign="center" align="middle" colspan="2">
+                    <table height="75" width="75" align="center" >
+                      <tr>
+                        <td valign="center" align="middle" width="65" bgcolor="#ffffff" height="75"><img id="Image4" height="75" width="75" border="0" name="Image4"></td>
+                      </tr>
+                    </table>
+                    <img id="Add4" onclick="LoadImage4()" name="Add4"><img id="Remove4" onclick="RemoveImages(document.items.image_four.value,'4')" name="Remove4"></td>
+                  <td valign="center" align="middle" colspan="2">
+                    <table height="77" width="77" align="center" >
+                      <tr>
+                        <td valign="center" align="middle" width="65" bgcolor="#ffffff" height="77"><img id="Image5" height="75" width="75" border="0" name="Image5"></td>
+                      </tr>
+                    </table>
+                    <img id="Add5" onclick="LoadImage5()" name="Add5"><img id="Remove5" onclick="RemoveImages(document.items.image_five.value,'5')" name="Remove5"></td>
+                </tr>
+              </table>
+              <p>&nbsp;</p>
+              <p><input class="inputs" type="checkbox" value="1" name="image_preview" {image_preview}>&nbsp;<strong>Image
+              Preview</strong>- Displays the first image next to your title<br>
+              <font color="#ff0000"><strong>{currency}{image_preview_fee}</strong></font><br>
+              <br>
+              <input class="inputs" type="checkbox" value="1" name="slide_show" {slide_show}>&nbsp;<strong>Image
+              {lang_122}</strong>- {lang_123}{lang_122}<br>
+              <font color="#ff0000"><strong>{currency}{slide_fee}</strong></font></p>
+            </td>
+          </tr>
+      <!-- BEGIN Custom_TextBox -->
+    	<tr>
+        	<td class="ct"  height="31" colspan="3">{lang_124}</td>
+        	</tr>
+        <!-- BEGIN tb_Row -->
+	    <tr>
+        <td height="31" valign="top" nowrap>
+          <p><strong>{tb_name}</strong></p>
+          <p><font>{tb_description}</font></p>
+        </td>
+        <td colspan="2"><input value="{tb_value}" name="{tb_var}">&nbsp;</td>
+      </tr><!-- END tb_Row --><!-- END Custom_TextBox -->
+      <!-- BEGIN Custom_DropDown -->
+    	<tr>
+        	<td class="ct"  height="31" colspan="3">{lang_125}</td>
+        	</tr>
+        <!-- BEGIN dd_Row -->
+	    <tr>
+        <td height="31" valign="top" nowrap>
+          <p><strong>{dd_name}</strong></p>
+          <p><font>{dd_description}</font></p>
+        </td>
+        <td colspan="2"><select class="select" name="{dd_var}">
+          {dropdown_Options}
+        </select></td>
+      </tr><!-- END dd_Row --><!-- END Custom_DropDown -->
+          <tr>
+            <td class="ct"  height="31" colspan="3">{lang_126}</td>
+            <tr>
+              <tr>
+                <td height="31" valign="top" nowrap><strong>{lang_127}</strong>&nbsp;</td>
+                <td colspan="2"><input value="{city_town}" name="city_town">&nbsp;</td>
+              </tr>
+              <tr>
+                <td height="31" valign="top" nowrap><strong>{lang_128}</strong>&nbsp;</td>
+                <td colspan="2"><input value="{state_province}" name="state_province">&nbsp;</td>
+              </tr>
+		  <tr>
+                <td height="31" valign="top" nowrap><strong>Country</strong>&nbsp;</td>
+                <td colspan="2"><select class="select" name="country">
+          {country_Options}
+        </select> &nbsp;</td>
+		  </tr>
+		<tr>
+                <td class="ct"  height="31" colspan="3">{lang_129}</td>
+                </tr>
+                  <tr>
+                    <td height="31" valign="top" nowrap><strong>{lang_130}</strong><br>{lang_131}<br>
+					{lang_132} "{lang_118}" {lang_133}</td>
+                    <td colspan="2">
+                      <input class="inputs" maxlength="50" size="30" value="{item_paypal}" name="item_paypal">
+                      &nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td height="31" valign="top" nowrap><strong>{lang_134}</strong><br>{lang_135} <br>
+					{lang_136}</td>
+                    <td colspan="2">
+                      Method: <input class="inputs" maxlength="150" size="45" value="{ship1}" name="ship1"><br>
+                      S&H Fee: $<input class="inputs" maxlength="20" size="6" value="{shipfee1}" name="shipfee1">
+                      &nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td height="31" valign="top" nowrap><strong>{lang_137} 2</strong></td>
+                    <td colspan="2">
+                      Method: <input class="inputs" maxlength="150" size="45" value="{ship2}" name="ship2"><br>
+                      S&H Fee: $<input class="inputs" maxlength="20" size="6" value="{shipfee2}" name="shipfee2">
+                      &nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td height="31" valign="top" nowrap><strong>{lang_137} 3</strong></td>
+                    <td colspan="2">
+                      Method: <input class="inputs" maxlength="150" size="45" value="{ship3}" name="ship3"><br>
+                      S&H Fee: $<input class="inputs" maxlength="20" size="6" value="{shipfee3}" name="shipfee3">
+                      &nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td height="31" valign="top" nowrap><strong>{lang_137} 4</strong></td>
+                    <td colspan="2">
+                      Method: <input class="inputs" maxlength="150" size="45" value="{ship4}" name="ship4"><br>
+                      S&H Fee: $<input class="inputs" maxlength="20" size="6" value="{shipfee4}" name="shipfee4">
+                      &nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td height="31" valign="top" nowrap><strong>{lang_137} 5</strong></td>
+                    <td colspan="2">
+                      Method: <input class="inputs" maxlength="150" size="45" value="{ship5}" name="ship5"><br>
+                      S&H Fee: $<input class="inputs" maxlength="20" size="6" value="{shipfee5}" name="shipfee5">
+                      &nbsp;</td>
+                  </tr>
+              <tr>
+                <td class="ct"  height="31" colspan="3">{lang_138}</td>
+                <tr>
+                  <tr>
+                    <td height="31" valign="top" nowrap><strong>{lang_139}
+                      Listing</strong>&nbsp;<br><br>{dayfees}</td>
+                    <td colspan="2">
+                      <select class="selects" name="close">
+                        {close_Options}
+                      </select>
+                      &nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td height="31" valign="top" nowrap>
+                      <p><strong>Home Page Featured<br>
+                      <font color="#ff0000">{currency}{homepage_fee}</font></strong></p>
+                      <p>{lang_140}<br>
+                      {lang_141}<br>
+                      {lang_142}</p>
+                    </td>
+                    <td colspan="2">
+                      <select class="selects" name="home_featured">
+                        {home_featured_Options}
+                      </select>
+                      &nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td height="31" valign="top" nowrap>
+                      <p><strong>{lang_143}<br>
+                      <font color="#ff0000">{currency}{gallery_fee}</font></strong>&nbsp;</p>
+                      <p>{lang_142}<br>
+                      {lang_143}<br>
+                      gallery</p>
+                    </td>
+                    <td colspan="2">
+                      <select class="selects" name="gallery_featured">
+                        {gallery_featured_Options}
+                      </select>
+                      &nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td height="31" valign="top" nowrap>
+                      <p><strong>{lang_144}<br>
+                      <font color="#ff0000">{currency}{category_fee}</font></strong>&nbsp;</p>
+                      <p>{lang_145}<br>
+                      {lang_146}<br>
+                      {lang_147}<br>
+                      {lang_148}<br>
+                      {lang_149}<br>
+                      {lang_150}</p>
+                    </td>
+                    <td colspan="2">
+                      <select class="selects" name="cat_featured">
+                        {cat_featured_Options}
+                      </select>
+                      &nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td height="31" valign="top" nowrap>
+                      <p><strong>Bold Listing<br>
+                      <font color="#ff0000">{currency}{bold_fee}</font></strong></p>
+                      <p>{lang_151}<br>
+                      {lang_152}<br>
+                      {lang_153}</p>
+                    </td>
+                    <td colspan="2">
+                      <select class="selects" name="bold">
+                        {bold_Options}
+                      </select>
+                      &nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td height="31" valign="top" nowrap>
+                      <p><strong>{lang_154}&nbsp;<br>
+                      <font color="#ff0000">{currency}{highlight_fee}</font></strong>&nbsp;</p>
+                      <p>{lang_155}<br>
+                      a&nbsp;{lang_156}<br>
+                      in the {lang_150} page for<br>
+                      higher {lang_153}</p>
+                    </td>
+                    <td colspan="2">
+                      <select class="selects" name="background">
+                        {background_Options}
+                      </select>
+                      &nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td height="31" valign="top">
+                      <p><strong>Counter<br>
+                      <font color="#ff0000">{currency}{counter_fee}</font></strong>&nbsp;</p>
+                      <p>{lang_155} a<br>
+                      {lang_157}<br>
+                      {lang_158} {lang_91}<br>
+                      {lang_159}<br>
+                      {lang_160}</p>
+                    </td>
+                    <td colspan="2">
+                      <select class="selects" name="counter">
+                        {counter_Options}
+                      </select>
+                      &nbsp;</td>
+                  </tr>
+                  <!-- BEGIN admin -->
+                  <tr>
+                <td class="ct"  height="31" colspan="3">{lang_162}</td>
+                </tr>
+                  <tr>
+                    <td height="31" valign="top">
+                      <p><strong>Assign to User:
+                      </p>
+                      <p>{lang_161} {lang_91} make<br>
+                      {lang_163}<br>
+                      {lang_164}<br>
+                      {lang_165}</p>
+                    </td>
+                    <td colspan="2">
+                      <select class="selects" name="fakeuser">
+                        {fakeuser_Options}
+                      </select><input type="hidden" name="adminkey" value="{adminkey}">
+                      &nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td height="31" valign="top">
+                      <p><strong>{lang_166}</p>
+                      <p>{lang_167}</p>
+                    </td>
+                    <td colspan="2">
+                      <select class="selects" name="startnow">
+                        {startnow_Options}
+                      </select>
+                      &nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td height="31" valign="top">
+                      <p><strong>{lang_168}</p>
+                      <p>{lang_169}<br>
+                      {lang_170} <br>
+                      {lang_171}<br>
+                      {lang_172}<br>
+					  {lang_173}<br>
+					  {lang_174}<br>
+					  {lang_175}<br>
+					  {lang_176}</p>
+                    </td>
+                    <td colspan="2">
+                      <select class="selects" name="addtime">
+                        {addtime_Options}
+                      </select>
+                      &nbsp;</td>
+                  </tr>
+                  <!-- END admin -->
+                  <tr>
+                    <td align="middle" colspan="4" class="footer">
+					<input type="hidden" value="{ItemNum}" name="ItemNum">
+					<input type="hidden" value="{user_id}" name="user_id">
+					<input type="hidden" value="{status}" name="status">
+					<input class="inputs" type="hidden" maxlength="250" size="50" value="{image_five}" name="image_five">
+					<input type="hidden" value="{started}" name="started">
+					<input class="inputs" type="hidden" maxlength="250" size="50" value="{image_four}" name="image_four">
+					<input class="inputs" type="hidden" maxlength="250" size="50" value="{image_three}" name="image_three">
+					<input class="inputs" type="hidden" maxlength="250" size="50" value="{image_two}" name="image_two">
+					<input class="inputs" type="hidden" maxlength="250" size="50" value="{image_one}" name="image_one">
+                      <!-- BEGIN Button Update --><input type="submit" value="Start Listing" name="Update"><!-- END Button Update -->
+                      <!-- BEGIN Button Insert --><input class="buttons" type="submit" value="Create Listing" name="Insert"><!-- END Button Insert -->&nbsp;
+                      <!-- BEGIN Button Preview --><input class="buttons" type="submit" value="Preview Listing" name="Preview"><!-- END Button Preview -->&nbsp;</td>
+                  </tr>
+                </table>
+              </form>
+              <!-- END Record items -->{Footer}
+              </body>
+              </html>

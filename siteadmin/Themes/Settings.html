@@ -1,0 +1,327 @@
+<html>
+
+<head>
+
+<title>Malware market {versions} - Administration</title>
+
+<link rel="stylesheet" type="text/css" href="Themes/images/Style.css">
+</head>
+
+<body bgcolor="#ffffff" link="#000000" alink="#ff0000" vlink="#000099" text="#000000">
+
+{Header}
+
+<!-- BEGIN Record settings_general -->
+
+<form method="post" action="{Action}" name="settings_general">
+
+  <font class="ItechClsFormHeaderFont">Edit&nbsp;General Settings&nbsp;</font>
+
+  <table cellpadding="3" cellspacing="0" border="0" width="70%" class="ft">
+
+    <!-- BEGIN Error -->
+
+    <tr>
+
+      <td colspan="2" >{Error}</td>
+
+    </tr>
+
+    <!-- END Error -->
+
+    <tr>
+
+      <td class="ItechClsFieldCaptionTD" height="31">
+
+        <p>Site Name&nbsp;</p>
+
+      </td>
+
+      <td ><input name="sitename" value="Malware market" maxlength="250" size="50" class="ItechClsInput">&nbsp;</td>
+
+    </tr>
+
+    <tr>
+
+      <td class="ItechClsFieldCaptionTD" height="31">
+
+        <p>Site Email<br>
+
+        (used for plugins)<em>&nbsp;</em></p>
+
+      </td>
+
+      <td ><input name="siteemail" value="{siteemail}" maxlength="250" size="50" class="ItechClsInput">&nbsp;</td>
+
+    </tr>
+
+    <tr>
+
+      <td class="ItechClsFieldCaptionTD" height="31">
+
+        <p>Home URL<br>
+
+        <font size="1">Full path to the scripts<br>
+
+        Ex.</font><em>&nbsp;</em><a href="http://www.yoursite.com/nc/">http://www.yoursite.com/nc/</a>&nbsp;</p>
+
+      </td>
+
+      <td ><input name="homeurl" value="{homeurl}" maxlength="250" size="50" class="ItechClsInput">&nbsp;</td>
+
+    </tr>
+
+    <tr>
+
+      <td class="ItechClsFieldCaptionTD" height="31">
+
+        <p>Secure URL&nbsp;<br>
+
+        Full path to the scripts<br>
+
+        Ex.<em>&nbsp;</em><a href="https://www.yoursite.com/nc/">https://www.yoursite.com/nc/</a><br>
+
+        </p>
+
+      </td>
+
+      <td ><input name="secureurl" value="{secureurl}" maxlength="250" size="50" class="ItechClsInput">&nbsp;</td>
+
+    </tr>
+
+    <tr>
+
+      <td class="ItechClsFieldCaptionTD" height="31">
+
+        <p>Upload&nbsp;Directory<br>
+
+        Relative to the Home URL with the trailing slash "/"<br>
+
+        This folder must be set to CHMOD&nbsp;777<br>
+
+        Ex.&nbsp;uploads/&nbsp;</p>
+
+      </td>
+
+      <td ><input name="uploadurl" value="{uploadurl}" maxlength="50" class="ItechClsInput">&nbsp;</td>
+
+    </tr>
+
+    <tr>
+
+      <td class="ItechClsFieldCaptionTD" height="31">
+
+        <p>Number of listings to be displayed on each page<br>
+
+        Default: 20&nbsp;</p>
+
+      </td>
+
+      <td ><input name="pagentrys" value="{pagentrys}" maxlength="4" size="4" class="ItechClsInput">&nbsp;</td>
+
+    </tr>
+
+    <tr>
+
+      <td class="ItechClsFieldCaptionTD" height="31">
+
+        <p>Number of&nbsp;Home Page Featured items to display on the Home Page.<br>
+
+        Default: 10&nbsp;</p>
+
+      </td>
+
+      <td ><input name="frontentrys" value="{frontentrys}" maxlength="4" size="4" class="ItechClsInput">&nbsp;</td>
+
+    </tr>
+
+    <tr>
+
+      <td class="ItechClsFieldCaptionTD" height="31">
+
+        <p>Notify Admin&nbsp;of new registrations?&nbsp;</p>
+
+      </td>
+
+      <td >
+
+        <select name="notify" class="ItechClsSelect">
+
+          {notify_Options}
+
+        </select>
+
+        &nbsp;</td>
+
+    </tr>
+
+    <tr>
+
+      <td class="ItechClsFieldCaptionTD" height="31">
+
+        <p>Notify&nbsp;Admin of new&nbsp;ads listed?&nbsp;</p>
+
+      </td>
+
+      <td >
+
+        <select name="notifyads" class="ItechClsSelect">
+
+          {notifyads_Options}
+
+        </select>
+
+      </td>
+
+    </tr>
+
+    <tr>
+
+      <td class="ItechClsFieldCaptionTD" height="31">
+
+        <p>Email for notifications&nbsp;</p>
+
+      </td>
+
+      <td ><input name="notifyemail" value="{notifyemail}" maxlength="250" size="50" class="ItechClsInput">&nbsp;</td>
+
+    </tr>
+
+    <tr>
+
+      <td class="ItechClsFieldCaptionTD" height="31">
+
+        <p>Block users out if they are not of a certain age</p>
+
+      </td>
+
+      <td >
+
+        <select class="ItechClsInput" tabindex="0" name="bounceout">
+
+          {bounceout_Options}
+
+        </select>
+
+      </td>
+
+    </tr>
+     <tr>
+
+      <td class="ItechClsFieldCaptionTD" height="31">
+
+        <p>Age group that you want users to be blocked by
+
+        selecting</p>
+
+      </td>
+
+      <td >
+
+        <select class="ItechClsInput" tabindex="0" name="bounce_id">
+
+          {bounce_id_Options}
+
+        </select>
+
+      </td>
+
+    </tr>
+
+<tr>
+
+      <td class="ItechClsFieldCaptionTD" height="31">
+
+        <p>Site Language</p>
+
+      </td>
+
+      <td >
+
+        <select class="ItechClsInput" tabindex="0" name="langg_id">
+
+          {langg_id_Options}
+
+        </select>
+
+      </td>
+
+    </tr>
+
+
+    <tr>
+
+      <td class="ItechClsFieldCaptionTD" height="31">
+
+        <p>Timeout in seconds&nbsp;for the "Who is Online"<br>
+
+        Default: 60</p>
+
+      </td>
+
+      <td ><input name="timeout" value="{timeout}" maxlength="10" size="10" class="ItechClsInput">&nbsp;</td>
+
+    </tr>
+
+    <tr>
+
+      <td class="ItechClsFieldCaptionTD" height="31">
+
+        <p>Require Approval Group Priority?</p>
+
+      </td>
+
+      <td >
+
+        <select name="approv_priority" class="ItechClsSelect">
+
+          {approv_priority_Options}
+
+        </select>
+
+      </td>
+
+    </tr>
+
+    <tr>
+
+      <td class="ItechClsFieldCaptionTD" height="31">
+
+        <p>Use GD for Image Resizing?</p>
+
+      </td>
+
+      <td >
+
+        <select name="has_gd" class="ItechClsSelect">
+
+          {has_gd_Options}
+
+        </select>
+
+      </td>
+
+    </tr>
+
+    <tr>
+
+      <td colspan="2" align="right" class="ItechClsFooterTD">&nbsp;
+
+        <!-- BEGIN Button Update --><input name="Update" type="submit" value="Update" class="ItechClsButton"><!-- END Button Update -->&nbsp;&nbsp;
+
+        <!-- BEGIN Button Cancel --><input class="ItechClsButton" type="submit" value="Cancel" name="Cancel"><!-- END Button Cancel --></td>
+
+    </tr>
+
+  </table>
+
+  <input type="hidden" name="set_id" value="{set_id}">
+
+</form>
+
+<!-- END Record settings_general -->{Footer}
+
+</body>
+
+</html>
+

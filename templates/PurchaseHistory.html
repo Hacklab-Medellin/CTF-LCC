@@ -1,0 +1,118 @@
+<html>
+<head>
+<title>malwaremarket - {lang_190}</title>
+<link rel="stylesheet" type="text/css" href="templates/images/Style.css">
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#FF0000">
+{Header}
+  <!-- BEGIN Grid purchase1 -->
+  <table class="ft" width="100%" >
+     <tr>
+      <td class="ct"  height="31" colspan="5"><font class="fhf">{lang_191}:</font></td>
+    </tr>
+    <tr>
+      <td class="ct" height="31" nowrap>
+        <!-- BEGIN Sorter Sorter_title -->&nbsp;Item Title
+        <!-- BEGIN Asc_On --><img src="templates/images/AscOn.gif" border="0"><!-- END Asc_On -->
+        <!-- BEGIN Asc_Off --><a href="{Asc_URL}"><img src="templates/images/AscOff.gif" border="0"></a><!-- END Asc_Off -->
+        <!-- BEGIN Desc_On --><img src="templates/images/DescOn.gif" border="0"><!-- END Desc_On -->
+        <!-- BEGIN Desc_Off --><a href="{Desc_URL}"><img src="templates/images/DescOff.gif" border="0"></a><!-- END Desc_Off --><!-- END Sorter Sorter_title -->&nbsp;</td>
+      <td class="ct" height="31" nowrap>
+        <!-- BEGIN Sorter Sorter_date -->&nbsp;Date
+        <!-- BEGIN Asc_On --><img src="templates/images/AscOn.gif" border="0"><!-- END Asc_On -->
+        <!-- BEGIN Asc_Off --><a href="{Asc_URL}"><img src="templates/images/AscOff.gif" border="0"></a><!-- END Asc_Off -->
+        <!-- BEGIN Desc_On --><img src="templates/images/DescOn.gif" border="0"><!-- END Desc_On -->
+        <!-- BEGIN Desc_Off --><a href="{Desc_URL}"><img src="templates/images/DescOff.gif" border="0"></a><!-- END Desc_Off --><!-- END Sorter Sorter_date -->&nbsp;</td>
+      <td class="ct" height="31" nowrap>&nbsp;Pruchased By&nbsp;</td>
+      <td class="ct" height="31" nowrap>&nbsp;Total Amount&nbsp;</td>
+      <td class="ct" height="31" nowrap>&nbsp;Actions</td>
+    </tr>
+    <!-- BEGIN Row -->
+    <tr>
+      <td><strong>{title}: {ItemNum}</strong>&nbsp;</td>
+      <td><strong>{date}</strong>&nbsp;</td>
+      <td><strong>{buyer}</strong>&nbsp;</td>
+      <td><strong>{currency}{amt_received}</strong>&nbsp;</td>
+      <td><a href="PurchaseDetails.php?id={id}">Details</a>&nbsp;&nbsp;|&nbsp;&nbsp;{feedbacklink}</td>
+    </tr>
+    <!-- END Row -->
+    <!-- BEGIN NoRecords -->
+    <tr height="31">
+      <td colspan="5">{lang_192}&nbsp;</td>
+    </tr>
+    <!-- END NoRecords -->
+    <tr>
+      <td class="footer" nowrap colspan="5">
+        <!-- BEGIN Navigator Navigator -->
+        <!-- BEGIN First_On --><a class="nl" href="{First_URL}">First</a><!-- END First_On -->
+        <!-- BEGIN First_Off -->First<!-- END First_Off -->
+        <!-- BEGIN Prev_On --><a class="nl" href="{Prev_URL}">Prev</a><!-- END Prev_On -->
+        <!-- BEGIN Prev_Off -->Prev<!-- END Prev_Off -->&nbsp;
+        <!-- BEGIN Pages -->
+        <!-- BEGIN Page_On --><a class="nl" href="{Page_URL}">{Page_Number}</a>&nbsp;<!-- END Page_On -->
+        <!-- BEGIN Page_Off -->{Page_Number}&nbsp;<!-- END Page_Off --><!-- END Pages -->of
+        {Total_Pages}&nbsp;
+        <!-- BEGIN Next_On --><a class="nl" href="{Next_URL}">Next</a><!-- END Next_On -->
+        <!-- BEGIN Next_Off -->Next<!-- END Next_Off -->
+        <!-- BEGIN Last_On --><a class="nl" href="{Last_URL}">Last</a><!-- END Last_On -->
+        <!-- BEGIN Last_Off -->Last<!-- END Last_Off --><!-- END Navigator Navigator -->&nbsp;</td>
+    </tr>
+  </table>
+  <!-- END Grid purchase1 --><br>
+  <!-- BEGIN Grid purchase2 -->
+  <table class="ft" width="100%" >
+     <tr>
+      <td class="ct"  height="31" colspan="5"><font class="fhf">Purchases I have made:</font></td>
+    </tr>
+    <tr>
+      <td class="ct" height="31" nowrap>
+        <!-- BEGIN Sorter Sorter_title -->&nbsp;Item Title
+        <!-- BEGIN Asc_On --><img src="templates/images/AscOn.gif" border="0"><!-- END Asc_On -->
+        <!-- BEGIN Asc_Off --><a href="{Asc_URL}"><img src="templates/images/AscOff.gif" border="0"></a><!-- END Asc_Off -->
+        <!-- BEGIN Desc_On --><img src="templates/images/DescOn.gif" border="0"><!-- END Desc_On -->
+        <!-- BEGIN Desc_Off --><a href="{Desc_URL}"><img src="templates/images/DescOff.gif" border="0"></a><!-- END Desc_Off --><!-- END Sorter Sorter_title -->&nbsp;</td>
+      <td class="ct" height="31" nowrap>
+        <!-- BEGIN Sorter Sorter_date -->&nbsp;Date
+        <!-- BEGIN Asc_On --><img src="templates/images/AscOn.gif" border="0"><!-- END Asc_On -->
+        <!-- BEGIN Asc_Off --><a href="{Asc_URL}"><img src="templates/images/AscOff.gif" border="0"></a><!-- END Asc_Off -->
+        <!-- BEGIN Desc_On --><img src="templates/images/DescOn.gif" border="0"><!-- END Desc_On -->
+        <!-- BEGIN Desc_Off --><a href="{Desc_URL}"><img src="templates/images/DescOff.gif" border="0"></a><!-- END Desc_Off --><!-- END Sorter Sorter_date -->&nbsp;</td>
+      <td class="ct" height="31" nowrap>&nbsp;Pruchased From&nbsp;</td>
+      <td class="ct" height="31" nowrap>&nbsp;Total Amount&nbsp;</td>
+      <td class="ct" height="31" nowrap>&nbsp;Actions</td>
+    </tr>
+    <!-- BEGIN Row -->
+    <tr>
+      <td><strong>{title}: {ItemNum}</strong>&nbsp;</td>
+      <td><strong>{date}</strong>&nbsp;</td>
+      <td><strong>{user_id}</strong>&nbsp;</td>
+      <td><strong>{currency}{amt_received}</strong>&nbsp;</td>
+      <td><a href="PurchaseDetails.php?id={id}">Details</a>&nbsp;&nbsp;|&nbsp;&nbsp;{feedbacklink}</td>
+    </tr>
+    <!-- END Row -->
+    <!-- BEGIN NoRecords -->
+    <tr height="31">
+      <td colspan="5">{lang_192}&nbsp;</td>
+    </tr>
+    <!-- END NoRecords -->
+    <tr>
+      <td class="footer" nowrap colspan="5">
+        <!-- BEGIN Navigator Navigator -->
+        <!-- BEGIN First_On --><a class="nl" href="{First_URL}">First</a><!-- END First_On -->
+        <!-- BEGIN First_Off -->First<!-- END First_Off -->
+        <!-- BEGIN Prev_On --><a class="nl" href="{Prev_URL}">Prev</a><!-- END Prev_On -->
+        <!-- BEGIN Prev_Off -->Prev<!-- END Prev_Off -->&nbsp;
+        <!-- BEGIN Pages -->
+        <!-- BEGIN Page_On --><a class="nl" href="{Page_URL}">{Page_Number}</a>&nbsp;<!-- END Page_On -->
+        <!-- BEGIN Page_Off -->{Page_Number}&nbsp;<!-- END Page_Off --><!-- END Pages -->of
+        {Total_Pages}&nbsp;
+        <!-- BEGIN Next_On --><a class="nl" href="{Next_URL}">Next</a><!-- END Next_On -->
+        <!-- BEGIN Next_Off -->Next<!-- END Next_Off -->
+        <!-- BEGIN Last_On --><a class="nl" href="{Last_URL}">Last</a><!-- END Last_On -->
+        <!-- BEGIN Last_Off -->Last<!-- END Last_Off --><!-- END Navigator Navigator -->&nbsp;</td>
+    </tr>
+  </table>
+  <!-- END Grid purchase2 --><br>
+{Footer}
+  </body>
+  </html>

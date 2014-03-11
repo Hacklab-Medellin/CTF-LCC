@@ -1,0 +1,430 @@
+<html>
+<head>
+<title>malwaremarket- Search</title>
+<link rel="stylesheet" type="text/css" href="templates/images/Style.css">
+<script language="JavaScript">
+
+var req;
+
+
+
+function completer_title() {
+    var url = "./Search_AutoCompleteXML.php?action=title&title=" + escape(document.itemsSearch.s_title.value) + "&subcats=" + escape(document.itemsSearch.subcats.value);
+
+    if (window.XMLHttpRequest) {
+        req = new XMLHttpRequest();
+        req.onreadystatechange = process_titleRequest;
+        req.open("GET", url, true);
+        req.send(null);
+    // branch for IE/Windows ActiveX version
+    } else if (window.ActiveXObject) {
+        req = new ActiveXObject("Microsoft.XMLHTTP");
+        if (req) {
+            req.onreadystatechange = process_titleRequest;
+            req.open("GET", url, true);
+            req.send();
+        }
+    }
+}
+
+function process_titleRequest() {
+    if (req.readyState == 4) {
+
+        if (req.status == 200) {
+        	
+      var response = req.responseXML.documentElement;
+      
+      var result;
+      
+      document.itemsSearch.t_suggest.options.length = 0;
+      
+      
+      
+      for (loop = 0; loop < response.childNodes.length; loop++) {
+      	
+      	result = response.getElementsByTagName('result')[loop].firstChild.data;
+      	
+      	if (loop == 0 && result != '0') {
+      		document.getElementById('t_suggest_block').style.display='block';
+      	} else if ((loop == 0 && result == '0') || document.itemsSearch.s_title.value == '') {
+      		document.getElementById('t_suggest_block').style.display='none';
+      	}
+      	
+      	if (result != '0'){
+      	
+      	document.itemsSearch.t_suggest.options[loop] = new Option(result,loop);
+      	
+      	}
+      
+      }
+
+        } else {
+            document.itemsSearch.t_suggest.options.length = 0;
+        }
+    }
+}
+
+function title_assign() {
+	document.itemsSearch.s_title.value = document.itemsSearch.t_suggest.options[document.itemsSearch.t_suggest.value].text;
+}
+
+
+
+function completer_ItemNum() {
+    var url = "./Search_AutoCompleteXML.php?action=ItemNum&ItemNum=" + escape(document.itemsSearch.s_ItemNum.value) + "&subcats=" + escape(document.itemsSearch.subcats.value);
+
+    if (window.XMLHttpRequest) {
+        req = new XMLHttpRequest();
+        req.onreadystatechange = process_ItemNumRequest;
+        req.open("GET", url, true);
+        req.send(null);
+    // branch for IE/Windows ActiveX version
+    } else if (window.ActiveXObject) {
+        req = new ActiveXObject("Microsoft.XMLHTTP");
+        if (req) {
+            req.onreadystatechange = process_ItemNumRequest;
+            req.open("GET", url, true);
+            req.send();
+        }
+    }
+}
+
+function process_ItemNumRequest() {
+    if (req.readyState == 4) {
+
+        if (req.status == 200) {
+        	
+      var response = req.responseXML.documentElement;
+      
+      var result;
+      
+      document.itemsSearch.I_suggest.options.length = 0;
+      
+      
+      
+      for (loop = 0; loop < response.childNodes.length; loop++) {
+      	
+      	result = response.getElementsByTagName('result')[loop].firstChild.data;
+      	
+      	if (loop == 0 && result != '0') {
+      		document.getElementById('I_suggest_block').style.display='block';
+      	} else if ((loop == 0 && result == '0') || document.itemsSearch.s_ItemNum.value == '') {
+      		document.getElementById('I_suggest_block').style.display='none';
+      	}
+      	
+      	if (result != '0'){
+      	
+      		document.itemsSearch.I_suggest.options[loop] = new Option(result,loop);
+      	
+      	}
+      
+      }
+
+        } else {
+            document.itemsSearch.I_suggest.options.length = 0;
+        }
+    }
+}
+
+function ItemNum_assign() {
+	document.itemsSearch.s_ItemNum.value = document.itemsSearch.I_suggest.options[document.itemsSearch.I_suggest.value].text;
+}
+
+
+
+function completer_user_id() {
+    var url = "./Search_AutoCompleteXML.php?action=user_id&user_id=" + escape(document.itemsSearch.s_user_id.value);
+
+    if (window.XMLHttpRequest) {
+        req = new XMLHttpRequest();
+        req.onreadystatechange = process_user_idRequest;
+        req.open("GET", url, true);
+        req.send(null);
+    // branch for IE/Windows ActiveX version
+    } else if (window.ActiveXObject) {
+        req = new ActiveXObject("Microsoft.XMLHTTP");
+        if (req) {
+            req.onreadystatechange = process_user_idRequest;
+            req.open("GET", url, true);
+            req.send();
+        }
+    }
+}
+
+function process_user_idRequest() {
+    if (req.readyState == 4) {
+
+        if (req.status == 200) {
+        	
+      var response = req.responseXML.documentElement;
+      
+      var result;
+      
+      document.itemsSearch.u_suggest.options.length = 0;
+      
+      
+      
+      for (loop = 0; loop < response.childNodes.length; loop++) {
+      	
+      	result = response.getElementsByTagName('result')[loop].firstChild.data;
+      	
+      	if (loop == 0 && result != '0') {
+      		document.getElementById('u_suggest_block').style.display='block';
+      	} else if ((loop == 0 && result == '0') || document.itemsSearch.s_user_id.value == '') {
+      		document.getElementById('u_suggest_block').style.display='none';
+      	}
+      	
+      	if (result != '0'){
+      	
+      	document.itemsSearch.u_suggest.options[loop] = new Option(result,loop);
+      	
+      	}
+      
+      }
+
+        } else {
+            document.itemsSearch.u_suggest.options.length = 0;
+        }
+    }
+}
+
+function user_id_assign() {
+	document.itemsSearch.s_user_id.value = document.itemsSearch.u_suggest.options[document.itemsSearch.u_suggest.value].text;
+}
+
+function hide_blocks(){
+	document.getElementById('t_suggest_block').style.display='none';
+	document.getElementById('I_suggest_block').style.display='none';
+	document.getElementById('u_suggest_block').style.display='none';
+}
+</script>
+
+
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#FF0000" onload="hide_blocks();">
+{Header}
+<table class="ft" height="31" cellspacing="1" border="0">
+		<tr>
+      		<td class="ct" height="31"><strong>Power&nbsp;Search&nbsp;Explanation&nbsp;&nbsp;&nbsp;&nbsp;</strong></td></tr>
+      	<tr>
+	      	<td>{lang_220}  
+	      	<br>{lang_221}:  
+	      	<br><br>{lang_222}  
+	      	<br>{lang_223}: 
+	      	<hr><b>+</b> T{lang_224} 
+	      	<br><b>-</b> {lang_225} 
+	      	<br><b>*</b> {lang_226} 
+	      	<br><b>"</b> {lang_227}
+	      	<br><b>{lang_232}</b> {lang_228}
+	      	<hr><b>{lang_229}:</b>
+	      	<br><i>a b c</i> = {lang_230}
+	      	<br><i>+a +b +c</i> = {lang_231}
+	      	<br><i>-a -b +c</i> = {lang_234}
+	      	<br><i>"ab c"</i> = {lang_235}
+	      	<br><i>*a "b c"</i> = Will match any {lang_150} {lang_236}
+	      	<hr><b>Rules</b>
+	      	<br>--{lang_237}
+	      	<br>--{lang_238}
+	      	<br>--{lang_91} {lang_239}
+	      	</td>
+    	</tr>
+  	</table><BR>
+<!-- BEGIN Record itemsSearch -->
+<table height="31" width="100%" cellspacing="0" border="0">
+<form name="itemsSearch" action="{Action}" method="post">
+<tr valign="top">
+<td class="wtbk" width="100%" style="padding-left:0px">
+<table class="ft" width="100%" cellspacing="0" border="0">
+<tr>
+  <td class="dt"  height="31" height="25"><font color="Red"><b> {lang_240}</b></font></td>
+</tr>
+<tr>
+  <td>
+  <table border="0" width="100%">
+    <tr>
+      <td nowrap><strong>In Category:</strong></td>
+      <td><select name="CatID" onchange="location='./search.php?CatID=' + this.form.CatID.value">
+      {catoptions}
+      </select></td>
+    </tr>
+  </table>
+ </td>
+</tr>
+<tr>
+  <td class="ct"  height="31" height="25"><font color="Red"><b> {lang_241}</b></font></td>
+</tr>
+ <tr>
+  <td class="ct" height="31" height="25"> {lang_242}</td></font></td>
+</tr>
+<tr>
+ <td>
+  <table border="0" width="100%"">
+    <!-- BEGIN Error -->
+    <tr>
+      <td class="dt"  height="31" colspan="2">{Error}</td>
+    </tr>
+    <!-- END Error -->
+    <tr>
+      <td nowrap><strong>{lang_242}&nbsp;</strong></td>
+      <td><input class="input" maxlength="250" size="65" value="{s_indexsearch}" name="s_indexsearch"></td>
+    </tr>
+  </table>
+ <tr>
+  <td class="ct" height="31" height="25"> {lang_119}</td></font></td>
+</tr>
+<tr>
+ <td>
+  <table border="0" width="100%">
+    <tr>
+      <td nowrap><strong>{lang_38}</strong>&nbsp;</td>
+      <td><input class="input" maxlength="10" size="30" value="{s_ItemNum}" name="s_ItemNum" onkeyup="completer_ItemNum();">&nbsp;</td>
+    </tr>
+    <tr>
+      <td nowrap><strong>ItemNumber:<br>Suggestions</strong></td>
+      <td id="I_suggest_block"><select class="input" maxlength="250" size="5" value="" name="I_suggest" id="I_suggest" onchange="ItemNum_assign();" multiple width="20">&nbsp;</td>
+    </tr>
+    <tr>
+      <td nowrap><strong>Username</strong></td>
+      <td><input class="input" maxlength="10" size="30" value="{s_user_id}" name="s_user_id" onkeyup="completer_user_id();">&nbsp;</td>
+    </tr>
+    <tr>
+      <td nowrap><strong>{lang_98}:<br>Suggestions</strong></td>
+      <td id="u_suggest_block"><select class="input" maxlength="250" size="5" value="" name="u_suggest" id="u_suggest" onchange="user_id_assign();" multiple width="20">&nbsp;</td>
+    </tr>
+  </table>
+ </td>
+</tr>
+<tr>
+  <td class="ct" height="31" height="25"> Description</td></font></td>
+</tr>
+<tr>
+  <td>
+  <table border="0" width="100%">
+    <tr>
+	  <td nowrap><strong>{lang_84}&nbsp;Contains</strong></td>
+      <td><input class="input" maxlength="250" size="45" value="{s_title}" name="s_title" id="s_title" onkeyup="completer_title();">&nbsp;</td>
+    </tr>
+    <tr>
+      <td nowrap><strong>{lang_56} Top 10 <br>Suggestions</strong></td>
+      <td id="t_suggest_block"><select class="input" maxlength="250" size="5" value="" name="t_suggest" id="t_suggest" onchange="title_assign();" multiple width="20">&nbsp;</td>
+    </tr>
+    <tr>
+      <td nowrap><strong>Description&nbsp;Contains</strong></td>
+      <td><input class="input" size="45" value="{s_description}" name="s_description">&nbsp;</td>
+    </tr>
+  </table>
+ </td>
+</tr>
+<tr>
+  <td class="ct" height="31" height="25"> {lang_119}</td></font></td>
+</tr>
+<tr>
+<td>
+  <table border="0" width="100%">
+    <tr>
+      <td nowrap valign="top"><strong><br>{lang_118}</strong>&nbsp;</td>
+      <td>
+        <p>Minimum amount -<strong>{currency}</strong><input class="input" maxlength="12" size="7" value="{s_asking_min}" name="s_asking_min">&nbsp;</p>
+        <p>Maximum amount -<strong>{currency}</strong><input class="input" value="{s_asking_max}" name="s_asking_max" size="7"></p>
+        <p><input class="input" type="checkbox" value="1" name="s_make_offer" {s_make_offer}>&nbsp;Only
+        items that allow {lang_77}s</p>
+      </td>
+    </tr>
+    <tr>
+      <td nowrap><strong>Quantity</strong>&nbsp;</td>
+      <td>Must have atleast<input class="input" maxlength="10" size="5" value="{s_quantity}" name="s_quantity">&nbsp;items
+        to sell</td>
+    </tr>
+  </table>
+ </td>
+</tr>
+<tr>
+  <td class="ct" height="31" height="25"> {lang_126}</td></font></td>
+</tr>
+<tr>
+<td>
+  <table border="0" width="100%">
+    <tr>
+      <td nowrap><strong>City or Town</strong>&nbsp;</td>
+      <td><input class="input" maxlength="250" size="50" value="{s_city_town}" name="s_city_town">&nbsp;</td>
+    </tr>
+    <tr>
+      <td nowrap><strong>State or&nbsp;Province</strong>&nbsp;</td>
+      <td><input class="input" maxlength="2" size="2" value="{s_state_province}" name="s_state_province">&nbsp;</td>
+    </tr>
+  </table>
+ </td>
+</tr>
+<tr>
+  <td class="ct" height="31">{lang_243}</td>
+</tr>
+<!-- BEGIN Custom_TextArea -->
+<tr><td>
+<table border="0" width="100%">
+<!-- BEGIN Row -->
+<tr>
+  <td class="ct" valign="top">
+     <p><strong>{ta_name}</strong><br>
+     <font>{ta_description}</font></p>
+  </td>
+  <td><input class="input" maxlength="250" size="50" value="{ta_value}" name="{ta_var}"></td>
+</tr><!-- END Row --></table></td></tr><!-- END Custom_TextArea -->
+<!-- BEGIN Custom_TextBox -->
+<tr><td>
+<table border="0" width="100%">
+<!-- BEGIN tb_Row -->
+<tr>
+  <td class="ct" valign="top">
+     <p><strong>{tb_name}</strong><br>
+     <font>{tb_description}</font></p>
+  </td>
+  <td><input class="input" maxlength="250" size="50" value="{tb_value}" name="{tb_var}"></td>
+</tr><!-- END tb_Row --></table></td></tr><!-- END Custom_TextBox -->
+<!-- BEGIN Custom_DropDown -->
+<tr><td>
+<table border="0" width="100%">
+<!-- BEGIN dd_Row -->
+<tr>
+   <td class="ct" valign="top" width="30%">
+      <p><strong>{dd_name}</strong><br>
+      <font>{dd_description}</font></p>
+   </td>
+   <td width="70%"><select class="select" name="{dd_var}">
+        {dropdown_Options}
+      </select></td>
+</tr><!-- END dd_Row --></table></td></tr><!-- END Custom_DropDown -->
+<!-- BEGIN Custom_DropDown_As_Checkbox -->
+<tr><td>
+<table border="0" width="100%">
+<!-- BEGIN ddcb_Row -->
+<tr>
+   <td class="ct" valign="top" width="30%">
+      <p><strong>{dd_name}</strong><br>
+      <font>{dd_description}</font></p>
+   </td>
+   <td width="70%"><table border="0" width="100%">
+        {dropdown_Options}
+      </table></td>
+</tr><!-- END ddcb_Row --></table></td></tr><!-- END Custom_DropDown_As_Checkbox -->
+<tr>
+  <td class="dt"  height="31" height="25"><font color="Red"><b> STEP 3: Execute Your Search!</b></font></td>
+</tr>  
+<tr>
+<td>
+  <table>
+  <tr>
+      <td nowrap align="middle" colspan="2">
+      <input type="hidden" name="subcats" value="{subcats}" id="subcats">
+        <!-- BEGIN Button DoSearch --><input class="button" type="submit" value="Search" name="DoSearch"><!-- END Button DoSearch --></td>
+    </tr>
+  </table>
+ </td>
+</tr>
+</table>
+</form>
+</td>
+</tr>
+</table>
+<!-- END Record itemsSearch -->{Footer}
+</body>
+</html>

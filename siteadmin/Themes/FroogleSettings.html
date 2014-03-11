@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>malware market {versions} - Administration</title>
+<link rel="stylesheet" type="text/css" href="Themes/images/Style.css">
+</head>
+<body bgcolor="#ffffff" link="#000000" alink="#ff0000" vlink="#000099" text="#000000">
+{Header}
+<!-- BEGIN Record settings_froogle -->
+<form method="post" action="{Action}" name="settings_froogle">
+  <font class="ItechClsFormHeaderFont">Edit&nbsp;Froogle Merchant Settings&nbsp;</font>
+  <table cellpadding="3" cellspacing="0" border="0" width="70%" class="ft">
+    <!-- BEGIN Error -->
+    <tr>
+      <td colspan="2" >{Error}</td>
+    </tr>
+    <!-- END Error -->
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">
+        <p>Froogle FTP URL&nbsp;</p>
+      </td>
+      <td ><input name="ftp_url" value="{ftp_url}" maxlength="250" size="50" class="ItechClsInput">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">
+        <p>FTP Username</p>
+      </td>
+      <td ><input name="ftpusername" value="{ftpusername}" maxlength="250" size="50" class="ItechClsInput">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">
+        <p>FTP Password<br></p>
+      </td>
+      <td ><input name="ftppassword" value="{ftppassword}" maxlength="250" size="50" class="ItechClsInput">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">
+        <p>File Name&nbsp;<br>
+        File name for your txt file:<br>
+        When you create your Froogle FTP account you will have to give<br>
+        a file name for your products file, enter that EXACT name here<br>
+        WITHOUT the .txt extension.<br>
+        </p>
+      </td>
+      <td ><input name="frooglefile" value="{frooglefile}" maxlength="250" size="50" class="ItechClsInput">&nbsp;</td>
+    </tr>
+    <tr>
+      <td colspan="2" align="right" class="ItechClsFooterTD">&nbsp;
+        <!-- BEGIN Button Update --><input name="Update" type="submit" value="Update" class="ItechClsButton"><!-- END Button Update -->&nbsp;&nbsp;
+        <!-- BEGIN Button Cancel --><input class="ItechClsButton" type="submit" value="Cancel" name="Cancel"><!-- END Button Cancel --></td>
+    </tr>
+  </table>
+  <input type="hidden" name="set_id" value="{set_id}">
+</form>
+
+<br><br>
+<table cellpadding="3" width="100%" cellspacing="0" border="0" class="ft">
+  <tr>
+    <td class="ItechClsColumnTD" height="31">Promo Code VS. Coupons?&nbsp;&nbsp;</td>
+  </tr>
+  <tr>
+    <td >Froogle Merchant Account Setup?<br>
+    Froogle is a great, free, and growing search tool.  It allows people to do google searches for products.  Before you can add your site's listings to their search engine you must register for an account with them, 
+    it's very quick and easy.  After you have an account follow these steps to get your site setup in their system.<br>
+    1.  Login or create a Google account:  <a href="https://www.google.com/accounts/Login" target="_blank"> Google Login </a><br>
+    2.  Activate and Go to your <a href="https://www.google.com/froogle/merchants/home" target="_blank">"Froogle Merchant Center"</a><br>
+    3.  Create an FTP account <b>(It may take several hours before you are able to login after creating an FTP account with google)</b><br>
+    4.  Setup your 'Feed' with your information.  Pay special attention to the "Filename" field, you will need this later too.  Leave the "Advanced Options" to their default values.<br>
+    5.  Enter your FTP information into this page.
+    6.  Enter your EXACT "Filename", without the extention on it (for example "MyFile.txt" on your Froogle Account should be "MyFile" on this page)
+    7.  Proceed to the "Submit to Froogle" page to automatically format and generate your file and upload it to your Merchant Account on Froogle.
+    </td>
+  </tr>
+</table>
+<!-- END Record settings_froogle -->{Footer}
+</body>
+</html>

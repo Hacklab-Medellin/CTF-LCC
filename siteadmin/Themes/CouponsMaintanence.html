@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>malware market {versions} - Administration</title>
+<link rel="stylesheet" type="text/css" href="Themes/images/Style.css">
+<style type="text/css">@import url(cal/calendar-win2k-1.css);</style>
+<script type="text/javascript" src="cal/calendar.js"></script>
+<script type="text/javascript" src="cal/lang/calendar-en.js"></script>
+<script type="text/javascript" src="cal/calendar-setup.js"></script>
+</head>
+<body bgcolor="#ffffff" link="#000000" alink="#ff0000" vlink="#000099" text="#000000">
+{Header}
+<!-- BEGIN Record coupons -->
+<form method="post" action="{Action}" name="coupons">
+  <font class="ItechClsFormHeaderFont">Edit coupons</font>
+  <table cellpadding="3" cellspacing="0" border="0" class="ft">
+    <!-- BEGIN Error -->
+    <tr>
+      <td colspan="2" >{Error}</td>
+    </tr>
+    <!-- END Error -->
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Coupon ID&nbsp;</td>
+      <td >{id}&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Coupon Code&nbsp;</td>
+      <td ><input class="ItechClsInput" maxlength="100" size="25" value="{code}" name="code">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">&nbsp;Discount Percent<br>
+        <br>
+        The discount to be given on <br>the Listing the user is creating</td>
+      <td ><input class="ItechClsInput" maxlength="12" size="12" value="{discount}" name="discount">%&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Start Date&nbsp;<br>
+        <br>
+        Starting when will this offer be valid</td>
+      <td ><input id="start" class="ItechClsInput" maxlength="12" size="12" value="{start}" name="start">&nbsp;<button id="trigger">Pick...</button></td>
+    </tr>
+    <tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Expire Date&nbsp;<br>
+        <br>
+        When will this offer expire</td>
+      <td ><input id="end" class="ItechClsInput" maxlength="12" size="12" value="{end}" name="end">&nbsp;<button id="trigger2">Pick...</button></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="right" class="ItechClsFooterTD">&nbsp;
+        <!-- BEGIN Button Update --><input name="Update" type="submit" value="Update" class="ItechClsButton"><!-- END Button Update -->
+        <!-- BEGIN Button Delete --><input name="Delete" type="submit" value="Delete Charge" class="ItechClsButton"><!-- END Button Delete -->&nbsp;
+        <!-- BEGIN Button Cancel --><input type="submit" value="Cancel" name="Cancel" class="ItechClsButton"><!-- END Button Cancel --></td>
+    </tr>
+  </table>
+</form>
+<script type="text/javascript">
+  Calendar.setup(
+    {
+      inputField  : "start",         // ID of the input field
+      ifFormat    : "%m/%d/%Y",    // the date format
+      button      : "trigger"       // ID of the button
+    }
+  );
+</script>
+<script type="text/javascript">
+  Calendar.setup(
+    {
+      inputField  : "end",         // ID of the input field
+      ifFormat    : "%m/%d/%Y",    // the date format
+      button      : "trigger2"       // ID of the button
+    }
+  );
+</script>
+<!-- END Record coupons -->{Footer}
+</body>
+</html>

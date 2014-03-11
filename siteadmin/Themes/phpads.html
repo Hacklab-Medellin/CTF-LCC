@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>malware market {versions} - Administration</title>
+<style type="text/css">
+<!--
+BODY { font-family: Tahoma, Verdana, Arial, Helvetica; font-size: 11px; }
+TABLE { font-family: Tahoma, Verdana, Arial, Helvetica; font-size: 11px; }
+TH { font-family: Tahoma, Verdana, Arial, Helvetica; font-size: 11px; }
+TR { font-family: Tahoma, Verdana, Arial, Helvetica; font-size: 11px; }
+TD { font-family: Tahoma, Verdana, Arial, Helvetica; font-size: 11px; }
+OL { font-family: Tahoma, Verdana, Arial, Helvetica; font-size: 11px; }
+P { font-family: Tahoma, Verdana, Arial, Helvetica; font-size: 11px; }
+A { font-family: Tahoma, Verdana, Arial, Helvetica; font-size: 11px; }
+BLOCKQUOTE { font-family: Tahoma, Verdana, Arial, Helvetica; font-size: 11px; }
+LABEL { font-family: Tahoma, Verdana, Arial, Helvetica; font-size: 11px; }
+.ItechClsPageBODY {  }
+.ItechClsFormTABLE { border: solid 2px #9DB4C8; background-color: #5A7994; }
+.ItechClsFormHeaderFont { color: #9DB4C8; font-size: 16px; font-weight: bold; }
+.ItechClsFieldCaptionTD { border: 1px solid #000000; background-color: #FFE3E3; color: #000000; font-size: 11px; font-weight: bold; }
+.ItechClsAltDataTD { color: #C5D3DF; font-size: 11px; }
+
+
+.ItechClsTextarea { font-size: 11px; font-family: Tahoma, Verdana, Arial, Helvetica; }
+.ItechClsSelect { font-size: 11px; font-family: Tahoma, Verdana, Arial, Helvetica; }
+-->
+</style>
+</head>
+<body bgcolor="#ffffff" link="#000000" alink="#ff0000" vlink="#000099" text="#000000">
+{Header}<br>
+<table width="100%" align="left" >
+  <tr>
+    <td align="middle" class="ItechClsFieldCaptionTD" height="31">phpAdsNew Installation</td>
+  </tr>
+  <tr>
+    <td align="left" >
+    1.  Download phpAdsNew 2.0 from the <a class="ItechClsDataLink" href="http://www.phpadsnew.com" target="_blank">phpAdsNew Website</a><br><br>
+    2.  Create a directory called phpads on the root of your malware market Installation.  For example, if you are running NC from www.yoursite.com/classifieds/ create the phpads directory on to that: www.yoursite.com/classifieds/phpads/<br><br>
+    3.  Upload the files from the phpAdsNew package that you downloaded into the phpads directory that you just created.<br><br>
+    4.  If this was done properly a link will appear below that will take you to the phpAdsNew installer.<br><br>
+    5.  If you wish you use the simple malware market template plugins to show your banners on your site, you will need to create your phpAdsNew Database in the same database that you currently have malware market installed and you will need to use phpads_ as your table prefix<br><br>
+    6.  After installation you will be able to setup new publishers, campaigns, zones etc.<br><br>
+    7.  For every zone you create malware market will create a template plugin for it, in the form of bannerzoneX where X is the Zone ID.  All you have to do is add that plugin to your templates where ever you want that zone to appear.<br><br>
+	8.  You can also use the JavaScript Invocation method if you choose, just copy the JS Invocation code out of the 'Invocation Code' section in phpAdsNew Administration and paste it into your NC templates.<br><br>
+	9.  phpAdsNew is not a ScriptDevelopers product and therefore not supported by us, please direct any questions about it to the <a class="ItechClsDataLink" href="http://forum.phpadsnew.com/index.php" target="_blank">phpAdsNew Forums</a>.<br><br>
+	<br>
+	{phpadsinstall}
+    </td></tr></table>
+</body>
+</html>

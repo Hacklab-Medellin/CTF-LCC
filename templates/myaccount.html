@@ -1,0 +1,356 @@
+<html>
+
+<head>
+
+<title>malware market - {lang_112}</title>
+
+<link rel="stylesheet" type="text/css" href="templates/images/Style.css">
+
+<script language="JavaScript">
+
+<!--
+
+function confirmSubmitEmail()
+
+{
+
+var agree=confirm("{lang_113}");
+
+if (agree)
+
+     return true ;
+
+else
+
+     return false ;
+
+}
+
+// -->
+
+</script>
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#FF0000">
+
+{Header}
+
+
+
+  <table class="ft" width="100%" style="padding-bottom: 0px">
+
+    <tr>
+
+      <td class="ct" height="31" nowrap>
+
+<!-- BEGIN Record usercontrol -->
+
+<form name="NewRecord1" action="{Action}" method="post" style="border-collapse: collapse; MARGIN: 0px">
+
+  <!-- BEGIN Error --><!-- END Error --><input type="hidden" value="{userID}"></form><!-- END Record usercontrol -->
+  <b>Balance:</b> {currency}{BalanceTotal}&nbsp;<br>
+
+  <b>Free Listing Tokens:</b> {tokens}&nbsp;<br>
+
+  <b>Subscriptions</b><br>
+
+  {subscriptions}<a href="ViewSubscriptions.php">{lang_114}</a></td></tr></table><br>
+
+  
+
+  <!-- BEGIN Grid emails -->
+
+  <table class="ft" width="100%" >
+    <tr>
+
+      <td class="ct"  height="31" colspan="4"><font class="fhf">{lang_284}</font></td>
+
+    </tr>
+
+    <tr>
+
+      <td class="ct" height="31" nowrap>
+
+        <!-- BEGIN Sorter Sorter_subject -->&nbsp;Subject
+
+        <!-- BEGIN Asc_On --><img src="templates/images/AscOn.gif" border="0"><!-- END Asc_On -->
+
+        <!-- BEGIN Asc_Off --><a href="{Asc_URL}"><img src="templates/images/AscOff.gif" border="0"></a><!-- END Asc_Off -->
+
+        <!-- BEGIN Desc_On --><img src="templates/images/DescOn.gif" border="0"><!-- END Desc_On -->
+
+        <!-- BEGIN Desc_Off --><a href="{Desc_URL}"><img src="templates/images/DescOff.gif" border="0"></a><!-- END Desc_Off --><!-- END Sorter Sorter_subject -->&nbsp;</td>
+
+      <td class="ct" height="31" nowrap>
+
+        <!-- BEGIN Sorter Sorter_emaildate -->&nbsp;Date
+
+        <!-- BEGIN Asc_On --><img src="templates/images/AscOn.gif" border="0"><!-- END Asc_On -->
+
+        <!-- BEGIN Asc_Off --><a href="{Asc_URL}"><img src="templates/images/AscOff.gif" border="0"></a><!-- END Asc_Off -->
+
+        <!-- BEGIN Desc_On --><img src="templates/images/DescOn.gif" border="0"><!-- END Desc_On -->
+
+        <!-- BEGIN Desc_Off --><a href="{Desc_URL}"><img src="templates/images/DescOff.gif" border="0"></a><!-- END Desc_Off --><!-- END Sorter Sorter_emaildate -->&nbsp;</td>
+
+      <td class="ct" height="31" nowrap>&nbsp;From&nbsp;</td>
+
+      <td class="ct" height="31" nowrap>&nbsp;Actions</td>
+
+    </tr>
+
+    <!-- BEGIN Row -->
+
+    <tr {been_read}>
+
+      <td><strong>{subject}</strong>&nbsp;</td>
+
+      <td><strong>{emaildate}</strong>&nbsp;</td>
+
+      <td><strong>{from_user_id}</strong>&nbsp;</td>
+
+      <td><a href="ReadMail.php?email_id={email_id}">Read</a>&nbsp|&nbsp<a href="myaccount.php?action=delete&email_id={email_id}" onclick="return confirmSubmitEmail()">Delete</a></td>
+
+    </tr>
+
+    <!-- END Row -->
+
+    <!-- BEGIN NoRecords -->
+
+    <tr class="dt"  height="31">
+
+      <td colspan="5">No Emails&nbsp;</td>
+
+    </tr>
+
+    <!-- END NoRecords -->
+
+    <tr>
+
+      <td class="footer" nowrap colspan="5">
+
+        <!-- BEGIN Navigator Navigator -->
+
+        <!-- BEGIN First_On --><a class="nl" href="{First_URL}">First</a><!-- END First_On -->
+
+        <!-- BEGIN First_Off -->First<!-- END First_Off -->
+
+        <!-- BEGIN Prev_On --><a class="nl" href="{Prev_URL}">Prev</a><!-- END Prev_On -->
+
+        <!-- BEGIN Prev_Off -->Prev<!-- END Prev_Off -->&nbsp;
+
+        <!-- BEGIN Pages -->
+
+        <!-- BEGIN Page_On --><a class="nl" href="{Page_URL}">{Page_Number}</a>&nbsp;<!-- END Page_On -->
+
+        <!-- BEGIN Page_Off -->{Page_Number}&nbsp;<!-- END Page_Off --><!-- END Pages -->of
+
+        {Total_Pages}&nbsp;
+
+        <!-- BEGIN Next_On --><a class="nl" href="{Next_URL}">Next</a><!-- END Next_On -->
+
+        <!-- BEGIN Next_Off -->Next<!-- END Next_Off -->
+
+        <!-- BEGIN Last_On --><a class="nl" href="{Last_URL}">Last</a><!-- END Last_On -->
+
+        <!-- BEGIN Last_Off -->Last<!-- END Last_Off --><!-- END Navigator Navigator -->&nbsp;</td>
+
+    </tr>
+
+  </table>
+
+  <!-- END Grid emails --><br>
+
+  <!-- BEGIN Grid watchlist -->
+
+  <table class="ft" width="100%">
+    <tr>
+
+      <td class="ct"  height="31" colspan="3"><font class="fhf">My {lang_36}</font></td>
+
+    </tr>
+
+    <tr>
+
+      <td class="ct" height="31" width="30%">
+
+        <!-- BEGIN Sorter Sorter_itemID -->{lang_115}
+
+        <!-- BEGIN Asc_On --><img src="templates/images/AscOn.gif" border="0"><!-- END Asc_On -->
+
+        <!-- BEGIN Asc_Off --><a href="{Asc_URL}"><img src="templates/images/AscOff.gif" border="0"></a><!-- END Asc_Off -->
+
+        <!-- BEGIN Desc_On --><img src="templates/images/DescOn.gif" border="0"><!-- END Desc_On -->
+
+        <!-- BEGIN Desc_Off --><a href="{Desc_URL}"><img src="templates/images/DescOff.gif" border="0"></a><!-- END Desc_Off --><!-- END Sorter Sorter_itemID --></td>
+
+      <td class="ct" height="31" width="40%">
+
+        <!-- BEGIN Sorter Sorter_ItemTitle -->&nbsp;Title
+
+        <!-- BEGIN Asc_On --><img src="templates/images/AscOn.gif" border="0"><!-- END Asc_On -->
+
+        <!-- BEGIN Asc_Off --><a href="{Asc_URL}"><img src="templates/images/AscOff.gif" border="0"></a><!-- END Asc_Off -->
+
+        <!-- BEGIN Desc_On --><img src="templates/images/DescOn.gif" border="0"><!-- END Desc_On -->
+
+        <!-- BEGIN Desc_Off --><a href="{Desc_URL}"><img src="templates/images/DescOff.gif" border="0"></a><!-- END Desc_Off --><!-- END Sorter Sorter_ItemTitle --></td>
+
+      <td class="ct" height="31" width="30%">&nbsp;Actions</td>
+
+    </tr>
+
+    <!-- BEGIN Row -->
+
+    <tr>
+
+      <td>&nbsp;<b>{itemID}</b>&nbsp;</td>
+
+      <td>&nbsp;<a href="ViewItem.php?ItemNum={itemID}">{ItemTitle}</a></td>
+
+      <td>&nbsp;<a href="ViewItem.php?ItemNum={itemID}">View Item</a>&nbsp;|&nbsp;<a href="RemoveCircled.php?watch_id={watch_id}">Remove</a></td>
+
+    </tr>
+
+    <!-- END Row -->
+
+    <!-- BEGIN NoRecords -->
+
+    <tr>
+
+      <td colspan="3">{lang_116}&nbsp;</td>
+
+    </tr>
+
+    <!-- END NoRecords -->
+
+    <tr>
+
+      <td class="footer" nowrap colspan="3">
+
+        <!-- BEGIN Navigator Navigator -->
+
+        <!-- BEGIN First_On --><a class="nl" href="{First_URL}">First</a><!-- END First_On -->
+
+        <!-- BEGIN First_Off -->First<!-- END First_Off -->
+
+        <!-- BEGIN Prev_On --><a class="nl" href="{Prev_URL}">Prev</a><!-- END Prev_On -->
+
+        <!-- BEGIN Prev_Off -->Prev<!-- END Prev_Off -->&nbsp;
+
+        <!-- BEGIN Pages -->
+
+        <!-- BEGIN Page_On --><a class="nl" href="{Page_URL}">{Page_Number}</a>&nbsp;<!-- END Page_On -->
+
+        <!-- BEGIN Page_Off -->{Page_Number}&nbsp;<!-- END Page_Off --><!-- END Pages -->of
+
+        {Total_Pages}&nbsp;
+
+        <!-- BEGIN Next_On --><a class="nl" href="{Next_URL}">Next</a><!-- END Next_On -->
+
+        <!-- BEGIN Next_Off -->Next<!-- END Next_Off -->
+
+        <!-- BEGIN Last_On --><a class="nl" href="{Last_URL}">Last</a><!-- END Last_On -->
+
+        <!-- BEGIN Last_Off -->Last<!-- END Last_Off --><!-- END Navigator Navigator -->&nbsp;</td>
+
+    </tr>
+
+  </table>
+
+  <!-- END Grid watchlist --><br>
+
+  <!-- BEGIN Grid items -->
+
+  <table class="ft" width="100%">
+     <tr>
+
+      <td class="ct"  height="31" colspan="3"><font class="fhf">{lang_117}</font></td>
+
+    </tr>
+
+    <tr>
+
+      <td class="ct" height="31" width="50%">
+
+        <!-- BEGIN Sorter Sorter_title -->Title
+
+        <!-- BEGIN Asc_On --><img src="templates/images/AscOn.gif" border="0"><!-- END Asc_On -->
+
+        <!-- BEGIN Asc_Off --><a href="{Asc_URL}"><img src="templates/images/AscOff.gif" border="0"></a><!-- END Asc_Off -->
+
+        <!-- BEGIN Desc_On --><img src="templates/images/DescOn.gif" border="0"><!-- END Desc_On -->
+
+        <!-- BEGIN Desc_Off --><a href="{Desc_URL}"><img src="templates/images/DescOff.gif" border="0"></a><!-- END Desc_Off --><!-- END Sorter Sorter_title -->&nbsp;</td>
+
+      <td class="ct" height="31" width="30%">
+
+        <!-- BEGIN Sorter Sorter_asking_price -->{lang_118}
+
+        <!-- BEGIN Asc_On --><img src="templates/images/AscOn.gif" border="0"><!-- END Asc_On -->
+
+        <!-- BEGIN Asc_Off --><a href="{Asc_URL}"><img src="templates/images/AscOff.gif" border="0"></a><!-- END Asc_Off -->
+
+        <!-- BEGIN Desc_On --><img src="templates/images/DescOn.gif" border="0"><!-- END Desc_On -->
+
+        <!-- BEGIN Desc_Off --><a href="{Desc_URL}"><img src="templates/images/DescOff.gif" border="0"></a><!-- END Desc_Off --><!-- END Sorter Sorter_asking_price -->&nbsp;</td>
+
+      <td class="ct" height="31" width="20%">Actions</td>
+
+    </tr>
+
+    <!-- BEGIN Row -->
+
+    <tr>
+
+      <td width="60%"><strong><font color="#ff0000">{title}</font></strong></td>
+
+      <td width="20%"><strong>{currency}{asking_price}</strong></td>
+
+      <td width="20%">&nbsp;<a href="catlist.php?Item_Number={ItemNum}&finalcat={finalcat}">Edit/Start</a>&nbsp;|&nbsp;<a href="RemoveListing.php?ItemNum={ItemNum}">Delete</a></td>
+
+    </tr>
+
+    <!-- END Row -->
+
+    <tr>
+
+      <td class="footer" nowrap colspan="3">
+
+        <!-- BEGIN Navigator Navigator -->
+
+        <!-- BEGIN First_On --><a class="nl" href="{First_URL}">First</a><!-- END First_On -->
+
+        <!-- BEGIN First_Off -->First<!-- END First_Off -->
+
+        <!-- BEGIN Prev_On --><a class="nl" href="{Prev_URL}">Prev</a><!-- END Prev_On -->
+
+        <!-- BEGIN Prev_Off -->Prev<!-- END Prev_Off -->&nbsp;
+
+        <!-- BEGIN Pages -->
+
+        <!-- BEGIN Page_On --><a class="nl" href="{Page_URL}">{Page_Number}</a>&nbsp;<!-- END Page_On -->
+
+        <!-- BEGIN Page_Off -->{Page_Number}&nbsp;<!-- END Page_Off --><!-- END Pages -->of
+
+        {Total_Pages}&nbsp;
+
+        <!-- BEGIN Next_On --><a class="nl" href="{Next_URL}">Next</a><!-- END Next_On -->
+
+        <!-- BEGIN Next_Off -->Next<!-- END Next_Off -->
+
+        <!-- BEGIN Last_On --><a class="nl" href="{Last_URL}">Last</a><!-- END Last_On -->
+
+        <!-- BEGIN Last_Off -->Last<!-- END Last_Off --><!-- END Navigator Navigator -->&nbsp;</td>
+
+    </tr>
+
+  </table>
+
+  <!-- END Grid items -->{Footer}
+
+  </body>
+
+  </html>
+

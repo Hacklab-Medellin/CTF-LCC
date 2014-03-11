@@ -1,0 +1,74 @@
+<html>
+<head>
+<title>malwaremarket {lang_20}</title>
+<link rel="stylesheet" type="text/css" href="templates/images/Style.css">
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#FF0000">
+{Header}
+<!-- BEGIN Record users -->
+<form name="users" action="{Action}" method="post">
+
+  <table class="ft" width="100%">
+    <tr>
+      <td class="ct"  height="31" colspan="2"><font class="fhf">{lang_20}</font>&nbsp;</td>
+    </tr>
+    <!-- BEGIN Error -->
+    <tr>
+      <td class="dt"  height="31" colspan="2">{Error}</td>
+    </tr>
+    <!-- END Error -->
+    <tr>
+      <td height="31" nowrap>{lang_21}&nbsp;</td>
+      <td height="31"><strong>{first_name},&nbsp;{last_name}</strong></td>
+    </tr>
+    <tr>
+      <td height="31" nowrap>{lang_22}&nbsp;</td>
+      <td height="31"><input class="input" maxlength="50" size="50" value="{address1}" name="address1">&nbsp;</td>
+    </tr>
+    <tr>
+      <td height="31" nowrap>{lang_23}</td>
+      <td height="31"><input class="input" maxlength="50" size="50" value="{address2}" name="address2">&nbsp;</td>
+    </tr>
+    <tr>
+      <td height="31" nowrap>{lang_24}</td>
+      <td height="31"><input class="input" maxlength="30" size="30" value="{city}" name="city">&nbsp;</td>
+    </tr>
+    <tr>
+      <td height="31" nowrap>{lang_25}</td>
+      <td height="31">
+        <input class="input" maxlength="50" size="30" value="{state_id}" name="state_id">&nbsp;</td>
+    </tr>
+    <tr>
+      <td height="31" nowrap>{lang_26}&nbsp;</td>
+      <td height="31"><input class="input" maxlength="10" size="10" value="{zip}" name="zip">&nbsp;</td>
+    </tr>
+    <tr>
+      <td height="31" nowrap>{lang_27}&nbsp;</td>
+      <td height="31">
+        <select class="select" name="country_id">
+          {country_id_Options}
+        </select>
+        &nbsp;</td>
+    </tr>
+    <tr>
+      <td height="31" nowrap>{lang_28}&nbsp;</td>
+      <td height="31"><input class="input" maxlength="20" value="{phone_day}" name="phone_day">&nbsp;</td>
+    </tr>
+    <tr>
+      <td height="31" nowrap>{lang_29}&nbsp;</td>
+      <td height="31"><input class="input" maxlength="20" value="{phone_evn}" name="phone_evn">&nbsp;</td>
+    </tr>
+    <tr>
+      <td height="31" nowrap>{lang_30}&nbsp;</td>
+      <td height="31"><input class="input" maxlength="20" value="{fax}" name="fax">&nbsp;</td>
+    </tr>
+    <tr>
+      <td nowrap align="right" colspan="2">
+        <!-- BEGIN Button Update --><input class="button" type="submit" value="Change" name="Update"><!-- END Button Update -->
+        <!-- BEGIN Button Cancel --><input class="button" type="submit" value="Cancel" name="Cancel"><!-- END Button Cancel -->&nbsp;</td>
+    </tr>
+  </table>
+</form>
+<!-- END Record users -->{Footer}
+</body>
+</html>

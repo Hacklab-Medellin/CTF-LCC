@@ -1,0 +1,64 @@
+<html>
+<head>
+<title>malwaremarket {lang_255}</title>
+<link rel="stylesheet" type="text/css" href="templates/images/Style.css">
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#FF0000">
+{Header}
+<!-- BEGIN Record charges -->
+<form name="charges" action="{Action}" method="post">
+  <table class="ft" cellspacing="1" width="100%" cellpadding="5">
+    <tr>
+      <td class="ct"  height="31" colspan="2"><font class="fhf">{lang_256}</font></td>
+    </tr>
+    <!-- BEGIN Error -->
+    <tr>
+      <td class="dt"  height="31" colspan="2">{Error}</td>
+    </tr>
+    <!-- END Error -->
+    <tr>
+      <td colspan="2">{lang_257} <a href="myaccount.php">{lang_290}</a> {lang_259} "{lang_117}" section. 
+	  <br><br></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap><b>Charges<b>&nbsp;</td>
+      <td>{ChargeListing}&nbsp;<br><a href="Coupons.php">{lang_258} {lang_53} {lang_260}</a>{tokens}</td>
+    </tr>
+    <tr>
+      <td colspan="2"></td>
+    </tr>
+    <tr>
+      <td align="center" colspan="2">
+        <!-- BEGIN Button Insert --><input class="buttons" type="submit" value="Start Ad" name="Insert"><!-- END Button Insert -->&nbsp;</td>
+    </tr>
+  </table>
+  <input type="hidden" value="{user_id}" name="user_id"><input type="hidden" value="{date}" name="date"><input type="hidden" value="{charge}" name="charge"><input type="hidden" value="{cause}" name="cause">
+</form>
+<!-- END Record charges -->
+<!-- BEGIN Record charges1 -->
+<form name="charges1" action="{Action}" method="post">
+  <table class="ft" width="100%" cellspacing="1" cellpadding="5">
+    <tr>
+      <td class="ct"  colspan="2"><font class="fhf">{lang_256}</font></td>
+    </tr>    
+    <!-- BEGIN Error -->
+    <tr>
+      <td class="dt"  colspan="2">{Error}</td>
+    </tr>
+    <!-- END Error -->
+    <tr>
+      <td colspan="2">{lang_261}<a href="myaccount.php">{lang_290}</a> {lang_262} "{lang_117}" section. <br><br></td>
+    </tr>
+    <tr>
+      <td valign="top" nowrap>Charges&nbsp;</td>
+      <td>{ChargeListing}&nbsp;<br><a href="Coupons.php">{lang_258} {lang_53} {lang_260}</a>{tokens}</td>
+    </tr>
+    <tr>
+<td colspan="2">{lang_263}<a href="MakePayment.php?ItemNum={ItemNum}">{lang_291}</a>.  {lang_264} {lang_91} {lang_292} "{lang_117}" {lang_293} <a href="myaccount.php">"MyAccount"</a>.<br><br></td></tr>
+<tr><td colspan="2" align="center"><a href="catlist.php?Item_Number={ItemNum}&finalcat={finalcat}"><img src="images/edititem.gif" border="0">&nbsp;&nbsp;&nbsp;<a href="MakePayment.php?ItemNum={ItemNum}"><img src="images/checkout.gif" border="0"></a></td>
+    </tr>
+  </table>
+</form>
+<!-- END Record charges1 -->{Footer}
+</body>
+</html>

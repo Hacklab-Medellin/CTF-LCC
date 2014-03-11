@@ -1,0 +1,8 @@
+#!bin/bash
+
+a='ls *.html '
+
+ for i in $a
+do
+ sed 's/malwaremarket/malwaremarket/g' $i>$i 
+ done

@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>malware market {versions} - Administration</title>
+<link rel="stylesheet" type="text/css" href="Themes/images/Style.css">
+</head>
+<body bgcolor="#ffffff" link="#000000" alink="#ff0000" vlink="#000099" text="#000000">
+{Header}
+<!-- BEGIN Record lookup_incomes -->
+<form method="post" action="{Action}" name="lookup_incomes">
+  <font class="ItechClsFormHeaderFont">Add/Edit&nbsp;Income Values&nbsp;</font>
+  <table cellpadding="3" cellspacing="0" border="0" class="ft">
+    <!-- BEGIN Error -->
+    <tr>
+      <td colspan="2" >{Error}</td>
+    </tr>
+    <!-- END Error -->
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Income ID&nbsp;</td>
+      <td ><input value="{income_id}" name="income_id" class="ItechClsInput" size="3"></td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Income&nbsp;Description&nbsp;</td>
+      <td ><input name="income_desc" value="{income_desc}" maxlength="20" class="ItechClsInput">&nbsp;</td>
+    </tr>
+    <tr>
+      <td colspan="2" align="right" class="ItechClsFooterTD">
+        <!-- BEGIN Button Insert --><input name="Insert" type="submit" value="Add" class="ItechClsButton"><!-- END Button Insert -->
+        <!-- BEGIN Button Update --><input name="Update" type="submit" value="Update" class="ItechClsButton"><!-- END Button Update -->
+        <!-- BEGIN Button Delete --><input name="Delete" type="submit" value="Delete" class="ItechClsButton"><!-- END Button Delete -->&nbsp;
+        <!-- BEGIN Button Cancel --><input type="submit" value="Cancel" name="Cancel" class="ItechClsButton"><!-- END Button Cancel --></td>
+    </tr>
+  </table>
+</form>
+<!-- END Record lookup_incomes -->{Footer}
+</body>
+</html>

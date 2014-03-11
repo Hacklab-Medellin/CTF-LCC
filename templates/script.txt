@@ -1,0 +1,2 @@
+find . -name "*.html" -print | xargs sed -i 's/iTechClassifieds/malware market/g'  
+

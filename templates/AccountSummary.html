@@ -1,0 +1,71 @@
+<html>
+<head>
+<title>malwaremarket - {lang_5}</title>
+<link rel="stylesheet" type="text/css" href="templates/images/Style.css">
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#FF0000">
+{Header}
+<form name="dayslook" method="get" action="AccountSummary.php">
+  <table align="center" class="ft" width="100%" style="padding-bottom:0px;">
+    <tr>
+      <td width="100%" class="ct" height="31" align="middle">{lang_6}&nbsp;<input class="inputs" id="Days" size="5" value="30" name="Days">&nbsp;{lang_271}&nbsp;<input id="action" type="submit" value="Go" name="action"></td>
+    </tr>
+  </table>
+</form>
+<!-- BEGIN Grid charges -->
+<table class="ft" width="100%"  cellspacing="1" cellpadding="1">
+<tr>
+      <td class="ct"  height="31" colspan="3"><font class="fhf">{lang_5}</font></font></td>
+    </tr>
+  <tr>
+    <td class="ct" height="31" width="15%">
+      <!-- BEGIN Sorter Sorter_date -->Date
+      <!-- BEGIN Asc_On --><img src="templates/images/AscOn.gif" border="0"><!-- END Asc_On -->
+      <!-- BEGIN Asc_Off --><a href="{Asc_URL}"><img src="templates/images/AscOff.gif" border="0"></a><!-- END Asc_Off -->
+      <!-- BEGIN Desc_On --><img src="templates/images/DescOn.gif" border="0"><!-- END Desc_On -->
+      <!-- BEGIN Desc_Off --><a href="{Desc_URL}"><img src="templates/images/DescOff.gif" border="0"></a><!-- END Desc_Off --><!-- END Sorter Sorter_date -->&nbsp;</td>
+    <td class="ct" height="31" width="35%">
+      <!-- BEGIN Sorter Sorter_charge -->{lang_7}
+      <!-- BEGIN Asc_On --><img src="templates/images/AscOn.gif" border="0"><!-- END Asc_On -->
+      <!-- BEGIN Asc_Off --><a href="{Asc_URL}"><img src="templates/images/AscOff.gif" border="0"></a><!-- END Asc_Off -->
+      <!-- BEGIN Desc_On --><img src="templates/images/DescOn.gif" border="0"><!-- END Desc_On -->
+      <!-- BEGIN Desc_Off --><a href="{Desc_URL}"><img src="templates/images/DescOff.gif" border="0"></a><!-- END Desc_Off --><!-- END Sorter Sorter_charge -->&nbsp;</td>
+    <td class="ct" height="31" width="50%">
+      <!-- BEGIN Sorter Sorter_cause -->Cause
+      <!-- BEGIN Asc_On --><img src="templates/images/AscOn.gif" border="0"><!-- END Asc_On -->
+      <!-- BEGIN Asc_Off --><a href="{Asc_URL}"><img src="templates/images/AscOff.gif" border="0"></a><!-- END Asc_Off -->
+      <!-- BEGIN Desc_On --><img src="templates/images/DescOn.gif" border="0"><!-- END Desc_On -->
+      <!-- BEGIN Desc_Off --><a href="{Desc_URL}"><img src="templates/images/DescOff.gif" border="0"></a><!-- END Desc_Off --><!-- END Sorter Sorter_cause -->&nbsp;</td>
+  </tr>
+  <!-- BEGIN Row -->
+  <tr>
+    <td align="middle" valign="center"><b>{date}</b>&nbsp;</td>
+    <td align="middle" valign="center"><font color="{color}"><b>{currency}{charge}</b></font>&nbsp;</td>
+    <td align="left" valign="center">{cause}&nbsp;</td>
+  </tr>
+  <!-- END Row -->
+  <!-- BEGIN NoRecords -->
+  <tr>
+    <td height="31" colspan="5">{lang_8}&nbsp;</td>
+  </tr>
+  <!-- END NoRecords -->
+  <tr>
+    <td class="footer" nowrap colspan="5">
+      <!-- BEGIN Navigator Navigator -->
+      <!-- BEGIN First_On --><a class="nl" href="{First_URL}">First</a><!-- END First_On -->
+      <!-- BEGIN First_Off -->First<!-- END First_Off -->
+      <!-- BEGIN Prev_On --><a class="nl" href="{Prev_URL}">Prev</a><!-- END Prev_On -->
+      <!-- BEGIN Prev_Off -->Prev<!-- END Prev_Off -->&nbsp;
+      <!-- BEGIN Pages -->
+      <!-- BEGIN Page_On --><a class="nl" href="{Page_URL}">{Page_Number}</a>&nbsp;<!-- END Page_On -->
+      <!-- BEGIN Page_Off -->{Page_Number}&nbsp;<!-- END Page_Off --><!-- END Pages -->of
+      {Total_Pages}&nbsp;
+      <!-- BEGIN Next_On --><a class="nl" href="{Next_URL}">Next</a><!-- END Next_On -->
+      <!-- BEGIN Next_Off -->Next<!-- END Next_Off -->
+      <!-- BEGIN Last_On --><a class="nl" href="{Last_URL}">Last</a><!-- END Last_On -->
+      <!-- BEGIN Last_Off -->Last<!-- END Last_Off --><!-- END Navigator Navigator -->&nbsp;</td>
+  </tr>
+</table>
+<!-- END Grid charges -->{Footer}
+</body>
+</html>

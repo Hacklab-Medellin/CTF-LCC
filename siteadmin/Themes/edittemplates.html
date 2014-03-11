@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>malware market {versions} - Administration</title>
+{JS}
+<link rel="stylesheet" type="text/css" href="Themes/images/Style.css">
+
+</head>
+<body bgcolor="#ffffff" link="#000000" alink="#ff0000" vlink="#000099" text="#000000"">
+{Header}<FONT class=ItechClsFormHeaderFont>{category} {page} Template:</font><font class=ItechClsDataLink>{error}</font>
+<TABLE  cellSpacing=0 cellPadding=3 class="ft" border=0 width="100%">
+<TBODY>
+  <tr>
+    <td width="100%"><form method="POST" action="edittemplates.php?cat={cat}&page={page}">
+<textarea id="page_temp" name="page_temp" style="width:100%" rows="24" cols="80" wrap="off">{textareavalue}</textarea>
+</td>
+    <tr>
+      <td >Active:<input type="checkbox" value="1" name="active" {active}>&nbsp;&nbsp;&nbsp;Admin Over-ride Active:<input type="checkbox" value="1" name="ao" {ao}> &nbsp;&nbsp;&nbsp;(Both boxes must be checked for the template to be active)</td>
+    </tr>
+    <tr>
+      <td ><INPUT class=ItechClsButton type="submit" value="Save Changes to this template" name="save">&nbsp;&nbsp;&nbsp;<INPUT class=ItechClsButton type="submit" value="Preview this template" name="preview">&nbsp;&nbsp;&nbsp;<INPUT class=ItechClsButton type="submit" value="Delete this template" name="delete"></td>
+	</tr>
+    </form></td>
+  </tr>
+  <tr>
+    <td width="100%">
+    <p class=ItechClsFieldCaptionTD align="center">Import Options:</td>
+  </tr>
+  <tr>
+    <td width="100%" align="center"><a href="edittemplates.php?cat={cat}&what=default&page={page}">Read in Default File for this template</a><hr></td>
+  </tr>
+  <tr>
+    <td width="100%" align="center">Upload and import an HTML File<form method="POST" enctype="multipart/form-data" action="edittemplates.php?cat={cat}&what=upload&page={page}">
+      <INPUT class=ItechClsButton type="file" name="htmlfile" size="35">&nbsp<input class=ItechClsButton type="submit" value="Upload" name="upload">
+    </form><hr>
+    </td>
+  </tr>
+  <tr>
+    <td width="100%" align="center">Import HTML file from URL:<form method="POST" action="edittemplates.php?cat={cat}&what=geturl&page={page}">
+      http://<input class=ItechClsButton type="text" name="url" size="50">&nbsp<input class=ItechClsButton type="submit" value="GetURL" name="geturl">
+    </form>
+    </td>
+  </tr>
+  {templatevars}
+</table>
+
+
+{Footer}
+</body>
+</html>

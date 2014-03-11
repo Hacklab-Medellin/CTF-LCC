@@ -1,0 +1,115 @@
+<html>
+<head>
+<title> MALWARE MARKET - {lang_89}</title>
+<link rel="stylesheet" type="text/css" href="templates/images/Style.css">
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#FF0000">
+{Header}
+<table class="ft" width="100%" style="padding-left:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;">
+  <tr>
+    <td valign="top" width="100%" class="ct">
+      <BR><p><font size="3"><strong>{lang_90}malware market, {lang_91}:<br>
+      <br>
+      </strong>{lang_92}<br>
+      {lang_77}s {lang_93}<br>
+      {lang_94}
+      {lang_95}<br>
+      <br>
+      {lang_96}<br>
+      <a href="register.php"><font class="cats">{lang_97}</font></a></p>
+      </font></td><tr/><tr>
+    <td width="100%" align="middle" valign="bottom" style="padding-left:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;">
+      <table height="31" width="100%" cellspacing="0" cellpadding="0">
+        <tr>
+          <td align="middle" valign="bottom" style="padding-left:0px;padding-right:0px;padding-bottom:0px;">
+            <!-- BEGIN Record Login -->
+            <form method="post" action="{Action}" name="Login" style="border-collapse: collapse; MARGIN: 0px">
+                <table cellpadding="0" cellspacing="0" width="100%">
+                 <tr>
+                  <td class="ct"  height="31" colspan="3"><font class="fhf">{lang_89}</font></td>
+                  <tr>
+                  <td height="15" colspan="2">&nbsp;&nbsp;</td>
+                </tr>
+                </tr>  
+                <!-- BEGIN Error -->              
+                  <tr>
+                  <td height="31" colspan="2">{Error}</td>
+                </tr>
+                <!-- END Error -->
+                <tr>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td align="left" width="30%"><b>{lang_98}:</b>&nbsp;</td>
+                  <td align="left"><input name="login" value="{login}" maxlength="100" class="input">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td height="5" colspan="2">&nbsp;&nbsp;</td>
+                </tr>
+                <tr>
+                  <td align="left"><b>{lang_102}:</b>&nbsp;</td>
+                  <td align="left"><input type="password" name="password" value="{password}" maxlength="100" class="input">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td align="left" colspan="2"><b>{lang_99}(Requires Cookies): </b>&nbsp;&nbsp;
+                  <input type="checkbox" name="stay_logged" value="1" class="input" checked>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td align="middle" colspan="2">
+                    <!-- BEGIN Button DoLogin --><input name="DoLogin" type="submit" value="Login" class="button"><!-- END Button DoLogin -->&nbsp;</td>
+                </tr>
+                <tr>
+                  <td height="15" colspan="2">&nbsp;&nbsp;</td>
+                </tr>
+              </table>
+            </form></td></tr>
+            <!-- END Record Login -->
+            <tr>
+          <td align="middle" valign="bottom" style="padding-left:0px;padding-right:0px;padding-bottom:0px;">
+            <!-- BEGIN Record forgottenpasswo -->
+            <form name="forgottenpasswo" action="{Action}" method="post" style="border-collapse: collapse; MARGIN: 0px">
+               <table height="31" width="100%" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td class="ct"  height="31" colspan="3">{lang_100}</td>
+                </tr>
+                <tr>
+                  <td height="15" colspan="2">&nbsp;&nbsp;</td>
+                </tr>  
+                <!-- BEGIN Error -->              
+                  <tr>
+                  <td height="31" colspan="2">{Error}</td>
+                </tr>
+                <!-- END Error -->               
+                <tr>
+                  <td>{lang_101}
+                   {lang_103}{lang_22}&nbsp;{lang_104}<br>
+                  </td>
+                </tr>
+                <tr>
+                  <td height="15" colspan="2">&nbsp;&nbsp;</td>
+                </tr>
+                <tr>
+                  <td align="middle"><input class="input" maxlength="50" size="25" value="{user_email}" name="user_email">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td height="15" colspan="2">&nbsp;&nbsp;</td>
+                </tr>
+                <tr>
+                  <td align="middle">
+                    <!-- BEGIN Button Insert --><input class="button" type="submit" value="Go" name="Insert"><!-- END Button Insert -->&nbsp;</td>
+                </tr>
+                <tr>
+                  <td height="15" colspan="2">&nbsp;&nbsp;</td>
+                </tr>
+              </table>
+              <input type="hidden" value="{user_login}" name="user_login"><input type="hidden" value="{ip_request}" name="ip_request"><input type="hidden" value="{date}" name="date">
+            </form>
+          </td>
+        </tr>
+      </table>
+      <!-- END Record forgottenpasswo --></td>
+  </tr>
+</table>
+{Footer}
+</body>
+</html>

@@ -1,0 +1,89 @@
+<html>
+<head>
+<title>malwaremarket - Make a Payment</title>
+<link rel="stylesheet" type="text/css" href="templates/images/Style.css">
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#FF0000">
+{Header}
+<!-- BEGIN Record charges1 -->
+<form name="charges" action="{Action}" method="post">
+  
+  <table class="ft" width="100%">
+     <tr>
+      <td class="dt"  height="31" colspan="2"><font class="fhf">{lang_105}</font></td>
+    </tr>
+    <!-- BEGIN Error -->
+    <tr>
+      <td class="dt"  height="31" colspan="2">{Error}</td>
+    </tr>
+    <!-- END Error -->
+    <tr>
+      <td height="31" width="400">{lang_106}&nbsp;</td>
+      <td>{currency}<input class="input" maxlength="12" size="12" value="{charge}" name="charge">&nbsp;</td>
+    </tr>
+    <tr>
+      <td height="31">{lang_107}</td>
+      <td><input value="{FirstName}" name="FirstName"></td>
+    </tr>
+    <tr>
+      <td height="31">{lang_108}</td>
+      <td><input value="{LastName}" name="LastName"></td>
+    </tr>
+    <tr>
+      <td height="31">{lang_105} {lang_109}</td>
+      <td><input value="{CCNumber}" name="CCNumber"></td>
+    </tr>
+    <tr>
+      <td height="31">{lang_110}</td>
+      <td><input value="{ExpDate}" name="ExpDate"></td>
+    </tr>
+    <tr>
+      <td height="31">Card Code (CVV2)</td>
+      <td><input value="{CardCode}" name="CardCode"></td>
+    </tr>
+    <tr>
+      <td class="footer" nowrap align="right" colspan="2"><b>(Press only once)
+        <!-- BEGIN Button Insert --><input class="button" type="submit" value="Go" name="Insert"><!-- END Button Insert -->
+        <!-- BEGIN Button Cancel --><input class="button" type="submit" value="Cancel" name="Cancel"><!-- END Button Cancel -->&nbsp;</b></td>
+    </tr>
+  </table>
+  <input type="hidden" value="{user_id}" name="user_id"><input type="hidden" value="{date}" name="date"><input type="hidden" value="{cause}" name="cause">
+  <p></p>
+</form>
+<!-- END Record charges1 -->
+<!-- BEGIN Record PayPalPay -->
+<form name="PayPalPay" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+  <input type="hidden" name="cmd" value="_xclick">
+  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <!-- BEGIN Error -->
+     <tr>
+      <td class="dt"  height="31" colspan="2"><font class="fhf"><font class="fhf">PayPal</font></font></td>
+    </tr>    
+<tr>
+      <td colspan="2">{Error}</td>
+    </tr>
+    <!-- END Error -->
+    <tr>
+      <td class="ct" height="31" align="left" width="300">{lang_106}</td><td class="ct" >
+        {currency}<input size="10" value="{amount}" name="amount">&nbsp;&nbsp;</td>
+      <td>&nbsp;<input type="hidden" name="custom" value="{user_payer}-{ItemNum}-StartListing">
+	  <input type="hidden" name="currency_code" value="{currencycode}">
+	  <input type="hidden" name="business" value="{paypal}">
+	  <input type="hidden" name="item_name" value="malwaremarket Payment-{ItemNum}-StartListing">
+	  <input type="hidden" name="no_shipping" value="1">
+	  <input type="hidden" name="return" value="{homeurl}PaymentConfirmed.php">
+	  <input type="hidden" name="notify_url" value="{homeurl}paypalipn.php">
+	  <input type="hidden" name="cancel_return" value="{homeurl}myaccount.php">
+	  <input type="image" src="https://www.paypal.com/images/x-click-but6.gif" border="0" name="submit" alt="{lang_51}"></td>
+    </tr>
+    <tr>
+      <td align="middle" colspan="3" valign="center"></td>
+    </tr>
+    <tr>
+      <td align="right" colspan="3" class="footer"></td>
+    </tr>
+  </table>
+</form>
+<!-- END Record PayPalPay -->{Footer}
+</body>
+</html>

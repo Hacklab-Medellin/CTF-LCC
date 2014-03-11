@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>malware market {versions} - Administration</title>
+<link rel="stylesheet" type="text/css" href="Themes/images/Style.css">
+</head>
+<body bgcolor="#ffffff" link="#000000" alink="#ff0000" vlink="#000099" text="#000000">
+{Header}
+{complete}
+  <font class="ItechClsFormHeaderFont">Submit Your Listing Database to Froogle</font>&nbsp;
+<table cellspacing="0" cellpadding="3" class="ft" border="0">
+    <tr>
+      <td  colspan="2">{Error}</td>
+    </tr>    
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Last time submitted:</td>
+      <td >{lastsubmit}</td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Generate Feed and Submit</td>
+      <td ><a href="FroogleSubmit.php?generate=1&sent=1">Click Here</a></td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Generate Feed Only</td>
+      <td ><a href="FroogleSubmit.php?generate=1">Click Here</a></td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Download Generated Feed File</td>
+      <td >{fileurl}</td>
+    </tr>
+  </table>
+</form><br>
+<table width="100%" align="left" >
+  <tr>
+    <td align="middle" class="ItechClsFieldCaptionTD" height="31">Froogle Feed Explaination</td>
+  </tr>
+  <tr>
+    <td align="left" >
+    <b>This Page:</b> - After you have set up your Froogle Merchant Account with Froogle and entered your information on the Settings page <a href="FroogleSettings.php">here</a> and waited till your account is activated you can start using this simple Froogle Feed submission page.<br>
+    <b>"Generate Feed and Submit"</b> - This is the main link you will use, it takes care of all the dirty work for you.  It will build the Feed file to Froogle's specs, then connect to your FTP account and send it for you.<br>
+    <b>"Generate Feed Only"</b> - Only creates the Feed file, incase you just want to see what's in it, but not submit it, or you wanted to submit it manually.<br>
+    <b>"Download Generated Feed File"</b> - Downloads the text "Feed" file that is sent to Froogle's system for your site.<hr>
+    <b>Additional Information</b><br><br>
+    <b>1.</b>  If you have just recently setup your Froogle FTP account then you will need to wait at least 3 hours for the account to be activated.  <B>If the account has not yet been activated then you will receive login failure errors here, please wait a little while longer and try again</B><br><br>
+    <b>2.</b>  Check your Froogle Merchant account for upload status and approval status.<br><br>
+    <b>3.</b>  The first time you submit a file to  Froogle it could take up to 7 days for  your listings to be approved and shown on Froogle searches, please read your Froogle Merchant Account Help files for more information.<br><br>
+    <b>4.</b>  The files this system generates have been tested and approved by Froogle, it's your responsibility to ensure that your site complies with Froogles standards and requirements, if it does not, your Feed files will be rejected by Froogle.<br><br>
+    <b>5.</b>  If you have tried to submit 2 Feeds in too short of a time you will receive "Permission" errors.  Wait a couple of hours and try again.<br><br>
+    <b>6.</b>  Feeds are active on Froogle for 30 days, so you can submit new Feeds as often as once per day or as infrequently as once per month.
+    </td></tr></table>
+    {Footer}
+</body>
+</html>

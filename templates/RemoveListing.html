@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>malwaremarket - {lang_218}</title>
+<link rel="stylesheet" type="text/css" href="templates/images/Style.css">
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#FF0000">
+{Header}
+<!-- BEGIN Record items -->
+<form name="items" action="{Action}" method="post">
+  <table class="ft" width="100%">
+    <tr>
+      <td class="ct"  height="31" colspan="2"><font class="fhf">{lang_294} - {ItemNum}</font></td>
+    </tr>    
+    <!-- BEGIN Error -->
+    <tr>
+      <td class="dt"  height="31" colspan="2">{Error}</td>
+    </tr>
+    <!-- END Error -->
+    <tr>
+      <td class="ct" height="31">{lang_219}</td>
+    </tr>
+    <tr>
+      <td><b>{lang_38}:</b>&nbsp; {ItemNum}<br>
+        <b>Item {lang_56}</b>&nbsp; {title}</td>
+    </tr>
+    <tr>
+      <td class="footer" nowrap align="middle">
+        <!-- BEGIN Button Delete --><input class="button" type="submit" value="Yes" name="Delete"><!-- END Button Delete -->
+        <!-- BEGIN Button Cancel --><input class="button" type="submit" value="No" name="Cancel"><!-- END Button Cancel -->&nbsp;</td>
+    </tr>
+  </table>
+</form>
+<!-- END Record items -->{Footer}
+</body>
+</html>

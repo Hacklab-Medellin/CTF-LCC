@@ -1,0 +1,203 @@
+<html>
+<head>
+<title>malwaremarket - {lang_244}</title>
+<link rel="stylesheet" type="text/css" href="templates/images/Style.css">
+
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#FF0000">
+{Header}
+  <!-- BEGIN Grid search -->
+  <table class="ft" width="100%">
+     <tr>
+      <td class="ct"  height="31" colspan="5"><font class="fhf"><font class="fhf">{lang_245}</font></font></td>
+    </tr>
+    <tr>
+      <td class="ct" height="31" width="15%">
+        <!-- BEGIN Sorter Sorter_date -->Date
+        <!-- BEGIN Asc_On --><img src="templates/images/AscOn.gif" border="0"><!-- END Asc_On -->
+        <!-- BEGIN Asc_Off --><a href="{Asc_URL}"><img src="templates/images/AscOff.gif" border="0"></a><!-- END Asc_Off -->
+        <!-- BEGIN Desc_On --><img src="templates/images/DescOn.gif" border="0"><!-- END Desc_On -->
+        <!-- BEGIN Desc_Off --><a href="{Desc_URL}"><img src="templates/images/DescOff.gif" border="0"></a><!-- END Desc_Off --><!-- END Sorter Sorter_date -->&nbsp;</td>
+      <td class="ct" height="31" width="30%">
+        <!-- BEGIN Sorter Sorter_value -->Search Summery
+        <!-- BEGIN Asc_On --><img src="templates/images/AscOn.gif" border="0"><!-- END Asc_On -->
+        <!-- BEGIN Asc_Off --><a href="{Asc_URL}"><img src="templates/images/AscOff.gif" border="0"></a><!-- END Asc_Off -->
+        <!-- BEGIN Desc_On --><img src="templates/images/DescOn.gif" border="0"><!-- END Desc_On -->
+        <!-- BEGIN Desc_Off --><a href="{Desc_URL}"><img src="templates/images/DescOff.gif" border="0"></a><!-- END Desc_Off --><!-- END Sorter Sorter_value -->&nbsp;</td>
+      <td class="ct" height="31" width="25%">
+        <!-- BEGIN Sorter Sorter_results -->Search Results
+        <!-- BEGIN Asc_On --><img src="templates/images/AscOn.gif" border="0"><!-- END Asc_On -->
+        <!-- BEGIN Asc_Off --><a href="{Asc_URL}"><img src="templates/images/AscOff.gif" border="0"></a><!-- END Asc_Off -->
+        <!-- BEGIN Desc_On --><img src="templates/images/DescOn.gif" border="0"><!-- END Desc_On -->
+        <!-- BEGIN Desc_Off --><a href="{Desc_URL}"><img src="templates/images/DescOff.gif" border="0"></a><!-- END Desc_Off --><!-- END Sorter Sorter_results -->&nbsp;</td>
+      <td class="ct" height="31" width="10%">
+        Notes</td>
+	  <td class="ct" height="31" width="20%">Actions</td>
+    </tr>
+    <!-- BEGIN Row -->
+    <tr>
+    <script>
+		function toggleDisplayrow{id}() {
+			if (document.getElementById) {
+				if(document.getElementById("row{id}").style.display=="block") {
+					document.getElementById("row{id}").style.display="none";
+					document.getElementById("row{id}_icon").src="images/expand.gif";
+				}
+				else {
+					document.getElementById("row{id}").style.display="block";
+					document.getElementById("row{id}_icon").src="images/minimize.gif";
+				}
+			}
+		}
+	</script>
+	<script>
+		function toggleDisplaysched{id}() {
+			if (document.getElementById) {
+				if(document.getElementById("sched{id}").style.display=="block") {
+					document.getElementById("sched{id}").style.display="none";
+				}
+				else {
+					document.getElementById("sched{id}").style.display="block";
+				}
+			}
+		}
+	</script>
+    <tr>
+    <td width="1%" class="dt"  height="31" valign="middle"><img id="row{id}_icon" src="images/expand.gif" width="16" height="16" onclick="javascript:toggleDisplayrow{id}();" onmouseover="javascript:this.style.cursor='hand';"></td>
+    <td width="99%" colspan="4" class="dt"  height="31" valign="middle">&nbsp;&nbsp;&nbsp;<strong><font color="#ffffff">{date}</font></strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{lang_246} {count} {lang_247}</i></td></tr>
+    <tr><td width="100%" colspan="5">
+    <div id="row{id}" style="display:none;">
+    <table class="ft" width="100%">
+    <tr>
+      <td width="10%" valign="top"><strong><font color="#ff0000">{date}</font></strong></td>
+      <td width="20%" valign="top">{summery}</td>
+      <td width="20%" valign="top">{results}</td>
+      <td width="10%" valign="top">{notes}</td>
+      <td width="40%" valign="top"><a href="ViewCat.php?search_id={id}&refreshresults=1">{lang_248}</a>&nbsp;
+      <hr width="25%" align="left"><a href="ViewCat.php?search_id={id}&shownew=1">{lang_249}</a>&nbsp;
+      <hr width="25%" align="left"><a href="SearchManage.php?delete={id}">Delete</a>&nbsp;
+      <hr width="25%" align="left"><a href="javascript:void(0)" onclick="javascript:toggleDisplaysched{id}();" onmouseover="javascript:this.style.cursor='hand';">{lang_250}</a>
+      <div id="sched{id}" style="display:none;">
+      <table class="ft" width="100%">
+      <tr><td class="ct" height="31" width="100%">{lang_251}</td></tr>
+      <tr><td width="100%">
+      <form action="SearchManage.php" method="post">
+      <input class="input" type="checkbox" value="1" name="sched" {sched}>&nbsp;&nbsp;Enable {lang_251}<br>
+      Automatically Run This Search Every <select class="select" name="frequency"><option value="1">1</option><option value="3">3</option><option value="7">7</option><option value="14">14</option><option value="30">30</option></select> {lang_253}<br><br>
+      <input type="hidden" value="{id}" name="id">
+      <input class="button" type="submit" value="Save Schedule" name="save_sched">
+      </form>
+      </td></tr>
+      </table>
+      </div>
+      </td>
+      </tr>
+      </table>
+      </div>
+      </td>
+    </tr>
+    <!-- END Row -->
+    <tr>
+      <td class="footer" nowrap colspan="5">
+        <!-- BEGIN Navigator Navigator -->
+        <!-- BEGIN First_On --><a class="nl" href="{First_URL}">First</a><!-- END First_On -->
+        <!-- BEGIN First_Off -->First<!-- END First_Off -->
+        <!-- BEGIN Prev_On --><a class="nl" href="{Prev_URL}">Prev</a><!-- END Prev_On -->
+        <!-- BEGIN Prev_Off -->Prev<!-- END Prev_Off -->&nbsp;
+        <!-- BEGIN Pages -->
+        <!-- BEGIN Page_On --><a class="nl" href="{Page_URL}">{Page_Number}</a>&nbsp;<!-- END Page_On -->
+        <!-- BEGIN Page_Off -->{Page_Number}&nbsp;<!-- END Page_Off --><!-- END Pages -->of
+        {Total_Pages}&nbsp;
+        <!-- BEGIN Next_On --><a class="nl" href="{Next_URL}">Next</a><!-- END Next_On -->
+        <!-- BEGIN Next_Off -->Next<!-- END Next_Off -->
+        <!-- BEGIN Last_On --><a class="nl" href="{Last_URL}">Last</a><!-- END Last_On -->
+        <!-- BEGIN Last_Off -->Last<!-- END Last_Off --><!-- END Navigator Navigator -->&nbsp;</td>
+    </tr>
+  </table>
+  <!-- END Grid search --><br><br>
+  <!-- BEGIN Grid search1 -->
+  <table class="ft" width="100%">
+     <tr>
+      <td class="ct"  height="31" colspan="5"><font class="fhf"><font class="fhf">{lang_252}</font></font></td>
+    </tr>
+    <tr>
+      <td class="ct" height="31" width="15%">
+        <!-- BEGIN Sorter Sorter_date -->Date
+        <!-- BEGIN Asc_On --><img src="templates/images/AscOn.gif" border="0"><!-- END Asc_On -->
+        <!-- BEGIN Asc_Off --><a href="{Asc_URL}"><img src="templates/images/AscOff.gif" border="0"></a><!-- END Asc_Off -->
+        <!-- BEGIN Desc_On --><img src="templates/images/DescOn.gif" border="0"><!-- END Desc_On -->
+        <!-- BEGIN Desc_Off --><a href="{Desc_URL}"><img src="templates/images/DescOff.gif" border="0"></a><!-- END Desc_Off --><!-- END Sorter Sorter_date -->&nbsp;</td>
+      <td class="ct" height="31" width="30%">
+        <!-- BEGIN Sorter Sorter_value -->Search Summery
+        <!-- BEGIN Asc_On --><img src="templates/images/AscOn.gif" border="0"><!-- END Asc_On -->
+        <!-- BEGIN Asc_Off --><a href="{Asc_URL}"><img src="templates/images/AscOff.gif" border="0"></a><!-- END Asc_Off -->
+        <!-- BEGIN Desc_On --><img src="templates/images/DescOn.gif" border="0"><!-- END Desc_On -->
+        <!-- BEGIN Desc_Off --><a href="{Desc_URL}"><img src="templates/images/DescOff.gif" border="0"></a><!-- END Desc_Off --><!-- END Sorter Sorter_value -->&nbsp;</td>
+      <td class="ct" height="31" width="25%">
+        <!-- BEGIN Sorter Sorter_results -->Search Results
+        <!-- BEGIN Asc_On --><img src="templates/images/AscOn.gif" border="0"><!-- END Asc_On -->
+        <!-- BEGIN Asc_Off --><a href="{Asc_URL}"><img src="templates/images/AscOff.gif" border="0"></a><!-- END Asc_Off -->
+        <!-- BEGIN Desc_On --><img src="templates/images/DescOn.gif" border="0"><!-- END Desc_On -->
+        <!-- BEGIN Desc_Off --><a href="{Desc_URL}"><img src="templates/images/DescOff.gif" border="0"></a><!-- END Desc_Off --><!-- END Sorter Sorter_results -->&nbsp;</td>
+      <td class="ct" height="31" width="10%">
+        Notes
+        </td>
+      <td class="ct" height="31" width="20%">Actions</td>
+    </tr>
+    <!-- BEGIN Row -->
+    <tr>
+    <script>
+		function toggleDisplayrow1{id}() {
+			if (document.getElementById) {
+				if(document.getElementById("row1{id}").style.display=="block") {
+					document.getElementById("row1{id}").style.display="none";
+					document.getElementById("row1{id}_icon").src="images/expand.gif";
+				}
+				else {
+					document.getElementById("row1{id}").style.display="block";
+					document.getElementById("row1{id}_icon").src="images/minimize.gif";
+				}
+			}
+		}
+	</script>
+    <tr>
+    <td width="1%" class="dt"  height="31" valign="middle"><img id="row1{id}_icon" src="images/expand.gif" width="16" height="16" onclick="javascript:toggleDisplayrow1{id}();" onmouseover="javascript:this.style.cursor='hand';">
+    <td width="99%" colspan="4" class="dt"  height="31" valign="middle">&nbsp;&nbsp;&nbsp;<strong><font color="#ffffff">{date}</font></strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{lang_246} {count} {lang_247}</i></td></tr>
+    <tr><td width="100%" colspan="5">
+    <div id="row1{id}" style="display:none;">
+    <table class="ft" width="100%">
+    <tr>
+      <td width="10%" valign="top"><strong><font color="#ff0000">{date}</font></strong></td>
+      <td width="20%" valign="top">{summery}</td>
+      <td width="20%" valign="top">{results}</td>
+      <td width="10%" valign="top">{notes}</td>
+      <td width="40%" valign="top"><a href="ViewCat.php?search_id={id}&refreshresults=1">{lang_248}</a>&nbsp;
+      <hr width="25%" align="left"><a href="ViewCat.php?search_id={id}&shownew=1">{lang_249}</a>&nbsp;
+      <hr width="25%" align="left"><a href="SearchManage.php?delete={id}">Delete</a>&nbsp;
+      <hr width="25%" align="left"><a href="SearchManage.php?save={id}">{lang_254}</a></td>
+      </tr>
+      </table>
+      </div>
+      </td>
+    </tr>
+    <!-- END Row -->
+    <tr>
+      <td class="footer" nowrap colspan="6">
+        <!-- BEGIN Navigator Navigator -->
+        <!-- BEGIN First_On --><a class="nl" href="{First_URL}">First</a><!-- END First_On -->
+        <!-- BEGIN First_Off -->First<!-- END First_Off -->
+        <!-- BEGIN Prev_On --><a class="nl" href="{Prev_URL}">Prev</a><!-- END Prev_On -->
+        <!-- BEGIN Prev_Off -->Prev<!-- END Prev_Off -->&nbsp;
+        <!-- BEGIN Pages -->
+        <!-- BEGIN Page_On --><a class="nl" href="{Page_URL}">{Page_Number}</a>&nbsp;<!-- END Page_On -->
+        <!-- BEGIN Page_Off -->{Page_Number}&nbsp;<!-- END Page_Off --><!-- END Pages -->of
+        {Total_Pages}&nbsp;
+        <!-- BEGIN Next_On --><a class="nl" href="{Next_URL}">Next</a><!-- END Next_On -->
+        <!-- BEGIN Next_Off -->Next<!-- END Next_Off -->
+        <!-- BEGIN Last_On --><a class="nl" href="{Last_URL}">Last</a><!-- END Last_On -->
+        <!-- BEGIN Last_Off -->Last<!-- END Last_Off --><!-- END Navigator Navigator -->&nbsp;</td>
+    </tr>
+  </table>
+  <!-- END Grid search1 -->{Footer}
+  </body>
+  </html>

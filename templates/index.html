@@ -1,0 +1,338 @@
+<html>
+<head>
+<title>malwaremarket</title>
+<link rel="stylesheet" type="text/css" href="templates/images/Style.css">
+{EditCSS}
+<script language="JavaScript" type="text/javascript" src="./edit-inplace/core.js"></script>
+<script language="JavaScript" type="text/javascript" src="./edit-inplace/events.js"></script>
+<script language="JavaScript" type="text/javascript" src="./edit-inplace/css.js"></script>
+<script language="JavaScript" type="text/javascript" src="./edit-inplace/coordinates.js"></script>
+<script language="JavaScript" type="text/javascript" src="./edit-inplace/drag.js"></script>
+<script language="JavaScript" type="text/javascript" src="./edit-inplace/dragsort.js"></script>
+<script language="JavaScript">
+<!--
+var ESCAPE = 27
+var ENTER = 13
+var TAB = 9
+
+var coordinates = ToolMan.coordinates()
+var dragsort = ToolMan.dragsort()
+var junkdrawer = ToolMan.junkdrawer()
+
+function setHandle(item) {
+	item.toolManDragGroup.setHandle(findHandle(item))
+}
+
+function findHandle(item) {
+	var children = item.getElementsByTagName("div")
+	for (var i = 0; i < children.length; i++) {
+		var child = children[i]
+
+		if (child.getAttribute("class") == null) continue
+
+		if (child.getAttribute("class").indexOf("handle") >= 0)
+			return child
+	}
+	return item
+}
+
+function join(name, isDoubleClick) {
+	var view = document.getElementById(name + "View")
+	view.editor = document.getElementById(name + "Edit")
+
+	var showEditor = function(event) {
+		event = fixEvent(event)
+
+		var view = this
+		var editor = view.editor
+
+		if (!editor) return true
+
+		if (editor.currentView != null) {
+			editor.blur()
+		}
+		editor.currentView = view
+
+		var topLeft = coordinates.topLeftOffset(view)
+		topLeft.reposition(editor)
+		if (editor.nodeName == 'TEXTAREA') {
+			editor.style['width'] = view.offsetWidth + "px"
+			editor.style['height'] = view.offsetHeight + "px"
+		}
+		editor.value = view.innerHTML
+		editor.style['visibility'] = 'visible'
+		view.style['visibility'] = 'hidden'
+		editor.focus()
+		return false
+	}
+
+	if (isDoubleClick) {
+		view.ondblclick = showEditor
+	} else {
+		view.onclick = showEditor
+	}
+
+	view.editor.onblur = function(event) {
+		event = fixEvent(event)
+
+		var editor = event.target
+		var view = editor.currentView
+
+		if (!editor.abandonChanges) view.innerHTML = editor.value
+		editor.abandonChanges = false
+		editor.style['visibility'] = 'hidden'
+		//editor.value = '' // fixes firefox 1.0 bug
+		view.style['visibility'] = 'visible'
+		editor.currentView = null
+
+		return true
+	}
+	
+	view.editor.onkeydown = function(event) {
+		event = fixEvent(event)
+		
+		var editor = event.target
+		if (event.keyCode == TAB) {
+			editor.blur()
+			return false
+		}
+	}
+
+	view.editor.onkeyup = function(event) {
+		event = fixEvent(event)
+
+		var editor = event.target
+		if (event.keyCode == ESCAPE) {
+			editor.abandonChanges = true
+			editor.blur()
+			return false
+		} else if (event.keyCode == TAB) {
+			return false
+		} else {
+			return true
+		}
+	}
+
+	// TODO: this method is duplicated elsewhere
+	function fixEvent(event) {
+		if (!event) event = window.event
+		if (event.target) {
+			if (event.target.nodeType == 3) event.target = event.target.parentNode
+		} else if (event.srcElement) {
+			event.target = event.srcElement
+		}
+
+		return event
+	}
+}
+function saveOrder(listId) {
+    var list = document.getElementById(listId);
+    var items = list.getElementsByTagName('li');
+    var ids = '';
+    var hiddeninput = document.getElementById('catorder'); // the input field storing the order
+	
+    for (var i = 0; i < items.length; i++)  {
+        if (i > 0) ids += '|';
+        ids += items[i].getAttribute("id");
+    }
+
+		hiddeninput.value = ids;
+		return true
+	}
+{EditJS}
+// -->
+</script>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#FF0000">
+{Header}
+<table width="100%" border="0" style="border-collapse: collapse; MARGIN: 0px">
+  <tr>
+    <td width="30%" valign="top" style="padding-left:0px;padding-right:0px;padding-bottom:0px;">
+      <table width="100%" border="0" style="border-collapse: collapse; MARGIN: 0px">
+        <tr>
+          <td style="padding-left:0px;padding-right:0px;padding-bottom:0px;">
+            <!-- BEGIN Grid categories -->
+            
+<table width="100%" cellpadding="0" cellspacing="0" style="padding-left:0px;">
+    <tr>
+<td width="1%" height="28" style="padding-left:0px;" valign="top" align="left"><img src=templates/images/h_left.gif></td>
+      <td class="ct2"  style="padding-left:0px;" height="28" width="100%">Categories</td>
+<td width="1%" height="28" style="padding-left:0px;" valign="top" align="right"><img src=templates/images/h_right.gif></td>
+      </tr></table>
+<table class="ftt" width="100%" border="0" id="categorylists" style="border-collapse: collapse; MARGIN: 0px">
+              <!-- BEGIN Row -->
+              <tr>
+                <td style="padding-left:5px;padding-top:5px;"><img src="images/folder1.gif" border="0">&nbsp;&nbsp;<a class="cats" href="ViewCat.php?CatID={cat_id}&s_ItemNum=&s_user_id=&s_title=&s_description=&s_asking_min=&s_asking_max=&s_quantity=&s_city_town=&s_state_province=">{name}</a>&nbsp;{Count}</td>
+              </tr>
+              <!-- END Row -->
+              <tr>
+              <td>
+              {OpenEditListEditor}
+              {OpenEditList}
+              <!-- BEGIN EditRow -->
+              <li id="{cat_id}">
+					<div class="handle"><img src="./edit-inplace/handle.png" align="right"></div>
+					<div id="cat_{cat_id}_View" class="view">{name}</div><a href="ViewCat.php?CatID={cat_id}">{Count} GO >> </a>&nbsp;
+			  </li>
+              <!-- END EditRow -->
+              {CloseEditList}
+              </td></tr>
+              <!-- BEGIN NoRecords -->
+              <tr>
+                <td colspan="2">No Categories Present&nbsp;</td>
+              </tr>
+              <!-- END NoRecords -->
+              <tr>
+                <td><br><a href="browse.php"><B>View All</B></a></td>
+              </tr>
+            </table>
+          
+      <!-- END Grid categories -->
+<BR>
+<!-- BEGIN Grid items3 -->
+
+<table width="100%" cellpadding="0" cellspacing="0" style="padding-left:0px;">
+    <tr>
+<td width="1%" height="28" style="padding-left:0px;" valign="top" align="left"><img src=templates/images/h_left.gif></td>
+      <td class="ct2"  style="padding-left:0px;" height="28" width="100%">Make Offer</td>
+<td width="1%" height="28" style="padding-left:0px;" valign="top" align="right"><img src=templates/images/h_right.gif></td>
+      </tr></table>
+            <table class="ftt" width="100%" border="0" id="categorylists" style="border-collapse: collapse; MARGIN: 0px">
+              <!-- BEGIN Row -->
+              <tr>
+                <td style="padding-left:5px;padding-top:5px;padding-bottom:5px;"><img src="images/mylist_bullet.gif" border="0">&nbsp;&nbsp;<a href="ViewItem.php?ItemNum={ItemNum}">{title}-{currency}{asking_price}</a></td>
+              </tr>
+              <!-- END Row -->
+              <!-- BEGIN NoRecords -->
+              <tr>
+                <td>No Make Offer Present&nbsp;</td>
+              </tr>
+              <!-- END NoRecords -->
+            </table></td>
+        </tr>
+      </table>
+<!-- END Grid items3 -->
+
+
+</td>
+    <td width="70%" align="left" valign="top" style="padding-right:0px;">
+    <table width="100%" cellspacing="0" cellpadding="2" style="border-collapse: collapse; MARGIN: 0px">
+        
+        <tr>
+         <td width="100%"><p align=center><script type="text/javascript">
+google_ad_client = "pub-6130138262899164";
+google_ad_slot = "9102382896";
+google_ad_width = 468;
+google_ad_height = 60;
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></p></td>
+         </tr>
+	   <tr>
+	<td></td>
+	   </tr>
+    </table><br>
+      <!-- BEGIN Grid items -->
+
+<table width="100%" cellpadding="0" cellspacing="0" style="padding-left:0px;">
+    <tr>
+<td width="1%" height="28" style="padding-left:0px;" valign="top" align="left"><img src=templates/images/h_left.gif></td>
+      <td class="ct2"  style="padding-left:0px;" height="28" width="100%">Featured Images</td>
+<td width="1%" height="28" style="padding-left:0px;" valign="top" align="right"><img src=templates/images/h_right.gif></td>
+      </tr></table>
+      <table class="ft_home" width=100%>
+      <tr><td colspan="11" height="10">&nbsp;</td></tr>
+         <tr>
+          <!-- BEGIN Row -->
+          <td align="middle" valign="top" width="125">
+            <p>{image_preview}{image_one}</p>
+            <p><a href="ViewItem.php?ItemNum={ItemNum}">{title}</a><br>
+            {currency}{asking_price}<br>
+            {city_town}{state_province}</p>
+          </td><!-- END Row -->
+          <!-- BEGIN Separator -->
+          <td></td><!-- END Separator -->
+        </tr>
+        <!-- BEGIN NoRecords -->
+<tr><td colspan="11" height="31"><font class="fhf">No Featured Images</font></td></tr>
+        <tr>
+        <!-- END NoRecords -->
+<tr><td colspan="11" height="7"></td></tr>
+      </table>
+      <!-- END Grid items -->
+<BR>
+      <!-- BEGIN Grid items1 -->
+
+<table width="100%" cellpadding="0" cellspacing="0" style="padding-left:0px;">
+    <tr>
+<td width="1%" height="28" style="padding-left:0px;" valign="top" align="left"><img src=templates/images/h_left.gif></td>
+      <td class="ct2"  style="padding-left:0px;" height="28" width="100%">Featured Items</td>
+<td width="1%" height="28" style="padding-left:0px;" valign="top" align="right"><img src=templates/images/h_right.gif></td>
+      </tr></table>
+     <table class="ft_home" width="100%" cellspacing="0" cellpadding="2">
+        <tr>
+          <td width="10%" class="ct" height="31" align="middle">Image&nbsp;</td>
+          <td width="55%" class="ct" height="31" align="left">Title&nbsp;</td>
+          <td width="20%" class="ct" height="31" align="middle">Location&nbsp;</td>
+          <td width="15%" class="ct" height="31" align="middle">Asking</td>
+        </tr>
+        <!-- BEGIN Row -->
+        <tr {background}>
+          <td valign="center" align="middle">{bold2}{image_preview}{image_one}</td>
+          <td align="left"><a href="ViewItem.php?ItemNum={ItemNum}">{bold}{title}{bold2}</a>{make_offer}</td>
+          <td align="middle">{bold}{city_town}{state_province}{bold2}{started}</td>
+          <td align="middle">{bold}{currency}{asking_price}{bold2}</td>
+        </tr>
+        <!-- END Row -->
+        <!-- BEGIN NoRecords -->
+        <tr>
+          <td colspan="11">No Current Featured Items&nbsp;</td>
+        </tr>
+        <!-- END NoRecords -->
+        <tr>
+          <td colspan="5"><br><a href="ViewCat.php?ShowFeatured=1&s_ItemNum=&s_user_id=&s_title=&s_description=&s_asking_min=&s_asking_max=&s_quantity=&s_city_town=&s_state_province="><B>View All</B></a></td>
+        </tr>
+
+      </table>
+      <!-- END Grid items1 -->
+<BR>
+
+<!-- BEGIN Grid items2 -->
+
+<table width="100%" cellpadding="0" cellspacing="0" style="padding-left:0px;">
+    <tr>
+<td width="1%" height="28" style="padding-left:0px;" valign="top" align="left"><img src=templates/images/h_left.gif></td>
+      <td class="ct2"  style="padding-left:0px;" height="28" width="100%">Latest Items</td>
+<td width="1%" height="28" style="padding-left:0px;" valign="top" align="right"><img src=templates/images/h_right.gif></td>
+      </tr></table>
+     <table class="ft_home" width="100%" cellspacing="0" cellpadding="2">
+        <tr>
+          <td width="10%" class="ct" height="31" align="middle">Image&nbsp;</td>
+          <td width="55%" class="ct" height="31" align="left">Title&nbsp;</td>
+          <td width="20%" class="ct" height="31" align="middle">Location&nbsp;</td>
+          <td width="15%" class="ct" height="31" align="middle">Asking</td>
+        </tr>
+        <!-- BEGIN Row -->
+        <tr {background}>
+          <td valign="center" align="middle">{bold2}{image_preview}{image_one}</td>
+          <td align="left"><a href="ViewItem.php?ItemNum={ItemNum}">{bold}{title}{bold2}</a>{make_offer}</td>
+          <td align="middle">{bold}{city_town}{state_province}{bold2}{started}</td>
+          <td align="middle">{bold}{currency}{asking_price}{bold2}</td>
+        </tr>
+        <!-- END Row -->
+        <!-- BEGIN NoRecords -->
+        <tr>
+          <td colspan="11">No Current Featured Items&nbsp;</td>
+        </tr>
+        <!-- END NoRecords -->
+        
+      </table>
+      <!-- END Grid items2 -->
+
+</td>
+  </tr>
+</table>
+{Footer}
+</body>
+</html>

@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>malwaremarket {lang_199}</title>
+<link rel="stylesheet" type="text/css" href="templates/images/Style.css">
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#FF0000">
+{Header}
+<!-- BEGIN Record emails -->
+<form name="emails" action="{Action}" method="post">
+  <table class="ft" width="100%" >
+    <tr>
+      <td class="ct"  height="31"><font class="fhf">Message</font></td>
+    </tr>
+    <!-- BEGIN Error -->
+    <tr>
+      <td class="dt"  height="31">{Error}</td>
+    </tr>
+    <!-- END Error -->
+    <tr>
+      <td class="ct" height="31">&nbsp;From</td>
+    </tr>
+    <tr>
+      <td><b>From:</b>&nbsp;{from_user_id}<br>
+        <b>Date Received:</b>&nbsp;{emaildate}<br>
+      </td>
+    </tr>
+    <tr>
+      <td class="ct" height="31">&nbsp;Subject</td>
+    </tr>
+    <tr>
+      <td><b>{subject}</b></td>
+    </tr>
+    <tr>
+      <td class="ct" height="31">&nbsp;Message</td>
+    </tr>
+    <tr>
+      <td>{message}</td>
+    </tr>
+    <tr>
+      <td nowrap align="right" colspan="2">
+        <!-- BEGIN Button Delete --><input type="submit" value="Delete" name="Delete" class="button"><!-- END Button Delete -->
+        <!-- BEGIN Button cancel --><input type="submit" value="Cancel" name="cancel" class="button"><!-- END Button cancel -->&nbsp;</td>
+    </tr>
+  </table>
+</form>
+<!-- END Record emails -->
+<!-- BEGIN Record emails2 -->
+<form name="emails2" action="{Action}" method="post">
+  <table class="ft" width="100%" blorder="1">
+    <tr>
+      <td class="ct" height="31" width="100%"><font class="fhf">Reply</font></td>
+    </tr>
+    <!-- BEGIN Error -->
+    <tr>
+      <td class="dt"  height="31">{Error}</td>
+    </tr>
+    <!-- END Error -->
+    <tr>
+      <td width="100%"><strong><br>
+        Subject:</strong><br>
+        <input value="Re:  {SUB}" name="subject" maxlength="100" size="50"><br>
+        <strong><br>
+        Message:</strong><br>
+        <textarea class="textarea" name="message" rows="20" cols="80">{message}</textarea>&nbsp;</td>
+    </tr>
+    <tr>
+      <td nowrap align="middle">
+        <!-- BEGIN Button Insert --><input class="button" type="submit" value="Reply" name="Insert"><!-- END Button Insert -->
+        <!-- BEGIN Button Cancel --><input class="button" type="submit" value="Cancel" name="Cancel"><!-- END Button Cancel -->&nbsp;</td>
+    </tr>
+  </table>
+  <input type="hidden" value="{ReplyToID}" name="to_user_id"><input type="hidden" value="{from_user_id}" name="from_user_id"><input type="hidden" value="{emaildate}" name="emaildate"><input type="hidden" value="{been_read}" name="been_read">
+</form>
+<!-- END Record emails2 -->{Footer}
+</body>
+</html>

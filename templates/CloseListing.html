@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>malwaremarket {lang_41}</title>
+<link rel="stylesheet" type="text/css" href="templates/images/Style.css">
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#FF0000">
+{Header}
+<!-- BEGIN Record items -->
+<form name="items" action="{Action}" method="post">
+  <font class="fhf">{lang_41} - {ItemNum}</font>
+  <table class="ft" >
+    <!-- BEGIN Error -->
+    <tr>
+      <td class="dt"  height="31" colspan="2">{Error}</td>
+    </tr>
+    <!-- END Error -->
+    <tr>
+      <td colspan="2">{lang_42}
+        {lang_43}<br>
+        {lang_44}
+        {lang_45}</td>
+    </tr>
+    <tr>
+      <td class="fct" height="31" nowrap><strong>{lang_38}</strong>&nbsp;</td>
+      <td class="dt"  height="31"><strong>{ItemNum}</strong>&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="fct" height="31" nowrap><strong>{lang_56}</strong>&nbsp;</td>
+      <td class="dt"  height="31"><strong>{title}</strong>&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="fct" height="31" nowrap><strong>{lang_46}</strong>&nbsp;</td>
+      <td class="dt"  height="31"><input class="input" maxlength="250" size="50" value="{end_reason}" name="end_reason">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="footer" nowrap align="right" colspan="2">
+        <!-- BEGIN Button Update --><input class="button" type="submit" value="Close" name="Update"><!-- END Button Update -->
+        <!-- BEGIN Button Cancel --><input class="button" type="submit" value="Cancel" name="Cancel"><!-- END Button Cancel -->&nbsp;</td>
+    </tr>
+  </table>
+  <input type="hidden" value="{ItemNum}" name="ItemNum">
+  <input type="hidden" value="2" name="status">
+</form>
+<!-- END Record items -->{Footer}
+</body>
+</html>

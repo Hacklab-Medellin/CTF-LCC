@@ -1,0 +1,251 @@
+<html>
+<head>
+<title>malwaremarket - Browse {lang_150}</title>
+<link rel="stylesheet" type="text/css" href="templates/images/Style.css">
+{EditCSS}
+<script language="JavaScript" type="text/javascript" src="./edit-inplace/core.js"></script>
+<script language="JavaScript" type="text/javascript" src="./edit-inplace/events.js"></script>
+<script language="JavaScript" type="text/javascript" src="./edit-inplace/css.js"></script>
+<script language="JavaScript" type="text/javascript" src="./edit-inplace/coordinates.js"></script>
+<script language="JavaScript" type="text/javascript" src="./edit-inplace/drag.js"></script>
+<script language="JavaScript" type="text/javascript" src="./edit-inplace/dragsort.js"></script>
+<script language="JavaScript">
+<!--
+var ESCAPE = 27
+var ENTER = 13
+var TAB = 9
+
+var coordinates = ToolMan.coordinates()
+var dragsort = ToolMan.dragsort()
+var junkdrawer = ToolMan.junkdrawer()
+
+function setHandle(item) {
+	item.toolManDragGroup.setHandle(findHandle(item))
+}
+
+function findHandle(item) {
+	var children = item.getElementsByTagName("div")
+	for (var i = 0; i < children.length; i++) {
+		var child = children[i]
+
+		if (child.getAttribute("class") == null) continue
+
+		if (child.getAttribute("class").indexOf("handle") >= 0)
+			return child
+	}
+	return item
+}
+
+function join(name, isDoubleClick) {
+	var view = document.getElementById(name + "View")
+	view.editor = document.getElementById(name + "Edit")
+
+	var showEditor = function(event) {
+		event = fixEvent(event)
+
+		var view = this
+		var editor = view.editor
+
+		if (!editor) return true
+
+		if (editor.currentView != null) {
+			editor.blur()
+		}
+		editor.currentView = view
+
+		var topLeft = coordinates.topLeftOffset(view)
+		topLeft.reposition(editor)
+		if (editor.nodeName == 'TEXTAREA') {
+			editor.style['width'] = view.offsetWidth + "px"
+			editor.style['height'] = view.offsetHeight + "px"
+		}
+		editor.value = view.innerHTML
+		editor.style['visibility'] = 'visible'
+		view.style['visibility'] = 'hidden'
+		editor.focus()
+		return false
+	}
+
+	if (isDoubleClick) {
+		view.ondblclick = showEditor
+	} else {
+		view.onclick = showEditor
+	}
+
+	view.editor.onblur = function(event) {
+		event = fixEvent(event)
+
+		var editor = event.target
+		var view = editor.currentView
+
+		if (!editor.abandonChanges) view.innerHTML = editor.value
+		editor.abandonChanges = false
+		editor.style['visibility'] = 'hidden'
+		//editor.value = '' // fixes firefox 1.0 bug
+		view.style['visibility'] = 'visible'
+		editor.currentView = null
+
+		return true
+	}
+	
+	view.editor.onkeydown = function(event) {
+		event = fixEvent(event)
+		
+		var editor = event.target
+		if (event.keyCode == TAB) {
+			editor.blur()
+			return false
+		}
+	}
+
+	view.editor.onkeyup = function(event) {
+		event = fixEvent(event)
+
+		var editor = event.target
+		if (event.keyCode == ESCAPE) {
+			editor.abandonChanges = true
+			editor.blur()
+			return false
+		} else if (event.keyCode == TAB) {
+			return false
+		} else {
+			return true
+		}
+	}
+
+	// TODO: this method is duplicated elsewhere
+	function fixEvent(event) {
+		if (!event) event = window.event
+		if (event.target) {
+			if (event.target.nodeType == 3) event.target = event.target.parentNode
+		} else if (event.srcElement) {
+			event.target = event.srcElement
+		}
+
+		return event
+	}
+}
+function saveOrder(listId) {
+    var list = document.getElementById(listId);
+    var items = list.getElementsByTagName('li');
+    var ids = '';
+    var hiddeninput = document.getElementById('catorder'); // the input field storing the order
+	
+    for (var i = 0; i < items.length; i++)  {
+        if (i > 0) ids += '|';
+        ids += items[i].getAttribute("id");
+    }
+
+		hiddeninput.value = ids;
+		return true
+	}
+{EditJS}
+// -->
+</script>
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#FF0000">
+{Header}
+{AdminMenu}
+<table width="100%" border="0" class="ft" style="padding-left:0px;padding-right:0px;padding-bottom:0px;">
+  <tr>
+      <td valign="top" width="83%" style="padding-left:0px;padding-right:0px;padding-bottom:0px;">
+        <!-- BEGIN Grid items -->
+       <table height="31" width="100%" cellspacing="0" border="0" cellpadding="0">
+        <tr>
+          <td colspan="7" class="ct"><BR><font class="fhf">{Results} Item(s) Found</font><br><br><font style="font-size: 14px">{catlist}</font><br>
+            </td></tr><tr><td colspan="7" style="padding-left:0px;padding-right:0px;padding-bottom:0px;">
+              <table class="ft" cellspacing="1" align="left" border="0" cellpadding="0" width="100%">
+              <tr>
+               <td width="125" align="center" class="dt" height="31">{lang_70}</td>
+               <td width="125" align="center" class="dt"  height="31"><a href="{gallerylink_Src}"><font color="#0000FF">- {lang_69}:</font></a></td>
+               <td align="center" class="ct" height="31"></td>              
+</tr>
+            </table>
+          </td>
+        </tr>
+          <tr class="ct">
+
+            <td class="ct" align="middle"></td>
+            <td class="ct" height="31"></td>
+            <td width="46%" class="ct" height="31" align="left" nowrap>
+			    <!-- BEGIN Sorter Sorter_title -->&nbsp;Title
+        		<!-- BEGIN Asc_On --><img src="templates/images/AscOn.gif" border="0"><!-- END Asc_On -->
+        		<!-- BEGIN Asc_Off --><a href="{Asc_URL}"><img src="templates/images/AscOff.gif" border="0"></a><!-- END Asc_Off -->
+        		<!-- BEGIN Desc_On --><img src="templates/images/DescOn.gif" border="0"><!-- END Desc_On -->
+        		<!-- BEGIN Desc_Off --><a href="{Desc_URL}"><img src="templates/images/DescOff.gif" border="0"></a><!-- END Desc_Off --><!-- END Sorter Sorter_title -->&nbsp;</td>
+            <td width="23%" class="ct" height="31" align="middle" nowrap>
+				<!-- BEGIN Sorter Sorter_location -->&nbsp;Location
+        		<!-- BEGIN Asc_On --><img src="templates/images/AscOn.gif" border="0"><!-- END Asc_On -->
+        		<!-- BEGIN Asc_Off --><a href="{Asc_URL}"><img src="templates/images/AscOff.gif" border="0"></a><!-- END Asc_Off -->
+        		<!-- BEGIN Desc_On --><img src="templates/images/DescOn.gif" border="0"><!-- END Desc_On -->
+        		<!-- BEGIN Desc_Off --><a href="{Desc_URL}"><img src="templates/images/DescOff.gif" border="0"></a><!-- END Desc_Off --><!-- END Sorter Sorter_location -->&nbsp;</td>
+            <td width="18%" class="ct" height="31" align="middle" nowrap>
+				<!-- BEGIN Sorter Sorter_asking_price -->&nbsp;{lang_118}
+        		<!-- BEGIN Asc_On --><img src="templates/images/AscOn.gif" border="0"><!-- END Asc_On -->
+        		<!-- BEGIN Asc_Off --><a href="{Asc_URL}"><img src="templates/images/AscOff.gif" border="0"></a><!-- END Asc_Off -->
+        		<!-- BEGIN Desc_On --><img src="templates/images/DescOn.gif" border="0"><!-- END Desc_On -->
+        		<!-- BEGIN Desc_Off --><a href="{Desc_URL}"><img src="templates/images/DescOff.gif" border="0"></a><!-- END Desc_Off --><!-- END Sorter Sorter_asking_price -->&nbsp;</td>
+            <td width="13%" class="ct" height="31" align="middle" nowrap>
+				<!-- BEGIN Sorter Sorter_started -->&nbsp;Started
+        		<!-- BEGIN Asc_On --><img src="templates/images/AscOn.gif" border="0"><!-- END Asc_On -->
+        		<!-- BEGIN Asc_Off --><a href="{Asc_URL}"><img src="templates/images/AscOff.gif" border="0"></a><!-- END Asc_Off -->
+        		<!-- BEGIN Desc_On --><img src="templates/images/DescOn.gif" border="0"><!-- END Desc_On -->
+        		<!-- BEGIN Desc_Off --><a href="{Desc_URL}"><img src="templates/images/DescOff.gif" border="0"></a><!-- END Desc_Off --><!-- END Sorter Sorter_started -->&nbsp;</td>
+          </tr>
+          <tr>
+            <td colspan="6" class="wtbk"></td>
+          </tr>
+          <tr>
+           <td colspan="6" style="padding-left:0px;padding-right:0px;padding-bottom:0px;">
+            <table class="ft"  height="31" cellspacing="0" cellpadding="0" width="100%" style="padding-left:0px;padding-right:0px;padding-bottom:0px;">
+             <tr>
+               <td style="padding-left:0px;padding-right:0px;padding-bottom:0px;">
+                <table class="ft" cellspacing="0" cellpadding="0" width="100%" style="padding-left:0px;padding-right:0px;padding-bottom:0px;">{beginFeat}
+         <!-- BEGIN Row -->{image_one}
+          <tr>
+            <td valign="middle" width="75" align="center" height="40">{image_preview}</td>
+            <td></td>
+            <td align="left" width="46%">&nbsp;&nbsp;<a href="ViewItem.php?ItemNum={ItemNum}"><font style="font-size: 12px; text-decoration: none">{bold}{title}{bold2}</a>{make_offer}</td>
+            <td align="middle" width="23%"><font style="font-size: 11px; text-decoration: none">{bold}{city_town}{state_province}{bold2}</font></td>
+            <td align="middle" width="18%"><font style="font-size: 11px; text-decoration: none">{bold}{currency}{asking_price}{bold2}</font></td>
+            <td align="middle" width="13%"><font style="font-size: 11px; text-decoration: none">{bold}{started}{bold2}</font></td>
+          </tr>
+          <tr>
+            <td colspan="6" style="padding-left:0px;padding-right:0px;padding-bottom:0px;"></td>
+          </tr>
+          <!-- END Row -->
+
+          <tr>
+            <td colspan="6" style="padding-left:0px;padding-right:0px;padding-bottom:0px;"></td>
+          </tr>
+
+          <!-- BEGIN NoRecords -->
+
+          <tr>
+            <td colspan="6">No {lang_150} Found&nbsp;</td>
+          </tr>
+          <!-- END NoRecords -->
+          <tr>
+            <td class="ct" height="20" nowrap colspan="11" align="center">
+              <!-- BEGIN Navigator Navigator -->
+              <!-- BEGIN First_On --><a class="nl" href="{First_URL}">First</a><!-- END First_On -->
+              <!-- BEGIN First_Off -->First<!-- END First_Off -->
+              <!-- BEGIN Prev_On --><a class="nl" href="{Prev_URL}">Prev</a><!-- END Prev_On -->
+              <!-- BEGIN Prev_Off -->Prev<!-- END Prev_Off -->&nbsp;
+              <!-- BEGIN Pages -->
+              <!-- BEGIN Page_On --><a class="nl" href="{Page_URL}">{Page_Number}</a>&nbsp;<!-- END Page_On -->
+              <!-- BEGIN Page_Off -->{Page_Number}&nbsp;<!-- END Page_Off --><!-- END Pages -->of
+              {Total_Pages}&nbsp;
+              <!-- BEGIN Next_On --><a class="nl" href="{Next_URL}">Next</a><!-- END Next_On -->
+              <!-- BEGIN Next_Off -->Next<!-- END Next_Off -->
+              <!-- BEGIN Last_On --><a class="nl" href="{Last_URL}">Last</a><!-- END Last_On -->
+              <!-- BEGIN Last_Off -->Last<!-- END Last_Off --><!-- END Navigator Navigator -->&nbsp;</td>
+          </tr>
+        </table></td></tr></table></td></tr></table>
+        <!-- END Grid items --></td>
+    </tr>
+  </tbody>
+</table>
+{Footer}
+</body>
+</html>

@@ -1,0 +1,148 @@
+<html>
+<head>
+<title>malware market {versions} - Administration</title>
+<link rel="stylesheet" type="text/css" href="Themes/images/Style.css">
+</head>
+<body bgcolor="#ffffff" link="#000000" alink="#ff0000" vlink="#000099" text="#000000">
+{Header}
+<!-- BEGIN Record settings_charges -->
+<form method="post" action="{Action}" name="settings_charges">
+  <font class="ItechClsFormHeaderFont">&nbsp;Fees</font>
+  <table cellpadding="3" cellspacing="0" border="0" class="ft">
+    <!-- BEGIN Error -->
+    <tr>
+      <td colspan="2" >{Error}</td>
+    </tr>
+    <!-- END Error -->
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Category&nbsp;Selection&nbsp;</td>
+      <td >
+        <select name="category" class="ItechClsSelect" onchange="location='./Fees.php?cat_id='+this.form.category.value">
+
+
+
+          {CatOptions}
+        </select>
+        &nbsp;</td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">
+        <p>Currency Symbol</p>
+        <p>(Only the symbol)<br>
+        Example: $&nbsp;</p>
+      </td>
+      <td  width="150"><input name="currency" value="{currency}" maxlength="1" size="3" class="ItechClsInput" {disabled}>&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">
+        <p>Currency Code</p>
+        <p>(All Caps. Used for AuthorizeNet,<br>
+        PlanetPayment and QuickCommerce)<br>
+        Example:&nbsp;USD&nbsp;</p>
+      </td>
+      <td  width="150"><input value="{currencycode}" name="currencycode" class="DeepwaterInput" maxlength="3" size="3" {disabled}></td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">
+        <p>Give Starting Credits/Tokens to New Users</p>
+      </td>
+      <td  width="150">
+        <select name="NewReg" class="ItechClsInput" tabindex="0" {disabled}>
+          {NewReg_Options}
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">
+        <p>New Registration Credit Amount</p>
+        <P>1 credit = 1 dollar)</p>
+      </td>
+      <td  width="150">{currency}<input value="{CreditAmount}" name="CreditAmount" class="ItechClsInput" {disabled}></td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">
+        <p>New Registration Tokens</p>
+      </td>
+      <td  width="150"><input value="{tokens}" name="tokens" class="ItechClsInput" {disabled}></td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">
+        <p>Transaction Message for Starting Credits</p>
+      </td>
+      <td  width="150"><textarea class="ItechClsInput" name="TransactReason" rows="10" cols="50" {disabled}>{TransactReason}</textarea></td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">
+        <p>Listing Fee</p>
+      </td>
+      <td ><input name="listing_fee" value="{listing_fee}" maxlength="12" size="12" class="ItechClsInput">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">
+        <p>Home Page Feature Fee</p>
+      </td>
+      <td ><input name="home_fee" value="{home_fee}" maxlength="12" size="12" class="ItechClsInput">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">
+        <p>Category Featured&nbsp;Fee</p>
+      </td>
+      <td ><input name="cat_fee" value="{cat_fee}" maxlength="12" size="12" class="ItechClsInput">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">
+        <p>Gallery Fee</p>
+      </td>
+      <td ><input name="gallery_fee" value="{gallery_fee}" maxlength="12" size="12" class="ItechClsInput">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">
+        <p>Image Preview Fee</p>
+      </td>
+      <td ><input name="image_pre_fee" value="{image_pre_fee}" maxlength="12" size="12" class="ItechClsInput">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">
+        <p>Slide Show Fee</p>
+      </td>
+      <td ><input name="slide_fee" value="{slide_fee}" maxlength="12" size="12" class="ItechClsInput">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">
+        <p>Counter Fee</p>
+      </td>
+      <td ><input name="counter_fee" value="{counter_fee}" maxlength="12" size="12" class="ItechClsInput">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">
+        <p>Bold Fee</p>
+        <p>The fee for having an item appear with<br>
+        a&nbsp;bold title&nbsp;</p>
+      </td>
+      <td ><input name="bold_fee" value="{bold_fee}" maxlength="12" size="12" class="ItechClsInput">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">
+        <p><font style="BACKGROUND-COLOR: #FFE3E3">Highlight Item Fee</font></p>
+      </td>
+      <td ><input name="high_fee" value="{high_fee}" maxlength="12" size="12" class="ItechClsInput">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">
+        <p>Image Upload Fee</p>
+      </td>
+      <td ><input name="upload_fee" value="{upload_fee}" maxlength="12" size="12" class="ItechClsInput">&nbsp;</td>
+    </tr>
+    <tr>
+      <td colspan="2" align="right" class="ItechClsFooterTD">&nbsp;
+      	<!-- BEGIN Button Insert --><input name="Insert" type="submit" value="Create" class="ItechClsButton"><!-- END Button Insert -->
+        <!-- BEGIN Button Update --><input name="Update" type="submit" value="Update" class="ItechClsButton"><!-- END Button Update -->&nbsp;&nbsp;
+        <!-- BEGIN Button Delete --><input name="Delete" type="submit" value="Delete" class="ItechClsButton"><!-- END Button Delete -->&nbsp;&nbsp;
+        <!-- BEGIN Button Cancel --><input type="submit" value="Cancel" name="Cancel" class="ItechClsButton"><!-- END Button Cancel --></td>
+    </tr>
+  </table>
+  <input type="hidden" name="set_id" value="{set_id}">
+</form>
+<!-- END Record settings_charges -->{Footer}
+</body>
+</html>

@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<title>malwaremarket - {lang_47}</title>
+<link rel="stylesheet" type="text/css" href="templates/images/Style.css">
+	</head>
+	<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#FF0000">
+		<p>{Header} </p>
+		<!-- BEGIN Confirm_PayPal -->
+		
+		<form method="POST" action="confirm.php">
+  			<table class="ft" cellpadding="0" cellspacing="0" width="100%" style="padding-left:0px;padding-right:0px;padding-bottom:0px;">
+    			
+<tr>
+      				<td width="100%" class="ct" style="padding-left:3px;padding-right:3px;padding-bottom:3px;padding-top:3px;font-weight:normal">
+<p>{lang_48}{lang_38} {ItemNum}: <b>"{title}"</b> {lang_49} ${asking_price}.  {lang_50}</p>
+					</td>
+    			</tr>
+<tr>
+      				<td width="100%">
+      					<table border="0" cellspacing="0" width="100%" cellpadding="0">
+                            <!-- BEGIN Row -->
+							<tr>
+      							<td width="1%" height="25"><input type="radio" value="{option}" {checked} name="shipping"></td>
+      							<td width="99%">{method}&nbsp;&nbsp;&nbsp;{price}</td>
+                            </tr>
+                            <!-- END Row -->
+  						</table>
+					</td>
+    			</tr>
+  			<tr><td style="padding-left:3px;padding-right:3px;padding-bottom:5px;padding-top:3px;font-weight:normal">
+  <p><input type="hidden" name="ItemNum" value="{ItemNum}">
+  <input type="image" src="https://www.paypal.com/images/x-click-but6.gif" border="0" name="submit" alt="{lang_51}"></p>
+</td>
+    			</tr>
+  			</table>
+</form>
+		<p>{shipping}</p>
+        <!-- End Confirm_PayPal -->
+		<p><br>
+		{Footer} </p>
+	</body>
+</html>

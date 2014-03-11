@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>malwaremarket {lang_54}</title>
+<link rel="stylesheet" type="text/css" href="templates/images/Style.css">
+</head>
+<body bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#0000ff" alink="#ff0000">
+{Header}
+<!-- BEGIN Record items -->
+<form name="items" action="{Action}" method="post">
+  <table class="ft" width="100%">
+    <tr>
+      <td class="ct"  height="31" colspan="2"><font class="fhf">{lang_55}</font></td>
+    </tr>    
+<!-- BEGIN Error -->
+    <tr>
+      <td class="dt"  height="31" colspan="2">{Error}</td>
+    </tr>
+    <!-- END Error -->
+    <tr>
+      <td class="cdt"  height="31" colspan="2">{lang_38}:<strong>{ItemNum}<br>
+        <br>
+        </strong>{lang_56}<strong>{title}</strong></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="ct" height="31" nowrap>
+        {lang_57}&nbsp;</td>
+    </tr>
+    <tr>
+      <td colspan="2" height="31"><BR><textarea class="MailboxTextarea" name="added_description" rows="8" cols="60">{added_description}</textarea><BR></td>
+    </tr>
+    <tr>
+      <td nowrap align="right" colspan="2">&nbsp;
+        <!-- BEGIN Button Update --><input class="button" type="submit" value="Update" name="Update"><!-- END Button Update -->
+        <!-- BEGIN Button Cancel --><input class="button" type="submit" value="Cancel" name="Cancel"><!-- END Button Cancel -->&nbsp;</td>
+    </tr>
+  </table>
+  <input type="hidden" value="{dateadded}" name="dateadded">
+</form>
+<!-- END Record items -->{Footer}
+</body>
+</html>

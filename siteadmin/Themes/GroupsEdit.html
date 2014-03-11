@@ -1,0 +1,57 @@
+<html>
+<head>
+<title>malware market {versions} - Administration</title>
+<link rel="stylesheet" type="text/css" href="Themes/images/Style.css">
+</head>
+<body bgcolor="#ffffff" link="#000000" alink="#ff0000" vlink="#000099" text="#000000">
+{Header}
+<!-- BEGIN Record groups -->
+<form method="post" action="{Action}" name="groups">
+  <font class="ItechClsFormHeaderFont">Add/Edit&nbsp;Groups&nbsp;</font>
+  <table cellpadding="3" cellspacing="0" border="0" class="ft">
+    <!-- BEGIN Error -->
+    <tr>
+      <td colspan="2" >{Error}</td>
+    </tr>
+    <!-- END Error -->
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Group Name&nbsp;</td>
+      <td ><input name="title" value="{title}" maxlength="10" size="10" class="ItechClsInput">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Group Description&nbsp;</td>
+      <td ><textarea class="ItechClsTextarea" name="description" rows="10" cols="50">{description}</textarea></td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Listing Discount<br><br>Give Users in This<br>Group a Percentage<br>Off Their Total<br>Listing Fee<br>(For Example: 100%<br> Would Mean that<br>Members in this<br>Group get Free Ads)&nbsp;</td>
+      <td ><input name="listing_discount" value="{listing_discount}" maxlength="3" size="3" class="ItechClsInput">% Off&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Tokens Added to Account<br><br>Give Users  a <br>Certian Number of <br>Tokens When they <br>Added to this Group<br>(For Example: If this <br>Group is used by a <br>Monthly Subscription <br>Plan and this Number is <br>Set to '5', then <br>Every Month users <br>Who are Subscribed <br>To that Plan Will <br>Get 5 Free Listings)&nbsp;</td>
+      <td ><input name="tokens" value="{tokens}" maxlength="3" size="3" class="ItechClsInput"> Tokens</td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Require Approval<br><br>Users in this<br>group must have<br>new listings approved<br>by admin before<br>the listing goes 'live'<br>on the site&nbsp;</td>
+      <td ><select name="req_approval" class="ItechClsSelect">
+          {req_approval_Options}
+        </select></td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Front-End Admin<br><br>This is a<br>Administrative Group<br>with permission to use<br>the Front-End Admin<br>features of the script<br><i>(Front-End Admins can<br>manipulate categories,<br>edit listings, approve<br>listings, and a few<br>other things as well.<br>Only assign yourself<br>and trusted admins<br>to a group with this<br>permission set)</i>&nbsp;</td>
+      <td ><select name="fe_admin" class="ItechClsSelect">
+          {fe_admin_Options}
+        </select></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="right" class="ItechClsFooterTD">
+        <!-- BEGIN Button Insert --><input name="Insert" type="submit" value="Add" class="ItechClsButton"><!-- END Button Insert -->
+        <!-- BEGIN Button Update --><input name="Update" type="submit" value="Update" class="ItechClsButton"><!-- END Button Update -->
+        <!-- BEGIN Button Delete --><input name="Delete" type="submit" value="Delete" class="ItechClsButton"><!-- END Button Delete -->&nbsp;
+        <!-- BEGIN Button Cancel --><input type="submit" value="Cancel" name="Cancel" class="ItechClsButton"><!-- END Button Cancel --></td>
+    </tr>
+  </table>
+  <input type="hidden" name="id" value="{id}">
+</form>
+<!-- END Record groups -->{Footer}
+</body>
+</html>

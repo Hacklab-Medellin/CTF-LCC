@@ -1,0 +1,161 @@
+<html>
+<head>
+<title>malware market {versions} - Administration</title>
+<link rel="stylesheet" type="text/css" href="Themes/images/Style.css">
+</head>
+<body bgcolor="#ffffff" link="#000000" alink="#ff0000" vlink="#000099" text="#000000">
+{Header}
+<!-- BEGIN Record users -->
+<form method="post" action="{Action}" name="users">
+  <font class="ItechClsFormHeaderFont">Add/Edit Users</font>
+  <table cellpadding="3" cellspacing="0" border="0" class="ft">
+    <!-- BEGIN Error -->
+    <tr>
+      <td colspan="2" >{Error}</td>
+    </tr>
+    <!-- END Error -->
+    <tr>
+      <td colspan="2" class="ItechClsFieldCaptionTD" height="31">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">User ID&nbsp;</td>
+      <td >{user_id}&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Status&nbsp;</td>
+      <td >
+        <select name="status" class="ItechClsSelect">
+          <option value="" selected>Select Value</option>
+          {status_Options}
+        </select>
+        &nbsp;</td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Username&nbsp;</td>
+      <td ><input name="user_login" value="{user_login}" maxlength="15" size="15" class="ItechClsInput">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Password&nbsp;</td>
+      <td ><input class="ItechClsInput" type="password" maxlength="15" size="15" value="{user_password}" name="user_password">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">First Name&nbsp;</td>
+      <td ><input name="first_name" value="{first_name}" maxlength="20" class="ItechClsInput">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Last Name&nbsp;</td>
+      <td ><input name="last_name" value="{last_name}" maxlength="20" class="ItechClsInput">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Email&nbsp;</td>
+      <td ><input name="email" value="{email}" maxlength="64" size="50" class="ItechClsInput">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Address&nbsp;</td>
+      <td ><input name="address1" value="{address1}" maxlength="50" size="50" class="ItechClsInput">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Address Cont.&nbsp;</td>
+      <td ><input name="address2" value="{address2}" maxlength="50" size="50" class="ItechClsInput">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">City/Town&nbsp;</td>
+      <td ><input name="city" value="{city}" maxlength="30" size="30" class="ItechClsInput">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">State/Province&nbsp;</td>
+      <td ><input value="{state_id}" name="state_id" class="ItechClsInput">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Zip&nbsp;Code</td>
+      <td ><input name="zip" value="{zip}" maxlength="10" size="10" class="ItechClsInput">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Country&nbsp;</td>
+      <td >
+        <select name="country_id" class="ItechClsSelect">
+          <option value="" selected>Select Value</option>
+          {country_id_Options}
+        </select>
+        &nbsp;</td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Day Phone&nbsp;</td>
+      <td ><input name="phone_day" value="{phone_day}" maxlength="20" class="ItechClsInput">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Evening&nbsp;Phone&nbsp;</td>
+      <td ><input name="phone_evn" value="{phone_evn}" maxlength="20" class="ItechClsInput">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Fax&nbsp;</td>
+      <td ><input name="fax" value="{fax}" maxlength="20" class="ItechClsInput">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Age&nbsp;</td>
+      <td >
+        <select name="age" class="ItechClsInput" tabindex="0">
+          {age_Options}
+        </select>
+        &nbsp;&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Gender&nbsp;</td>
+      <td >
+        <select name="gender" class="ItechClsSelect">
+          {gender_Options}
+        </select>
+        &nbsp;</td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Education&nbsp;</td>
+      <td >
+        <select name="education" class="ItechClsSelect">
+          {education_Options}
+        </select>
+        &nbsp;</td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Income&nbsp;</td>
+      <td >
+        <select name="income" class="ItechClsSelect">
+          {income_Options}
+        </select>
+        &nbsp;</td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Date Created&nbsp;</td>
+      <td >{date_created}&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Registered I.P&nbsp;</td>
+      <td >{ip_insert}&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Last I.P Address&nbsp;</td>
+      <td >{ip_update}&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Newsletter&nbsp;<br>
+        Subscription</td>
+      <td >
+        <select name="newsletter" class="ItechClsSelect">
+          {newsletter_Options}
+        </select>
+        &nbsp;</td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Tokens<br>One Token can<br>be redeemed for<br>one listing</td>
+      <td ><input name="tokens" value="{tokens}" maxlength="20" class="ItechClsInput">&nbsp;</td>
+    </tr>
+    <tr>
+      <td colspan="2" align="right" class="ItechClsFooterTD">
+        <!-- BEGIN Button Insert --><input name="Insert" type="submit" value="Add" class="ItechClsButton"><!-- END Button Insert -->
+        <!-- BEGIN Button Update --><input name="Update" type="submit" value="Update" class="ItechClsButton"><!-- END Button Update -->
+        <!-- BEGIN Button Delete --><input name="Delete" type="submit" value="Delete" class="ItechClsButton"><!-- END Button Delete -->&nbsp;</td>
+    </tr>
+  </table>
+</form>
+<!-- END Record users -->{Footer}
+</body>
+</html>

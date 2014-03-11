@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>malwaremarket - {lang_281}</title>
+<link rel="stylesheet" type="text/css" href="templates/images/Style.css">
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#FF0000">
+{Header}
+<table class="ft" width="100%">
+  <tr>
+      <td class="ct"  height="31"><font class="fhf">{lang_114}</font></td></tr><tr><td>
+<table class="ft" width="100%">
+  <tr>
+      <td class="ct"  height="31">
+<p><b>{title}</b></p>
+<p>{description}</p>
+<p>Price: {currency}{price}<br>
+Duration: {duration} days<br>
+Automatically Recurring: {recurring}<br>
+<!-- BEGIN intro -->
+Special Introduction Price: {currency}{intro_price}<br>
+Specail Introduction Duration: {intro_duration} days
+<!-- END intro --></p>
+<!-- BEGIN PayPal -->
+<a href="{paypallink}"><img src="https://www.paypal.com/en_US/i/btn/x-click-but20.gif" border="0"></a></td></tr></table>
+<!-- END PayPal -->
+<!-- BEGIN or -->
+</td></tr><tr><td class="ct">Or subscribe via {lang_105}</td></tr><tr><td>
+<!-- END or -->
+<!-- BEGIN Record charges1 -->
+<form name="charges" action="{Action}" method="post">
+  <table class="ft" width="100%">
+  <tr>
+      <td class="ct"  height="31" colspan="2"><font class="fhf">{lang_105}</font></td>
+    </tr>  
+<!-- BEGIN Error -->
+    <tr>
+      <td class="dt"  height="31" colspan="2">{Error}</td>
+    </tr>
+    <!-- END Error -->
+    <tr>
+      <td height="31">Amount Due&nbsp;</td>
+      <td>{currency}<input class="input" maxlength="12" size="12" value="{price}" name="charge" readonly>&nbsp;</td>
+    </tr>
+    <tr>
+      <td height="31">{lang_107}</td>
+      <td><input value="{FirstName}" name="FirstName"></td>
+    </tr>
+    <tr>
+      <td height="31">{lang_108}</td>
+      <td><input value="{LastName}" name="LastName"></td>
+    </tr>
+    <tr>
+      <td height="31">{lang_105} {lang_109}</td>
+      <td><input value="{CCNumber}" name="CCNumber"></td>
+    </tr>
+    <tr>
+      <td height="31">{lang_110}</td>
+      <td><input value="{ExpDate}" name="ExpDate"></td>
+    </tr>
+    <tr>
+      <td height="31">Card Code (CVV2)</td>
+      <td><input value="{CardCode}" name="CardCode"></td>
+    </tr>
+    <tr>
+      <td nowrap align="right" colspan="2"><b>(Press only once)
+        <!-- BEGIN Button Insert --><input class="button" type="submit" value="Go" name="Insert"><!-- END Button Insert -->
+        <!-- BEGIN Button Cancel --><input class="button" type="submit" value="Cancel" name="Cancel"><!-- END Button Cancel -->&nbsp;</b></td>
+    </tr>
+  </table></td></tr></table>
+  <input type="hidden" value="{user_id}" name="user_id"><input type="hidden" value="{date}" name="date"><input type="hidden" value="{cause}" name="cause">
+  <p></p>
+</form>
+<!-- END Record charges1 -->
+{Footer}
+</body>
+</html>

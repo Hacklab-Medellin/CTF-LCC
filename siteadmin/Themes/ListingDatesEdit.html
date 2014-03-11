@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>malware market {versions} - Administration</title>
+<link rel="stylesheet" type="text/css" href="Themes/images/Style.css">
+</head>
+<body bgcolor="#ffffff" link="#000000" alink="#ff0000" vlink="#000099" text="#000000">
+{Header}
+<!-- BEGIN Record lookup_listing_dates -->
+<form method="post" action="{Action}" name="lookup_listing_dates">
+  <font class="ItechClsFormHeaderFont">Add/Edit&nbsp;Listing Days&nbsp;</font>
+  <table cellpadding="3" cellspacing="0" border="0" class="ft">
+    <!-- BEGIN Error -->
+    <tr>
+      <td colspan="2" >{Error}</td>
+    </tr>
+    <!-- END Error -->
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Days&nbsp;</td>
+      <td ><input name="days" value="{days}" maxlength="10" size="10" class="ItechClsInput">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Chargeable</td>
+      <td ><input type="checkbox" value="1" name="Checkbox1" {Checkbox1}>&nbsp;Yes</td>
+    </tr>
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31">Amount to charge&nbsp;</td>
+      <td ><input value="{fee}" name="fee" class="ItechClsInput" size="10">&nbsp;</td>
+    </tr>
+    <tr>
+      <td colspan="2" align="right" class="ItechClsFooterTD">
+        <!-- BEGIN Button Insert --><input name="Insert" type="submit" value="Add" class="ItechClsButton"><!-- END Button Insert -->
+        <!-- BEGIN Button Update --><input name="Update" type="submit" value="Update" class="ItechClsButton"><!-- END Button Update -->
+        <!-- BEGIN Button Delete --><input name="Delete" type="submit" value="Delete" class="ItechClsButton"><!-- END Button Delete -->&nbsp;
+        <!-- BEGIN Button Cancel --><input type="submit" value="Cancel" name="Cancel" class="ItechClsButton"><!-- END Button Cancel --></td>
+    </tr>
+  </table>
+  <input type="hidden" name="date_id" value="{date_id}"><input type="hidden" name="cat_id" value="{cat_id}">
+</form>
+<!-- END Record lookup_listing_dates -->{Footer}
+</body>
+</html>

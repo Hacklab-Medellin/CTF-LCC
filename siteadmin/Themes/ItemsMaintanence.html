@@ -1,0 +1,199 @@
+<html>
+<head>
+<title>malware market {versions} - Administration</title>
+<link rel="stylesheet" type="text/css" href="Themes/images/Style.css">
+<link rel="stylesheet" type="text/css" href="Themes/images/Style.css">
+<script language="JavaScript">
+<!--
+function RemoveImage(imagename,FileID) {
+if(imagename == "")
+{
+return;
+}
+win2=window.open("RemoveImage.php?imagename=" + imagename + "&which=" + FileID,"window1", "menubar=yes,height=250,width=250,titlebar=test,resizable=yes,status=testing,toolbar=no,screenX=25px,screenY=140px,directories=no,dependent=no");
+}
+function ViewPic(imageID) {
+if(imageID == "")
+{
+return;
+}
+win2=window.open("../" + imageID,"window2");
+}
+// -->
+</script>
+</head>
+<body bgcolor="#ffffff" link="#000000" alink="#ff0000" vlink="#000099" text="#000000">
+{Header}&nbsp;
+<!-- BEGIN Record items1 -->
+<form name="items1" action="{Action}" method="post">
+  <font class="ItechClsFormHeaderFont">Edit Item #{ItemNumLabel}</font>
+  <table width="100%"  cellspacing="0" cellpadding="3" class="ft" border="0">
+    <!-- BEGIN Error -->
+    <tr>
+      <td  colspan="2">{Error}</td>
+    </tr>
+    <!-- END Error -->
+    <tr>
+      <td class="ItechClsFieldCaptionTD" height="31" colspan="2" align="middle"><a href="../ViewItem.php?ItemNum={ItemNum}">View
+        this Item</a></td>
+      <tr>
+        <td class="ItechClsFieldCaptionTD" height="31" colspan="2" align="left">
+          <p>Belongs To:<a href="../UserMaintanence.php?user_id={user_id}">{UserIDLabel}</a><br>
+          <br>
+          Started: {StartedLabel}&nbsp; Closes: {ClosesLabel}</p>
+        </td>
+        <tr>
+          <tr>
+            <td class="ItechClsFieldCaptionTD" height="31">Title&nbsp;</td>
+            <td ><input class="ItechClsInput" maxlength="250" size="50" value="{title}" name="title">&nbsp;</td>
+          </tr>
+          <tr>
+            <td class="ItechClsFieldCaptionTD" height="31">Status&nbsp;</td>
+            <td >
+              <select class="ItechClsSelect" name="status">
+                {status_Options}
+              </select>
+              &nbsp;</td>
+          </tr>
+          <tr>
+            <td class="ItechClsFieldCaptionTD" height="31">End Reason&nbsp;</td>
+            <td ><input class="ItechClsInput" maxlength="250" size="50" value="{end_reason}" name="end_reason">&nbsp;If
+              closing this item, state a reason why</td>
+          </tr>
+          <tr>
+            <td class="ItechClsFieldCaptionTD" height="31">Category&nbsp;</td>
+            <td >
+              <select class="ItechClsSelect" name="category">
+                {category_Options}
+              </select>
+              &nbsp;</td>
+          </tr>
+          <tr>
+            <td class="ItechClsFieldCaptionTD" height="31">Extend&nbsp;Listing</td>
+            <td >
+              <select class="ItechClsSelect" name="close">
+                <option value="979" selected>No Extension</option>
+                {close_Options}
+              </select>
+              &nbsp;Days</td>
+          </tr>
+          <tr>
+            <td class="ItechClsFieldCaptionTD" height="31">Asking Price&nbsp;</td>
+            <td >{currency}<input class="ItechClsInput" maxlength="12" size="12" value="{asking_price}" name="asking_price">&nbsp;</td>
+          </tr>
+          <tr>
+            <td class="ItechClsFieldCaptionTD" height="31">Make Offer&nbsp;</td>
+            <td ><input class="ItechClsInput" type="checkbox" value="1" name="make_offer" {make_offer}>&nbsp;Check
+              for yes</td>
+          </tr>
+          <tr>
+            <td class="ItechClsFieldCaptionTD" height="31">Quantity&nbsp;</td>
+            <td ><input class="ItechClsInput" maxlength="10" size="10" value="{quantity}" name="quantity">&nbsp;</td>
+          </tr>
+          <tr>
+            <td class="ItechClsFieldCaptionTD" height="31">City Town&nbsp;</td>
+            <td ><input class="ItechClsInput" maxlength="250" size="50" value="{city_town}" name="city_town">&nbsp;</td>
+          </tr>
+          <tr>
+            <td class="ItechClsFieldCaptionTD" height="31">State Province&nbsp;</td>
+            <td ><input class="ItechClsInput" value="{state}" name="state" size="50">&nbsp;&nbsp;</td>
+          </tr>
+          <tr>
+            <td class="ItechClsFieldCaptionTD" height="31">Country</td>
+            <td >
+              <select tabindex="0" name="country">
+                {country_Options}
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td class="ItechClsFieldCaptionTD" height="31">Description&nbsp;</td>
+            <td ><textarea class="ItechClsTextarea" name="description" rows="20" cols="100">{description}</textarea>&nbsp;</td>
+          </tr>
+          <tr>
+            <td class="ItechClsFieldCaptionTD" height="31">Added Description<br>
+              Date and Message<br>
+            </td>
+            <td ><input class="ItechClsInput" maxlength="250" size="50" value="{dateadded}" name="dateadded">&nbsp;</td>
+          </tr>
+          <tr>
+            <td class="ItechClsFieldCaptionTD" height="31">Added Description<br>
+            </td>
+            <td ><textarea class="ItechClsTextarea" name="added_description" rows="7" cols="75">{added_description}</textarea>&nbsp;</td>
+          </tr>
+          <tr>
+            <td class="ItechClsFieldCaptionTD" height="31">Image One&nbsp;</td>
+            <td ><input class="ItechClsInput" maxlength="250" size="50" value="{image_one}" name="image_one">&nbsp;&nbsp;<a href="javascript:ViewPic('{image_one}');">View</a>&nbsp;|&nbsp;<a href="javascript:RemoveImage('{image_one}', 'one');">Remove</a></td>
+          </tr>
+          <tr>
+            <td class="ItechClsFieldCaptionTD" height="31">Image Two&nbsp;</td>
+            <td ><input class="ItechClsInput" maxlength="250" size="50" value="{image_two}" name="image_two">&nbsp;&nbsp;<a href="javascript:ViewPic('{image_two}');">View</a>&nbsp;|&nbsp;<a href="javascript:RemoveImage('{image_two}', 'two');">Remove</a></td>
+          </tr>
+          <tr>
+            <td class="ItechClsFieldCaptionTD" height="31">Image Three&nbsp;</td>
+            <td ><input class="ItechClsInput" maxlength="250" size="50" value="{image_three}" name="image_three">&nbsp;&nbsp;<a href="javascript:ViewPic('{image_three}');">View</a>&nbsp;|&nbsp;<a href="javascript:RemoveImage('{image_three}', 'three');">Remove</a></td>
+          </tr>
+          <tr>
+            <td class="ItechClsFieldCaptionTD" height="31">Image Four&nbsp;</td>
+            <td ><input class="ItechClsInput" maxlength="250" size="50" value="{image_four}" name="image_four">&nbsp;&nbsp;<a href="javascript:ViewPic('{image_four}');">View</a>&nbsp;|&nbsp;<a href="javascript:RemoveImage('{image_four}', 'four');">Remove</a></td>
+          </tr>
+          <tr>
+            <td class="ItechClsFieldCaptionTD" height="31">Image Five&nbsp;</td>
+            <td ><input class="ItechClsInput" maxlength="250" size="50" value="{image_five}" name="image_five">&nbsp;&nbsp;<a href="javascript:ViewPic('{image_five}');">View</a>&nbsp;|&nbsp;<a href="javascript:RemoveImage('{image_five}', 'five');">Remove</a></td>
+          </tr>
+          <tr>
+            <td class="ItechClsFieldCaptionTD" height="31">Bold&nbsp;</td>
+            <td ><input class="ItechClsInput" type="checkbox" value="1" name="bold" {bold}>&nbsp;Check
+              for yes</td>
+          </tr>
+          <tr>
+            <td class="ItechClsFieldCaptionTD" height="31">Highlighted Background&nbsp;</td>
+            <td ><input class="ItechClsInput" type="checkbox" value="1" name="background" {background}>&nbsp;Check
+              for yes</td>
+          </tr>
+          <tr>
+            <td class="ItechClsFieldCaptionTD" height="31">Category Featured&nbsp;</td>
+            <td ><input class="ItechClsInput" type="checkbox" value="1" name="cat_featured" {cat_featured}>&nbsp;Check
+              for yes</td>
+          </tr>
+          <tr>
+            <td class="ItechClsFieldCaptionTD" height="31">Home Page Featured&nbsp;</td>
+            <td ><input class="ItechClsInput" type="checkbox" value="1" name="home_featured" {home_featured}>&nbsp;Check
+              for yes</td>
+          </tr>
+          <tr>
+            <td class="ItechClsFieldCaptionTD" height="31">Gallery Featured&nbsp;</td>
+            <td ><input class="ItechClsInput" type="checkbox" value="1" name="gallery_featured" {gallery_featured}>&nbsp;Check
+              for yes</td>
+          </tr>
+          <tr>
+            <td class="ItechClsFieldCaptionTD" height="31">Image Preview&nbsp;</td>
+            <td ><input class="ItechClsInput" type="checkbox" value="1" name="image_preview" {image_preview}>&nbsp;Check
+              for yes</td>
+          </tr>
+          <tr>
+            <td class="ItechClsFieldCaptionTD" height="31">Slide Show&nbsp;</td>
+            <td ><input class="ItechClsInput" type="checkbox" value="1" name="slide_show" {slide_show}>&nbsp;Check
+              for yes</td>
+          </tr>
+          <tr>
+            <td class="ItechClsFieldCaptionTD" height="31">Counter&nbsp;</td>
+            <td ><input class="ItechClsInput" type="checkbox" value="1" name="counter" {counter}>&nbsp;Check
+              for yes</td>
+          </tr>
+          <tr>
+            <td class="ItechClsFieldCaptionTD" height="31">Hits&nbsp;</td>
+            <td ><input class="ItechClsInput" maxlength="10" size="10" value="{hits}" name="hits">&nbsp;</td>
+          </tr>
+          <tr>
+            <td class="ItechClsFooterTD" align="right" colspan="2">&nbsp;
+              <!-- BEGIN Button Update --><input class="ItechClsButton" type="submit" value="Update" name="Update"><!-- END Button Update -->
+              <!-- BEGIN Button Delete --><input class="ItechClsButton" type="submit" value="Delete" name="Delete"><!-- END Button Delete -->
+              <!-- BEGIN Button Cancel --><input class="ItechClsButton" type="submit" value="Cancel" name="Cancel"><!-- END Button Cancel -->&nbsp;</td>
+          </tr>
+        </table>
+        <input type="hidden" value="{user_id}" name="user_id"><input type="hidden" value="{started}" name="started"><input type="hidden" value="{closes}" name="closes"><input type="hidden" value="{ItemNum}" name="ItemNum">
+      </form>
+      <!-- END Record items1 -->{Footer}
+      </body>
+      </html>

@@ -1,0 +1,57 @@
+<html>
+<head>
+<title>malware market {versions} - Administration</title>
+<style type="text/css">
+<!--
+BODY { font-family: Tahoma, Verdana, Arial, Helvetica; font-size: 11px; }
+TABLE { font-family: Tahoma, Verdana, Arial, Helvetica; font-size: 11px; }
+TH { font-family: Tahoma, Verdana, Arial, Helvetica; font-size: 11px; }
+TR { font-family: Tahoma, Verdana, Arial, Helvetica; font-size: 11px; }
+TD { font-family: Tahoma, Verdana, Arial, Helvetica; font-size: 11px; }
+OL { font-family: Tahoma, Verdana, Arial, Helvetica; font-size: 11px; }
+P { font-family: Tahoma, Verdana, Arial, Helvetica; font-size: 11px; }
+A { font-family: Tahoma, Verdana, Arial, Helvetica; font-size: 11px; }
+BLOCKQUOTE { font-family: Tahoma, Verdana, Arial, Helvetica; font-size: 11px; }
+LABEL { font-family: Tahoma, Verdana, Arial, Helvetica; font-size: 11px; }
+.ItechClsPageBODY {  }
+.ItechClsFormTABLE { border: solid 2px #9DB4C8; background-color: #5A7994; }
+.ItechClsFormHeaderFont { color: #9DB4C8; font-size: 16px; font-weight: bold; }
+.ItechClsFieldCaptionTD { border: 1px solid #000000; background-color: #FFE3E3; color: #000000; font-size: 11px; font-weight: bold; }
+.ItechClsAltDataTD { color: #C5D3DF; font-size: 11px; }
+
+
+.ItechClsTextarea { font-size: 11px; font-family: Tahoma, Verdana, Arial, Helvetica; }
+.ItechClsSelect { font-size: 11px; font-family: Tahoma, Verdana, Arial, Helvetica; }
+-->
+</style>
+</head>
+<body bgcolor="#ffffff" link="#000000" alink="#ff0000" vlink="#000099" text="#000000">
+{Header}
+<FONT class=ItechClsFormHeaderFont>Add/Modify Custom Drop Down Fields in {catname}:</FONT>
+<table  cellspacing="1" width="100%">
+  <tr>
+    <td width="45%" valign="top">
+{thiscat}<hr width="85%">
+{inherited}
+<br><br><br><hr width="100%" size="5" class=ItechClsSeparatorTD>
+<a class=ItechClsDataLink href="CatDetails.php?cat={cat}"><--- Back to Category Customizations Page</a>
+
+</td>
+    <td width="55%" align="left" valign="top"><FONT class=ItechClsFormHeaderFont>Add/Modify Field:</FONT><br><font color="Red" size="2">{error}<br>
+	<form method="POST" action="customdd.php">
+    <p><font class="ItechClsTextarea" color="#FFFFFF">Display Name:</font><br><input class="ItechClsInput" type="text" name="name" value="{name}" size="20"></p>
+    <p><font class="ItechClsTextarea" color="#FFFFFF">Template Variable: (no spaces or special characters, except underscores)</font><br><input class="ItechClsInput" type="text" name="template_var" value="{template_var}" size="20"></p>
+    <p><font class="ItechClsTextarea" color="#FFFFFF">Display Description:</font><br><textarea class="ItechClsTextarea" rows="8" name="description" cols="35">{description}</textarea></p>
+    <input class="ItechClsInput" type="checkbox" name="searchable" value="1"{searchablecheck}>&nbsp;<font class="ItechClsTextarea" color="#FFFFFF">Make this a searchable field (All fields are indexed for "Power Search" but this option makes this field display as an specific option on the search page).</font><br><br>
+    <font class="ItechClsTextarea" color="#FFFFFF">Search Display Style:</font>&nbsp;<select class="ItechClsInput" size="1" name="style"><option value="1"{style1checked}>Dropdown List</option><option value="2"{style2checked}>Checkbox List</option></select><br><br>
+    <font class="ItechClsTextarea" color="#FFFFFF">If "Checkbox List", How Many Per Row:</font>&nbsp;<input class="ItechClsInput" type="text" name="per_row" value="{per_row}" size="3"><br><br>
+    <input type="hidden" name="cat" value="{cat}"><input type="hidden" name="field" value="{field}">{thisfield}{addoption}
+    <p>{savebutton}{deletebutton}</p>
+</form>
+	</td>
+  </tr>
+</table>
+
+<p>{Footer}&nbsp; </p>
+</body>
+</html>

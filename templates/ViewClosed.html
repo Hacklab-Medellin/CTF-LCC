@@ -1,0 +1,61 @@
+<html>
+<head>
+<title>malwaremarket {lang_267}</title>
+<link rel="stylesheet" type="text/css" href="templates/images/Style.css">
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#FF0000">
+{Header}
+<!-- BEGIN Grid items -->
+<table class="ft" width="100%">
+     <tr>
+      <td class="ct"  height="31" colspan="4"><font class="fhf">Closed Items</font></td>
+    </tr>
+  <tr>
+    <td class="ct" height="31" width="25%">
+      <!-- BEGIN Sorter Sorter_ItemNum -->{lang_38}
+      <!-- BEGIN Asc_On --><img src="templates/images/AscOn.gif" border="0"><!-- END Asc_On -->
+      <!-- BEGIN Asc_Off --><a href="{Asc_URL}"><img src="templates/images/AscOff.gif" border="0"></a><!-- END Asc_Off -->
+      <!-- BEGIN Desc_On --><img src="templates/images/DescOn.gif" border="0"><!-- END Desc_On -->
+      <!-- BEGIN Desc_Off --><a href="{Desc_URL}"><img src="templates/images/DescOff.gif" border="0"></a><!-- END Desc_Off --><!-- END Sorter Sorter_ItemNum -->&nbsp;</td>
+    <td class="ct" height="31" width="40%">
+      <!-- BEGIN Sorter Sorter_title -->Title
+      <!-- BEGIN Asc_On --><img src="templates/images/AscOn.gif" border="0"><!-- END Asc_On -->
+      <!-- BEGIN Asc_Off --><a href="{Asc_URL}"><img src="templates/images/AscOff.gif" border="0"></a><!-- END Asc_Off -->
+      <!-- BEGIN Desc_On --><img src="templates/images/DescOn.gif" border="0"><!-- END Desc_On -->
+      <!-- BEGIN Desc_Off --><a href="{Desc_URL}"><img src="templates/images/DescOff.gif" border="0"></a><!-- END Desc_Off --><!-- END Sorter Sorter_title -->&nbsp;</td>
+    <td class="ct" height="31" width="25%">
+      <!-- BEGIN Sorter Sorter_end_reason -->{lang_46}
+      <!-- BEGIN Asc_On --><img src="templates/images/AscOn.gif" border="0"><!-- END Asc_On -->
+      <!-- BEGIN Asc_Off --><a href="{Asc_URL}"><img src="templates/images/AscOff.gif" border="0"></a><!-- END Asc_Off -->
+      <!-- BEGIN Desc_On --><img src="templates/images/DescOn.gif" border="0"><!-- END Desc_On -->
+      <!-- BEGIN Desc_Off --><a href="{Desc_URL}"><img src="templates/images/DescOff.gif" border="0"></a><!-- END Desc_Off --><!-- END Sorter Sorter_end_reason -->&nbsp;</td>
+    <td class="ct" height="31" width="10%">&nbsp;Actions</td>
+  </tr>
+  <!-- BEGIN Row -->
+  <tr>
+    <td class="dt"  height="31">{ItemNum}&nbsp;</td>
+    <td class="dt"  height="31">{title}&nbsp;</td>
+    <td class="dt"  height="31"><strong><font color="#ff0000">{end_reason}</font></strong>&nbsp;</td>
+    <td class="dt"  height="31"><a href="catlist.php?Item_Number={ItemNum}&finalcat={finalcat}">Edit/Restart</a>&nbsp;|&nbsp;<a href="RemoveListing.php?ItemNum={ItemNum}">Delete</a></td>
+  </tr>
+  <!-- END Row -->
+  <tr>
+    <td class="footer" nowrap colspan="4">
+      <!-- BEGIN Navigator Navigator -->
+      <!-- BEGIN First_On --><a class="nl" href="{First_URL}">First</a><!-- END First_On -->
+      <!-- BEGIN First_Off -->First<!-- END First_Off -->
+      <!-- BEGIN Prev_On --><a class="nl" href="{Prev_URL}">Prev</a><!-- END Prev_On -->
+      <!-- BEGIN Prev_Off -->Prev<!-- END Prev_Off -->&nbsp;
+      <!-- BEGIN Pages -->
+      <!-- BEGIN Page_On --><a class="nl" href="{Page_URL}">{Page_Number}</a>&nbsp;<!-- END Page_On -->
+      <!-- BEGIN Page_Off -->{Page_Number}&nbsp;<!-- END Page_Off --><!-- END Pages -->of
+      {Total_Pages}&nbsp;
+      <!-- BEGIN Next_On --><a class="nl" href="{Next_URL}">Next</a><!-- END Next_On -->
+      <!-- BEGIN Next_Off -->Next<!-- END Next_Off -->
+      <!-- BEGIN Last_On --><a class="nl" href="{Last_URL}">Last</a><!-- END Last_On -->
+      <!-- BEGIN Last_Off -->Last<!-- END Last_Off --><!-- END Navigator Navigator -->&nbsp;</td>
+  </tr>
+</table>
+<!-- END Grid items -->{Footer}
+</body>
+</html>

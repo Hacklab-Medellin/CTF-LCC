@@ -1,0 +1,94 @@
+<html>
+
+<head>
+
+<title>malware market {versions} - Administration</title>
+
+<link rel="stylesheet" type="text/css" href="Themes/images/Style.css">
+</head>
+
+<body bgcolor="#ffffff" link="#000000" alink="#ff0000" vlink="#000099" text="#000000">
+
+{Header}
+
+<!-- BEGIN Record categories -->
+
+<form method="post" action="{Action}" name="categories">
+
+  <font class="ItechClsFormHeaderFont">Add/Edit Categories</font>
+
+  <table cellpadding="3" cellspacing="0" border="0" class="ft">
+
+    <!-- BEGIN Error -->
+
+    <tr>
+
+      <td colspan="2" >{Error}</td>
+
+    </tr>
+
+    <!-- END Error -->
+
+    <tr>
+
+      <td class="ItechClsFieldCaptionTD" height="31">Sub&nbsp;Category ID&nbsp;</td>
+
+      <td ><input name="sub_cat_id" value="{sub_cat_id}" maxlength="10" size="10" class="ItechClsInput">&nbsp;</td>
+
+    </tr>
+
+    <tr>
+
+      <td class="ItechClsFieldCaptionTD" height="31">Name&nbsp;</td>
+
+      <td ><input name="caname" value="{caname}" maxlength="250" size="50" class="ItechClsInput">&nbsp;</td>
+
+    </tr>
+
+    <tr>
+
+      <td class="ItechClsFieldCaptionTD" height="31">Weight<br>
+
+        <br>
+
+        This will decide the order<br>
+
+        in which the categories<br>
+
+        are displayed. If left at<br>
+
+        1 or set the same as others,<br>
+
+        the categories would then&nbsp;<br>
+
+        be sorted alphabetically&nbsp;</td>
+
+      <td ><input class="ItechClsInput" value="{weight}" name="weight"></td>
+
+    </tr>
+
+    <tr>
+
+      <td colspan="2" align="right" class="ItechClsFooterTD">
+
+        <!-- BEGIN Button Insert --><input name="Insert" type="submit" value="Add" class="ItechClsButton"><!-- END Button Insert -->
+
+        <!-- BEGIN Button Update --><input name="Update" type="submit" value="Update" class="ItechClsButton"><!-- END Button Update -->
+
+        <!-- BEGIN Button Delete --><input name="Delete" type="submit" value="Delete" class="ItechClsButton"><!-- END Button Delete -->&nbsp;
+
+        <!-- BEGIN Button Cancel --><input type="submit" value="Cancel" name="Cancel" class="ItechClsButton"><!-- END Button Cancel --></td>
+
+    </tr>
+
+  </table>
+
+  <input type="hidden" name="cat_id" value="{cat_id}">
+
+</form>
+
+<!-- END Record categories -->{Footer}
+
+</body>
+
+</html>
