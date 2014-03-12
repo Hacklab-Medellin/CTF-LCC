@@ -10,6 +10,7 @@ Requerimientos del servidor:
 
 Instalación e instrucciones de configuración:
 
+0) Descargar el archivo Web_Application.rar (contiene todas las carpetas y archivos que hay en este repositorio) del siguiente enlace http://www.4shared.com/rar/34a3_QiRce/Web_Application.html 
 1) Extraer el contenido del archivo Web_Application.rar
 2) Subir todos los archivos a la carpeta raiz del servidor Web Apache.
 3) CHMOD 777 para los siguientes directorios
@@ -17,7 +18,7 @@ Instalación e instrucciones de configuración:
 /uploads
 /temp_templates
 4) Crear un nuevo usuario MySQL y una nueva base de datos llamada "Las_reses".
-5) Abrir el archivo Config/vars.php y editar las variables así como los parámetros SQL (user, password)
+5) Abrir el archivo Config/vars.php y editar las variables así como los parámetros SQL (user,password)
 6) Cargar SQL/SQL.sql (el que esta en github no en el del .rar)en PHPMYADMIN.
 
 
