@@ -16,9 +16,9 @@ Instalación e instrucciones de configuración:
 
 /uploads
 /temp_templates
-4) Crear un nuevo usuario MySQL y una nueva base de datos llamada "Las_reses"
+4) Crear un nuevo usuario MySQL y una nueva base de datos llamada "Las_reses".
 5) Abrir el archivo Config/vars.php y editar las variables así como los parámetros SQL (user, password)
-6) Cargar SQL/SQL.sql en PHPMYADMIN.
+6) Cargar SQL/SQL.sql (el que esta en github no en el del .rar)en PHPMYADMIN.
 
 
 
